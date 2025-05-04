@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --cor_primaria: #295430; 
+    --cor_segundaria: #FEFEFE; 
+    --cor_tercearia: #E6D9B6;
+    --cor_preto: black;
+    --cor_branco: white;
+
+    --fonte_titulo: "Oswald", serif;
+    --fonte_texto: "Noto Sans", serif;
+}
+
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor_segundaria);
+    min-height: 100vh; /* Altura mínima de toda a viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho {
+    background-color: var(--cor_primaria);
+    padding: 2% 10%;
+}
+
+.cabecalho__links {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+}
+
+.cabecalho__links_link{
+    color: var(--cor_segundaria);
+    text-decoration: none;
+    font-family: var(--fonte_texto);
+    font-weight: 600;
+}
+
+.apresentacao_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor_tercearia);
+    padding: 5% 0;
+    color: var(--cor_primaria);
+    gap: 20px;
+    font-family: var(--fonte_titulo);
+    width: 100%; /* Ocupa toda a largura */
+}
+
+.apresentacao_header__titulo{
+    font-size: 2.13rem;
+    font-weight: 700;
+}
+
+.apresentacao_header__paragrafo{
+    font-size: 1.13rem;
+    font-weight: 200;
+}
+
+.principal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5% 20%;
+    gap: 20px;
+}
+
+.principal img{
+    width: 20%;
+}
+
+.principal__secao{
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fonte_texto);
+    color: var(--cor_primaria);
+}
+
+.rodape {
+    background-color: var(--cor_primaria);
+    color: var(--cor_segundaria);
+    text-align: center;
+    padding: 2% 0;
+    font-family: var(--fonte_texto);
+    flex-shrink: 0; /* Garante que o rodapé fique no final da tela */
+}
+
+.rodape__titulo{
+    font-size: 1.13rem;
+    font-weight: 600;
+}
+
+.rodape__paragrafo{
+    font-size: 0.75rem;
+}
+
+.rodape__subtitulo{
+    text-decoration: underline;
+}
+
+.sobre{
+    background-color: var(--cor_segundaria);
+    color: var(--cor_preto);
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 5% 10%;
+    text-align: justify;
+    font-family: var(--fonte_texto);
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    flex-grow: 1; /* Faz com que esse bloco cresça para ocupar o espaço vazio */
+    min-height: 100vh; /* Altura mínima para preencher a tela */
+    justify-items: center;
+}
+
+.image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border-radius: 10px; /* Opcional, se quiser bordas arredondadas */
+}
+
+.image-item p{
+    font-family: var(--fonte_texto);
+    color: var(--cor_preto);
+}
+
+.contato{
+    padding: 5% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--fonte_texto);
+}
+
+.contato__titulo{
+    font-weight: 300;
+}
+
+.contato__contatos{
+    color: var(--cor_primaria);
+}
+
+#destaque{
+    color: var(--cor_preto);
+    font-weight: 800;
+    font-size: 1.1em;
+}
+
+.contato__redes__div{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    color: var(--cor_primaria);
+}
+
+.icone__redes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px
+}
+
+.icone__redes a{
+    text-decoration: none;
+    color: var(--cor_primaria);
+    font-size: 18px;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 1200px) {
+    .principal {
+        margin: 5%;
+    }
+    
+    .produtos {
+        width: 50%;
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+    }
+
+    .cabecalho__links{
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .cabecalho__links a{
+        border: 1px 1px 1px 1px solid;  
+    }
+
+    .sobre{
+        font-size: 1rem;
+        padding: 2% 5%;
+        width: auto;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .cabecalho__links {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .principal {
+        flex-direction: column;
+        margin: 5% 10%;
+    }
+
+    .principal img {
+        width: 50%;
+    }
+    
+    .produtos {
+        grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
+    }
+}
+
+@media (max-width: 480px) {
+    .apresentacao_header__titulo {
+        font-size: 28px;
+    }
+
+    .apresentacao_header__paragrafo {
+        font-size: 16px;
+    }
+
+    .principal img {
+        width: 100%;
+    }
+
+    .contato{
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: .8rem;
+    }
+
+    .contato__redes__div{
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    main{
+     margin-bottom: 10px;   
+    }
+}

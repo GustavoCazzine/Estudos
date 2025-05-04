@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 10vh;
+    box-sizing: border-box;
+    background-color: black;
+    color: aliceblue;
+}
+
+.conteudo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10%;
+}
+
+.seção_inicial{
+    width: 650px;
+}

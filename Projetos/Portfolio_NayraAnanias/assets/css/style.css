@@ -1,0 +1,614 @@
+@font-face {
+    font-family: 'PlayfairDisplay bold';
+    src: url('../fonts/PlayfairDisplay/PlayfairDisplay-Bold.woff2') format('woff2'),
+        url('../fonts/PlayfairDisplay/PlayfairDisplay-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Old_Standard_TT';
+    src: url('../fonts/Old_Standard_TT/OldStandardTT-Bold.woff2') format('woff2'),
+    url('../fonts/Old_Standard_TT/OldStandardTT-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Open_Sans';
+    src: url('../fonts/Open_Sans/OpenSansCondensed-Bold.woff2') format('woff2'),
+        url('../fonts/Open_Sans/OpenSansCondensed-Bold.woff') format('woff');
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root{
+    /* Cores Principais */
+    --cor-primaria: #ffffff;  /* Fundo Principal */
+    --cor-secundaria: #D4B483;  /* Destaques ou Seções */
+
+    /* Cores Alternativas */
+    --cor-alternativa: #fdfdfa;  /* Áreas de Texto Secundárias */
+
+    /* Cores de Texto */
+    --cor-titulo: #000000;  /* Títulos e Cabeçalhos */
+    --cor-paragrafos: #6b6657;  /* Texto dos Parágrafos */
+
+    /* Cores de Ação */
+    --cor-botoes: #8C1F1f;  /* Botões e Ações */
+
+    /* Cores Adicionais */
+    --cor-destaque: #8C1F1f;  /* Ícones e Links */
+    --cor-neutra: #555555;  /* Texto ou Gradientes Neutros */
+
+
+    --fonte-titulo: "Julius Sans One", serif;
+    --fonte-paragrafos: "PlayfairDisplay bolds", serif;
+    --fonte-subtitulo: "Open_Sans", serif;
+}
+
+html, body, main {
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar { 
+    display: none;
+}
+
+main::-webkit-scrollbar { 
+    display: none;
+}
+
+body::-webkit-scrollbar { 
+    display: none;
+}
+
+/* Estilização base para mobile-first */
+body {
+    font-family: var(--fonte-paragrafos);
+    font-size: 16px; /* Base para rem */
+    line-height: 1.5;
+    background-color: var(--cor-alternativa);
+    color: var(--cor-paragrafos);
+    overflow: hidden; /* Impede scroll global desnecessário */
+}
+
+p {
+    font-size: 1rem;
+}
+
+h3 {
+    font-family: var(--fonte-paragrafos);
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: center;
+    background-color: transparent; /* Faz o fundo do cabeçalho transparente */
+    position: absolute; /* Remove o cabeçalho do fluxo normal do documento */
+    top: 0; /* Coloca o cabeçalho no topo da página */
+    width: 100%; /* Garante que o cabeçalho ocupe toda a largura da página */
+    z-index: 10; /* Garante que o cabeçalho fique acima dos outros elementos */
+    margin-top: -1em;
+    
+}
+
+.cabecalho__logo {
+    width: 6em; /* Tamanho responsivo baseado no tamanho da fonte */
+    height: auto; /* Mantém a proporção da imagem */
+    background-color: transparent; /* Garantir fundo transparente, se necessário */
+    display: block; /* Remove qualquer espaço extra abaixo da imagem */
+}
+
+
+/* *********SEção 1 - Principal */
+.secao-principal {
+    position: relative;   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Alinha os itens ao final */
+    overflow: hidden; /* Garante que elementos fora da área visível não apareçam */
+    padding: 3em 1em 0 1em;
+}
+
+.secao-principal__fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1;
+}
+
+#fundo01{
+    background-color: var(--cor-alternativa);
+    width: 50%;
+    height: 100%;
+    display: flex;              /* Ativa o flexbox */
+    justify-content: start;    /* Centraliza horizontalmente */
+    align-items: center;        /* Centraliza verticalmente */
+}
+
+.secao-principal__fundo__paragrafo{
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 100px;
+    color: #0000000c;
+    font-family: var(--fonte-titulo);
+    font-weight: 900;
+    line-height: 1.3;
+    right: 1;
+    border-left: 2px solid #0000000c;
+    border-right: 2px solid #0000000c;
+    padding: 50px 0px; /* Espaçamento superior e inferior */
+    margin: 0 0 0 5%; /* Centraliza horizontalmente */
+}
+
+#fundo02{
+    background-color: var(--cor-secundaria);
+    width: 50%;
+    height: 100%;
+}
+
+.secao-principal__conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foto-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foto-wrapper:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%; /* Ajuste para garantir cobertura completa */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--cor-alternativa) 100%); /* Gradiente ajustado */
+    z-index: 5;
+    pointer-events: none; /* Impede que interfira na interação do usuário */
+}
+
+.secao-principal__foto {
+    width: 80%;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    aspect-ratio: 1 / 1; /* Proporção original da imagem */
+    object-fit: cover;
+    display: block;
+}
+
+
+.secao-principal__titulo {
+    position: absolute;
+    bottom: 2%;
+    z-index: 3;
+    font-size: 2.25rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--cor-titulo);
+    font-family: var(--fonte-titulo);
+    text-transform: uppercase;
+    z-index: 5;
+}
+
+.container__subtitulo{
+    padding: 2% 15% 10% 15%;
+    text-align: center; 
+    font-weight: 100;
+}
+
+
+
+/* ****** Seção Conteúdo */
+.content {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.container__subtitulo__desktop{
+    display: none;
+}
+
+/* Para garantir consistência com Webkit */ 
+/* Scrollbar personalizada */
+.content::-webkit-scrollbar{
+    overflow-x: hidden;
+}
+
+.scrollable-content::-webkit-scrollbar {
+    width: 10px;
+    overflow-x: hidden;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+    background: var(--cor-primaria);
+    border-radius: 10px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+    background: var(--cor-destaque);
+    border-radius: 10px;
+    border: 2px solid #f0f0f0;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+    background:var(--cor-destaque);
+}
+
+.scrollable-content::-webkit-scrollbar-horizontal {
+    height: 8px;
+}
+
+.secao-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+    padding-bottom: 2em ;
+}
+
+.container__conteudo {
+    width: 100%;
+    padding: 0% 5%;
+    display: block;
+}
+
+.container__conteudo img {
+    width: 100%; /* Escala a largura da imagem conforme o contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Arredonda os cantos */
+    border: 2px solid var(--cor-secundaria); /* Define uma única borda */
+    object-fit: cover; /* Garante que a imagem seja ajustada corretamente */
+    display: block; /* Remove o espaçamento inferior padrão */
+}
+
+.container__conteudo img{
+    border: 2px solid var(--cor-secundaria);
+}
+
+.container__conteudo__titulo {
+    font-size: clamp(1.25rem, 5vw, 2rem); /* Escala adaptativa para telas menores */
+    font-family: var(--fonte-titulo);
+    margin: .5em 0;
+}
+
+.container__conteudo__link {
+    text-decoration: none;
+    font-size: 3vw;
+    background-color: var(--cor-botoes);
+    padding: 0.5em 1.5em;
+    border-radius: 10px;
+    position: relative;
+    top: -8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: var(--cor-primaria);
+    text-transform: uppercase;
+}
+
+.container__conteudo__link:hover {
+    transform: scale(1.05); /* Efeito de destaque */
+}
+
+.container__conteudo__cursos {
+    display: flex;
+    flex-direction: column;
+}
+
+.container__conteudo__curso {
+    margin-bottom: 1em;
+}
+
+.link_cor{
+    background-color: var(--cor-botoes);
+    color: var(--cor-alternativa)
+}
+
+.container_cor{
+    border: 2px solid var(--cor-secundaria);
+}
+
+/* ****** Carrossel */
+/* Contêiner interativo para capturar cliques fora dos cards */
+.swiper-wrapper-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    cursor: grab; /* Indica que o contêiner pode ser arrastado */
+}
+
+.swiper-wrapper-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+
+.swiper {
+    width: 90%;
+    margin: 2em auto;
+    padding: 2em 1em;
+    overflow-x: hidden;
+    min-height: 300px; /* Defina um mínimo razoável */
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilos do container de feedback */
+.feedback-container {
+    height: auto; /* Defina o máximo esperado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.397);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+}
+
+/* Estilo Individual do Feedback */
+.feedback {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+}
+
+.feedback__alinhamento {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1em;
+}
+
+.profile-photo {
+    width: clamp(60px, 10vw, 80px);
+    height: clamp(60px, 10vw, 80px);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--cor-destaque);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.5) rotate(5deg);
+    border-color: var(--cor-destaque);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.client-name {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: bold;
+    color: var(--cor-titulo);
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.client-comment {
+    font-size: 0.8rem;
+    color: var(--cor-paragrafos);
+    line-height: 2em;
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+    padding: 0.5em 0;
+}
+
+.swiper-wrapper {
+    margin-bottom: 3em;
+    align-items: center;
+}
+
+
+.swiper-pagination{
+    --swiper-pagination-color: var(--cor-destaque);
+}
+
+
+/* Animações de aparição */
+.course {
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.course.top {
+    transform: translateY(-10%);
+}
+
+.course.bottom {
+    transform: translateY(10%);
+}
+
+.course.left {
+    transform: translateX(-10%);
+}
+
+.course.right {
+    transform: translateX(10%);
+}
+
+.course.visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition: 1s;
+}
+
+/* Botão fixo do WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: -100px; /* Começa fora da tela */
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out; /* Apenas transform para melhor desempenho */
+    will-change: transform; /* Informa ao navegador que o elemento será animado */
+    backdrop-filter: blur(2px);
+}
+
+.whatsapp-button img {
+    width: 70%; /* Responsivo: ajusta a largura ao contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    max-width: 100px; /* Limita o tamanho máximo da imagem */
+    display: block; /* Remove espaçamento indesejado */
+    margin: 0 auto; /* Centraliza no contêiner, se necessário */
+}
+
+.whatsapp-button.visible {
+    transform: translateX(-120px); /* Move para dentro da tela */
+}
+
+.whatsapp-button.hidden {
+    transform: translateX(100%); /* Sai para fora da tela */
+}
+
+/* Tooltip do WhatsApp */
+.whatsapp-tooltip {
+    position: absolute;
+    bottom: 70px;
+    right: 10px;
+    background-color: #25D366;
+    color: var(--cor-alternativa);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    white-space: nowrap;
+    will-change: opacity, transform, visibility; /* Informa ao navegador que o elemento será animado */
+}
+
+/* Triângulo do balão de fala */
+.whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -6px; /* Posiciona o triângulo abaixo do balão */
+    right: 15px; /* Ajusta para alinhar com o texto */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px; /* Triângulo apontando para baixo */
+    border-color: #25D366 transparent transparent transparent; /* Cor do triângulo */
+}
+
+/* Quando visível */
+.whatsapp-tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Animação de saída para a direita */
+.whatsapp-tooltip.fade-out {
+    opacity: 0;
+    transform: translateX(50px); /* Move para a direita */
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; /* Suave ao sair */
+}
+
+
+/* Estilo geral do rodapé */
+.site-footer {
+    background-color: var(--cor-primaria); /* Fundo suave */
+    color: var(--cor-paragrafos); /* Cor de texto neutra */
+    text-align: center;
+    padding: 10px 10px;
+    
+    border-top: 1px solid var(--cor-alternativa); /* Linha de separação sutil */
+}
+
+.site-footer a, .site-footer p{
+    font-size: .8rem;
+}
+
+/* Links no rodapé */
+.site-footer a {
+    color: var(--cor-destaque); /* Tom rosé ou pastel para destacar */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Hover nos links */
+.site-footer a:hover {
+    color: var(--cor-destaque); /* Cor mais intensa no hover */
+}
+
+
+/* Estilo da seção de localização */
+.location {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: var(--cor-primaria); /* Fundo suave */
+    color: var(--cor-neutra); /* Cor de texto neutra */
+    border-radius: 8px;
+}
+
+/* Título da seção */
+.location h2 {
+    font-size: 1.5rem;
+    color: var(--cor-destaque); /* Tom feminino e delicado */
+    margin-bottom: 1em;
+}
+
+/* Descrição */
+.location p {
+    font-size: .9rem;
+    color: var(--cor-paragrafos);
+    margin-bottom: 1.8rem;
+}
+
+/* Contêiner do mapa */
+.map-container {
+    margin-bottom: 1.5rem;
+    max-width: 100%; /* Para que o mapa ocupe toda a largura */
+}
+
+/* Ajuste no iframe do mapa */
+.map-container iframe {
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombras suaves */
+}
+

@@ -1,0 +1,141 @@
+/* Media Query para Desktop */
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+    .container__subtitulo{
+        display: none;
+    }
+
+    .container__subtitulo__desktop{
+        display: block;
+    }
+
+    .container__subtitulo-h3__desktop{
+        font-size: 1.5rem;
+        padding: 0 2em;
+    }
+
+    .cabecalho__logo {
+        width: 150px;
+    }
+    
+    .pagina__geral {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Divide a tela em duas colunas */
+        height: 100vh;
+    }
+
+
+    .secao-principal {
+        height: 100vh; /* Seção principal fixa e cheia */
+        grid-column: 1; /* Ocupa a primeira coluna */
+    }
+
+    .secao-principal__conteudo {
+        text-align: center;
+    }
+
+    .secao-conteudo {
+        overflow: auto;
+
+        padding: 4em;
+    }
+
+    .feedback-container {
+        width: 100%; /* Ocupa 100% da largura da coluna */
+        max-width: 600px; /* Tamanho máximo do container */
+        margin: 1em auto; /* Centraliza o feedback */
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        padding: 1.5em;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .container__conteudo {
+        margin: 1rem auto;
+    }
+
+    .container__conteudo__curso {
+        margin-bottom: 2rem;
+    }
+
+    .container__conteudo__link {
+        text-transform: uppercase;
+        padding: 0.2em 1em;
+        font-size: 1.2em;
+    }
+
+    .secao-principal__foto {
+        max-width: 800px;
+    }
+    
+    .secao-principal__titulo {
+        bottom: 5%;
+        font-size: 4em;
+    }
+
+    .container__conteudo__titulo {
+        font-size: 2vw; /* Escala adaptativa para telas menores */
+    }
+
+    .secao-principal__fundo__paragrafo{
+        font-size:170px;
+        margin: 0 5%;
+        padding: 5em 0;
+    }
+    
+    .secao-principal__fundo__paragrafo2{
+        font-size:150px;
+        margin: auto;
+    }
+
+    /* Carrossel */
+    .swiper {
+        width: 80%; /* Reduz a largura para centralizar melhor em telas maiores */
+        padding: 4em 2em; /* Aumenta o padding para mais espaçamento */
+        min-height: 55em; /* Aumenta a altura mínima para destacar mais o conteúdo */
+        
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center; /* Centraliza os cards horizontalmente dentro do slide */
+        align-items: center; /* Centraliza os cards verticalmente dentro do slide */
+        height: 100%; /* Garante que o slide ocupe toda a altura disponível */
+    }
+
+    .feedback-container {
+        max-width: 100%; /* Aumenta o tamanho máximo do container */
+        padding: 3em; /* Aumenta o padding interno */
+        gap: 1.5em; /* Ajusta o espaçamento entre os elementos */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Aumenta a intensidade da sombra */
+        border-radius: 12px; /* Torna os cantos mais arredondados */
+    }
+
+    /* Ajuste para imagem do perfil */
+    .profile-photo {
+        width: 70px; /* Aumenta o tamanho da imagem para telas maiores */
+        height: 70px; /* Mantém o formato circular */
+    }
+
+    /* Nome do cliente */
+    .client-name {
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte */
+        margin-top: 0.8em; /* Adiciona mais espaço acima do nome */
+    }
+
+    /* Comentário do cliente */
+    .client-comment {
+        font-size: 1rem; /* Aumenta o tamanho da fonte */
+        line-height: 1.8em; /* Melhora a legibilidade com maior espaçamento */
+    }
+
+    /* Posição e espaçamento das bolinhas de paginação */
+    .swiper-pagination {
+        bottom: -50px; /* Move a paginação um pouco mais para baixo */
+        margin-top: 30px; /* Adiciona mais espaço acima */
+    }
+
+    .swiper-wrapper {
+        margin-bottom: 2.5em; /* Aumenta o espaçamento inferior */
+        align-items: center; /* Garante o alinhamento centralizado */
+    }
+}
