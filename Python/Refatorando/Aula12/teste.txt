@@ -1,0 +1,11 @@
+Python
+Javascript
+Java
+C#
+R
+Golang
+Ruby
+SQL
+C
+C++
+Kotlin
