@@ -1,0 +1,17 @@
+[
+    {
+        "descricao": "estudar python",
+        "status": true,
+        "data": "09/05/2025"
+    },
+    {
+        "descricao": "ir trabalhar",
+        "status": false,
+        "data": "09/05/2025"
+    },
+    {
+        "descricao": "pegar onibus",
+        "status": false,
+        "data": "09/05/2025"
+    }
+]
