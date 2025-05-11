@@ -172,3 +172,120 @@ cursos.forEach(curso => {
     lista.appendChild(card);
 });
 
+
+
+const servicosSobrancelhas = [
+    {
+        titulo: "Design de Sobrancelhas",
+        descricao: "Modelagem personalizada para realçar a beleza natural do rosto.",
+        caracteristicas: ["Harmônico", "Preciso", "Natural"],
+        imagem: "assets/img/Feedbacks/Cliente07.avif"
+    },
+    {
+        titulo: "Sobrancelhas com Henna",
+        descricao: "Coloração temporária para destacar e preencher as sobrancelhas.",
+        caracteristicas: ["Definido", "Duradouro", "Versátil"],
+        imagem: "assets/img/Feedbacks/Cliente07.avif"
+    },
+    {
+        titulo: "Micropigmentação",
+        descricao: "Técnica semipermanente para corrigir falhas e definir o formato.",
+        caracteristicas: ["Duradouro", "Sofisticado", "Prático"],
+        imagem: "assets/img/Feedbacks/Cliente07.avif"
+    }
+];
+
+const servicosCilios = [
+    {
+        titulo: "Extensão Fio a Fio",
+        descricao: "Cílios aplicados um a um para um efeito delicado e elegante.",
+        caracteristicas: ["Elegante", "Natural", "Leve"],
+        imagem: "assets/img/Feedbacks/Cliente07.avif"
+    },
+    {
+        titulo: "Volume Russo",
+        descricao: "Fios leves aplicados em leques para um olhar mais marcante.",
+        caracteristicas: ["Volumoso", "Marcante", "Durável"],
+        imagem: "assets/img/Feedbacks/Cliente07.avif"
+    },
+    {
+        titulo: "Lash Lifting",
+        descricao: "Curvatura natural dos cílios sem extensão.",
+        caracteristicas: ["Curvado", "Natural", "Prático"],
+        imagem: "assets/img/Feedbacks/Cliente07.avif"
+    }
+];
+
+// Renderiza os serviços na tela
+function mostrarServicos(tipo) {
+    const container = document.getElementById("catalogo-carrossel");
+    container.innerHTML = "";
+
+    const servicos = tipo === "sobrancelhas" ? servicosSobrancelhas : servicosCilios;
+
+    // DUPLICAR para simular carrossel infinito
+    const servicosDuplicados = [...servicos, ...servicos];
+
+    servicosDuplicados.forEach((servico) => {
+        const card = document.createElement("div");
+        card.className = "catalogo__card";
+
+        card.innerHTML = `
+        <img src="${servico.imagem}" alt="${servico.titulo}" loading="lazy">
+        <div class="catalogo__card__conteudo">
+            <h3 class="catalogo__card__titulo">${servico.titulo}</h3>
+            <p class="catalogo__card__descricao">${servico.descricao}</p>
+            <div class="catalogo__card__caracteristicas">
+            ${servico.caracteristicas.map(item => `<span>${item}</span>`).join("")}
+            </div>
+            <div class="catalogo__cta">
+            <a href="#contato">Agendar agora</a>
+            </div>
+        </div>
+        `;
+        container.appendChild(card);
+    });
+
+    document.querySelectorAll(".catalogo__botao").forEach(botao => {
+        botao.classList.remove("ativo");
+    });
+    document.querySelector(`.catalogo__botao[onclick*="${tipo}"]`).classList.add("ativo");
+
+    aplicarSnapHighlight();
+}
+
+function aplicarSnapHighlight() {
+    const container = document.getElementById("catalogo-carrossel");
+
+    const destacarCardCentral = () => {
+        const cards = container.querySelectorAll(".catalogo__card");
+        const center = container.scrollLeft + container.offsetWidth / 2;
+
+        cards.forEach(card => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const distancia = Math.abs(center - cardCenter);
+
+        card.classList.toggle("destacado", distancia < card.offsetWidth / 2);
+        });
+    };
+
+    container.addEventListener("scroll", () => {
+        window.requestAnimationFrame(destacarCardCentral);
+    });
+
+  destacarCardCentral(); // Inicial
+}
+
+// Iniciar com sobrancelhas carregado
+document.addEventListener("DOMContentLoaded", () => {
+    mostrarServicos("sobrancelhas");
+
+    // Forçar o scroll centralizado no primeiro card
+    const container = document.getElementById("catalogo-carrossel");
+    setTimeout(() => {
+        const primeiroCard = container.querySelector(".catalogo__card");
+        if (primeiroCard) {
+        container.scrollLeft = primeiroCard.offsetLeft - container.offsetWidth / 2 + primeiroCard.offsetWidth / 2;
+        }
+    }, 200);
+});

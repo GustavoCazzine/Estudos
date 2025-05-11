@@ -71,11 +71,25 @@
             <div class="container__subtitulo container__subtitulo__desktop">
                 <h3 class="container__subtitulo-h3 container__subtitulo-h3__desktop">Transformando beleza em arte, todos os dias</h3>
             </div>
-            <div class="container__conteudo">
+            <section class="container__conteudo" id="catalogo">
                 <h2 class="container__conteudo__titulo">Catálogo</h2>
-                <img src="assets/img/Divs/Catalogo.avif" class="container__conteudo__imagem " alt="Designer Nayra Ananias - Catalogo" width="800" height="600" loading="lazy">
-                <a href="#" class="container__conteudo__link download-link" data-pdf="assets/pdf/CatálogoNayraAnanias.pdf">Ver Catálogo</a>
-            </div>
+                <p class="container__conteudo__descricao">
+                    Escolha uma das opções abaixo para visualizar os serviços disponíveis. Clique nos cards para ver detalhes de cada técnica.
+                </p>
+
+                <div class="catalogo__menu">
+                    <button class="catalogo__botao ativo" onclick="mostrarServicos('sobrancelhas')">Sobrancelhas</button>
+                    <button class="catalogo__botao" onclick="mostrarServicos('cilios')">Cílios</button>
+                </div>
+
+                <!-- Local onde os serviços serão carregados -->
+                <div class="catalogo__carrossel" id="catalogo-carrossel"></div>
+
+                <a href="#" class="container__conteudo__link download-link" data-pdf="assets/pdf/CatálogoNayraAnanias.pdf">
+                    Ver Catálogo Completo em PDF
+                </a>
+            </section>
+
 
             <section class="cursos">
                 <h2 class="cursos__titulo">Cursos Disponíveis</h2>
