@@ -23,15 +23,3 @@ class Tarefa:
     def __str__(self):
         status_str = '[x]' if self.status else '[ ]'
         return f"{status_str} {self.descricao.title()} ({self.data})"
-
-if __name__ == "__main__":
-    t1 = Tarefa("Estudar Python")
-    print(t1)
-    t1.marcar_concluida()
-    print(t1)
-    t1.marcar_concluida()
-    print(t1)
-    t1.desmarcar()
-    print(t1)
-    t1.desmarcar()
-    print(t1)
