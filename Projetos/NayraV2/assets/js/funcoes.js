@@ -132,7 +132,7 @@ cursos.forEach(curso => {
             <img src="${curso.imagem}" alt="${curso.titulo}">
         </div>
         <div class="curso-card-info">
-            <h3>${curso.titulo}</h3>
+            <h3 class="texto-com-gradiente">${curso.titulo}</h3>
             <p>${curso.descricao}</p>
             <div class="curso-card-icons">
                 <span title="Duração">${curso.duracao}</span>

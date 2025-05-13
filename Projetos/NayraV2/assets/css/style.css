@@ -18,26 +18,29 @@
 }
 
 /* ---------------------------- ROOT VARIABLES ---------------------------- */
+
 :root {
-  /* Cores principais */
-    --cor-primaria: #ffffff;
-    --cor-secundaria: #D4B483;
-    --cor-alternativa: #fdfdfa;
+  /* 🎨 Cores principais */
+    --cor-fundo-branco: #ffffff;
+    --cor-fundo-creme: #fdfdfa;
+    --cor-dourado: #D4B483;
 
-    /* Cores de texto */
-    --cor-titulo: #000000;
-    --cor-paragrafos: #6b6657;
+  /* 🎯 Cores de marca e ação */
+    --cor-vinho: #8C1F1F;
+    --cor-vinho-escuro: #721111;
 
-    /* Cores de ação e destaques */
-    --cor-botoes: #8C1F1f;
-    --cor-destaque: #8C1F1f;
+    /* Gradientes */
+    --gradiente-vinho:  linear-gradient(to right, #8C1F1F, #721111); /* ou as cores que quiser */
 
-    /* Cores neutras */
-    --cor-neutra: #555555;
 
-    /* Fontes */
+  /* 🖋️ Cores de texto */
+    --cor-texto-titulo: #000000;
+    --cor-texto-corpo: #6b6657;
+    --cor-texto-neutro: #555555;
+
+  /* 🔠 Fontes */
     --fonte-titulo: 'PlayfairDisplay-Bold', serif;
-    --fonte-paragrafos: 'OpenSans-Bold', sans-serif;
+    --fonte-corpo: 'OpenSans-Bold', sans-serif;
     --fonte-destaque: 'Julius Sans One', sans-serif;
 }
 
@@ -64,7 +67,7 @@ body::-webkit-scrollbar {
 body {
     font-family: var(--fonte-paragrafos);
     line-height: 1.6;
-    background-color: var(--cor-alternativa);
+    background-color: var(--cor-fundo-creme);
 }
 
 p {
@@ -88,25 +91,29 @@ h3 {
     top: 0;
     width: 100%;
     z-index: 10;
-    margin-top: -1em;
+    margin-top: -0.5em; /* Mais sutil */
 }
 
 .cabecalho__logo {
-    width: 6em;
+    width: 5.5em; /* Um pouco menor para equilíbrio */
     height: auto;
     background-color: transparent;
     display: block;
 }
 
+.cabecalho__logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 /* ---------------------------- SEÇÃO PRINCIPAL ---------------------------- */
 .secao-principal {
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     overflow: hidden;
-    padding: 3em 1em 0;
+    padding: 0;
 }
 
 .secao-principal__fundo {
@@ -114,92 +121,189 @@ h3 {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 65vh; /* até a altura da foto */
     display: flex;
     z-index: 1;
 }
 
-#fundo01 {
-    background-color: var(--cor-alternativa);
+#fundo01,
+#fundo02 {
     width: 50%;
-    height: 100%;
+    height: 99%;
     display: flex;
-    justify-content: start;
     align-items: center;
 }
 
+#fundo01 {
+    justify-content: start;
+    background-color: #fff;
+}
+
+
 #fundo02 {
-    background-color: var(--cor-secundaria);
-    width: 50%;
-    height: 100%;
+    justify-content: end;
+  background-color: #e2c99c; /* dourado mais suave */
 }
 
 .secao-principal__fundo__paragrafo {
     writing-mode: vertical-lr;
     transform: rotate(180deg);
-    font-size: 100px;
-    color: #0000000c;
-    font-family: var(--fonte-titulo);
+    font-size: 60px;
+    color: #00000012;
+    font-family: var(--fonte-principal);
     font-weight: 900;
     line-height: 1.3;
-    border-left: 2px solid #0000000c;
-    border-right: 2px solid #0000000c;
+    border-left: 2px solid #00000010;
+    border-right: 2px solid #00000010;
     padding: 50px 0;
-    margin-left: 5%;
     text-transform: uppercase;
+}
+
+.secao-principal__fundo__paragrafo:hover {
+    opacity: 1;
+    color: rgba(0, 0, 0, 0.1);
+}
+
+#fundo01 .secao-principal__fundo__paragrafo {
+    margin-left: 5%;
+}
+#fundo02 .secao-principal__fundo__paragrafo {
+    margin-right: 5%;
 }
 
 .secao-principal__conteudo {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 4rem; /* Subiu mais */
+    z-index: 2;
 }
 
-.foto-wrapper {
+.textos-titulo {
+    background-color: #fff;
+    width: 100%;
+    padding: 1rem 1rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 5;
+}
+
+.secao-principal__titulo {
+    margin-top: -2.5rem; /* Subiu o título até alinhar com o fim da foto */
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.secao-principal__subtitulo {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 300;
+    max-width: 90%;
+}
+
+.foto-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
 }
 
 .foto-wrapper::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     width: 100%;
-    height: 25%;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--cor-alternativa) 100%);
-    z-index: 5;
+    height: 40%; /* Aumente se quiser um degradê mais longo */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--cor-fundo-creme) 100%);
+    z-index: 3; /* abaixo da imagem mas acima do fundo */
     pointer-events: none;
 }
 
 .secao-principal__foto {
-    width: 80%;
-    background-color: transparent;
-    position: relative;
-    z-index: 2;
-    aspect-ratio: 1 / 1;
+    width: 75%;
+    max-width: 320px;
+    aspect-ratio: 1/1;
     object-fit: cover;
-    display: block;
+    z-index: 2;
 }
 
 .secao-principal__titulo {
-    position: absolute;
-    bottom: 2%;
-    z-index: 5;
-    font-size: 2.25rem;
-    font-weight: bold;
-    text-align: center;
-    color: var(--cor-titulo);
-    font-family: var(--fonte-titulo);
+    font-size: 2.5rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
 }
 
-.container__subtitulo {
-    padding: 2% 15% 10%;
+.secao-principal__subtitulo {
     text-align: center;
-    font-weight: 100;
-    color: var(--cor-paragrafos);
+    font-size: 1rem;
+    font-weight: 300;
+    max-width: 90%;
+    margin-top: 0.5rem;
+    z-index: 2;
+}
+
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+    color: var(--cor-vinho-escuro);
+}
+
+.scroll-text {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.mouse-scroll {
+    width: 24px;
+    height: 40px;
+    border: 2px solid var(--cor-vinho-escuro);
+    border-radius: 12px;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: var(--cor-vinho-escuro);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: wheelMove 1.5s infinite;
+}
+
+@keyframes wheelMove {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, 0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 0px);
+    }
+}
+
+.texto-com-gradiente {
+    background: var(--gradiente-vinho); /* seu gradiente */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* para navegadores modernos */
+    color: transparent;    /* fallback */
+    font-weight: bold;
+    font-size: 2rem;
 }
 
 /* ---------------------------- SEÇÃO CATÁLOGO ---------------------------- */
@@ -229,19 +333,23 @@ h3 {
 }
 
 .catalogo__botao {
-    background-color: var(--cor-secundaria);
-    color: #fff;
+    background-color: var(--cor-dourado);
+    color: var(--cor-fundo-creme);
     border: none;
     padding: 0.6rem 1.4rem;
     font-size: 1rem;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
 }
 
 .catalogo__botao:hover,
 .catalogo__botao.ativo {
-    background-color: var(--cor-botoes);
+    background: var(--gradiente-vinho);
+    color: var(--cor-fundo-creme);
+    font-weight: bold;
+    transition: .1s;
 }
 
 .catalogo__carrossel {
@@ -262,21 +370,20 @@ h3 {
 }
 
 .catalogo__carrossel::-webkit-scrollbar-thumb {
-    background: var(--cor-secundaria);
+    background: var(--gradiente-vinho);
     border-radius: 25px;
 }
 
 .catalogo__card {
-    flex: 0 0 85%;
+    flex: 0 0 100%;
     max-width: 320px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: var(--cor-fundo-branco);
+    border: 1px solid var(--cor-fundo-creme);
     border-radius: 15px;
     scroll-snap-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0 auto;
 }
 
 /* Efeitos nos cards */
@@ -327,12 +434,12 @@ h3 {
 }
 
 .catalogo__card__caracteristicas span {
-    background-color: #f0f0f0;
-    color: var(--cor-secundaria);
+    background-color: var(--cor-dourado);
+    color: var(--cor-fundo-creme);
     padding: 0.1rem 0.8rem;
     border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 500;
+    font-size: 0.70rem;
+    font-weight: bold;
 }
 
 .catalogo__cta {
@@ -364,20 +471,23 @@ h3 {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    background-color: #fff;
-    color: var(--cor-secundaria);
-    border: 2px solid var(--cor-secundaria);
     padding: 0.8rem 1.4rem;
     border-radius: 30px;
     font-weight: 600;
     font-size: 1rem;
     transition: all 0.3s ease;
     text-decoration: none;
+    transition: .1s;
 }
 
 .catalogo__pdf__link:hover {
-    background-color: var(--cor-secundaria);
-    color: #fff;
+    background: var(--gradiente-vinho);
+    color: var(--cor-fundo-creme);
+    font-weight: bold;
+    -webkit-text-fill-color: var(--cor-fundo-creme);
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+    transition: .1s;
 }
 
 .catalogo__pdf__link i {
@@ -440,11 +550,12 @@ h3 {
 
 /* Botão centralizado no CARD */
 .curso-card-btn {
-    background-color: var(--cor-botoes);
+    background: var(--gradiente-vinho);
     color: #fff;
     border: none;
     padding: 0.5rem 1.5rem;
     font-size: 0.9rem;
+    font-weight: bold;
     font-family: var(--fonte-paragrafos);
     border-radius: 8px;
     cursor: pointer;
@@ -457,7 +568,7 @@ h3 {
 }
 
 .curso-card-btn:hover {
-    background-color: #a42424;
+    background-color: var(--cor-vinho);
 }
 
 .catalogo__pdf {
@@ -550,8 +661,8 @@ h3 {
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
-    background-color: var(--cor-destaque);
-    color: var(--cor-primaria);
+    background: var(--gradiente-vinho);
+    color: var(--cor-fundo-branco);
     border-radius: 0.5rem;
     text-decoration: none;
     text-align: center;
@@ -656,7 +767,7 @@ h3 {
     display: flex;
     align-items: flex-start;
     gap: 0.5rem;
-    text-align: justify;
+    text-align: center;
     position: relative;
     padding-left: 2rem;
     margin-top: 1rem;
@@ -665,7 +776,7 @@ h3 {
 .card-feedback .comment::before {
     content: "“";
     font-size: 2.5rem;
-    color: var(--cor-destaque);
+    color: var(--cor-dourado);
     position: absolute;
     top: 0;
     left: 0;
@@ -722,24 +833,23 @@ h3 {
 /* Endereço com ícone */
 .location-address {
     font-weight: bold;
-    color: var(--cor-botoes);
+    color: var(--cor-vinho);
     font-size: 1rem;
-    font-family: var(--fonte-subtitulo);
+    font-family: var(--fonte-corpo);
 }
 
 .location-address i {
     margin-right: 0.375rem; /* 6px */
-    color: var(--cor-destaque);
+    color: var(--cor-vinho);
 }
 
 
 /* Estilo geral do rodapé */
 .site-footer {
-    background-color: var(--cor-primaria);
+    background-color: var(--cor-fundo-branco);
     color: var(--cor-paragrafos);
     text-align: center;
     padding: 1rem;
-    border-top: 1px solid var(--cor-alternativa);
 }
 
 .site-footer a,
@@ -751,7 +861,7 @@ h3 {
 
 /* Links no rodapé */
 .site-footer a {
-    color: var(--cor-destaque);
+    color: var(--cor-vinho);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -759,7 +869,7 @@ h3 {
 
 /* Hover nos links */
 .site-footer a:hover {
-    color: var(--cor-destaque); /* Mantém o destaque */
+    color: var(--cor-vinho); /* Mantém o destaque */
 }
 
 /* Ícones sociais */
@@ -769,13 +879,13 @@ h3 {
 
 .footer-social a {
     margin: 0 0.5rem;
-    color: var(--cor-destaque);
+    color: var(--cor-vinho);
     font-size: 1.2rem;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .footer-social a:hover {
-    color: var(--cor-botoes);
+    color: var(--cor-vinho);
     transform: scale(1.2);
 }
 
