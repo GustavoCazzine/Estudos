@@ -190,6 +190,8 @@ const servicosCilios = [
     }
 ];
 
+let scrollListenerAplicado = false;
+
 // Renderiza os serviços na tela
 function mostrarServicos(tipo) {
     const container = document.getElementById("catalogo-carrossel");
@@ -203,19 +205,21 @@ function mostrarServicos(tipo) {
     servicosDuplicados.forEach((servico) => {
         const card = document.createElement("div");
         card.className = "catalogo__card";
+        card.setAttribute("role", "group");
+        card.setAttribute("aria-label", servico.titulo);
 
         card.innerHTML = `
-        <img src="${servico.imagem}" alt="${servico.titulo}" loading="lazy">
-        <div class="catalogo__card__conteudo">
-            <h3 class="catalogo__card__titulo">${servico.titulo}</h3>
-            <p class="catalogo__card__descricao">${servico.descricao}</p>
-            <div class="catalogo__card__caracteristicas">
-            ${servico.caracteristicas.map(item => `<span>${item}</span>`).join("")}
+            <img src="${servico.imagem}" alt="${servico.titulo}" loading="lazy" onerror="this.src='assets/img/erro-fallback.jpg'">
+            <div class="catalogo__card__conteudo">
+                <h3 class="catalogo__card__titulo">${servico.titulo}</h3>
+                <p class="catalogo__card__descricao">${servico.descricao}</p>
+                <div class="catalogo__card__caracteristicas">
+                    ${servico.caracteristicas.map(item => `<span>${item}</span>`).join("")}
+                </div>
+                <div class="catalogo__cta">
+                    <a href="#contato">Agendar agora</a>
+                </div>
             </div>
-            <div class="catalogo__cta">
-            <a href="#contato">Agendar agora</a>
-            </div>
-        </div>
         `;
         container.appendChild(card);
     });
@@ -236,30 +240,34 @@ function aplicarSnapHighlight() {
         const center = container.scrollLeft + container.offsetWidth / 2;
 
         cards.forEach(card => {
-        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-        const distancia = Math.abs(center - cardCenter);
-
-        card.classList.toggle("destacado", distancia < card.offsetWidth / 2);
+            const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+            const distancia = Math.abs(center - cardCenter);
+            card.classList.toggle("destacado", distancia < card.offsetWidth / 2);
         });
     };
 
-    container.addEventListener("scroll", () => {
-        window.requestAnimationFrame(destacarCardCentral);
-    });
+    if (!scrollListenerAplicado) {
+        container.addEventListener("scroll", () => {
+            window.requestAnimationFrame(destacarCardCentral);
+        });
+        scrollListenerAplicado = true;
+    }
 
-  destacarCardCentral(); // Inicial
+    destacarCardCentral(); // Inicial
 }
 
 // Iniciar com sobrancelhas carregado
 document.addEventListener("DOMContentLoaded", () => {
     mostrarServicos("sobrancelhas");
 
-    // Forçar o scroll centralizado no primeiro card
-    const container = document.getElementById("catalogo-carrossel");
-    setTimeout(() => {
+    requestAnimationFrame(() => {
+        const container = document.getElementById("catalogo-carrossel");
         const primeiroCard = container.querySelector(".catalogo__card");
         if (primeiroCard) {
-        container.scrollLeft = primeiroCard.offsetLeft - container.offsetWidth / 2 + primeiroCard.offsetWidth / 2;
+            container.scrollTo({
+                left: primeiroCard.offsetLeft - container.offsetWidth / 2 + primeiroCard.offsetWidth / 2,
+                behavior: "smooth"
+            });
         }
-    }, 200);
+    });
 });
