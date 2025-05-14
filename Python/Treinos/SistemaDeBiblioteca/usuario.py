@@ -5,7 +5,7 @@ class Usuario:
         self.livros_emprestados = livros_emprestados if livros_emprestados else []
 
     def __str__(self):
-        return f'Nome: {self.nome}, CPF: {self.cpf}, Livros Emprestados: {self.livros_emprestados}'
+        return f'Nome: {self.nome} - CPF: {self.cpf} Livros Emprestados: {self.livros_emprestados}'
     
     
     @staticmethod

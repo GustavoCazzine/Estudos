@@ -1,3 +1,4 @@
+
 class Livro:
     def __init__(self, titulo:str, autor:str, ano:int, status:bool=True):
         self.titulo = titulo
@@ -6,8 +7,21 @@ class Livro:
         self.status = status
 
     def __str__(self):
-        return f'Título: {self.titulo}, Autor: {self.autor}, Ano: {self.ano}, Status: {"Disponível" if self.status else "Indisponível"}'
-    
+        return f'{self.titulo} - Autor: {self.autor} - Ano: {self.ano} - Status: {"Disponível" if self.status else "Indisponível"}'
+
+    def mudar_status(self, biblioteca,):
+        if self.status:
+            self.status = False
+            print(f'Livro "{self.titulo}" emprestado com sucesso!')
+        else:
+            self.status = True
+            print(f'Livro "{self.titulo}" devolvido com sucesso!')
+
+        # Atualiza o status do livro na biblioteca
+        for livro in biblioteca.livros:
+            if livro.titulo == self.titulo:
+                livro.status = self.status
+                break
 
     @staticmethod
     def cadastrar_livro():

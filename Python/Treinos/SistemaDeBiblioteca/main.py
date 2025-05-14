@@ -6,7 +6,7 @@ def menu():
     print("\n" + "=" * 30)
     print("          MENU PRINCIPAL")
     print("=" * 30)
-    opcoes = ["Cadastrar Livro", "Listar Livros", "Cadastrar Usuário", "Sair"]
+    opcoes = ["Cadastrar Livro", "Listar Livros", "Cadastrar Usuário", "Listar Usuário", "Emprestar Livro" ,"Sair"]
     for enum, itens in enumerate(opcoes, start=1):
         print(f'{enum} - {itens}')
     print("=" * 30)
@@ -66,9 +66,20 @@ def main():
                 print("\n[SUCESSO] Usuário cadastrado com sucesso!")
                 delay(2)
             case 4:
+                titulo("Listar Usuários")
+                biblioteca.listar_usuarios()
+                delay(2)
+
+            case 5:
+                titulo("Emprestar Livro")
+                biblioteca.emprestar_livro()
+                delay(2)
+
+            case 6:
                 print("\n[INFO] Saindo do sistema...")
                 delay(2)
                 break
+
             case _:
                 print("\n[ERRO] Opção inválida! Tente novamente.")
                 delay(2)
