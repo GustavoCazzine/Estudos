@@ -498,103 +498,165 @@ h3 {
 .curso-card-horizontal {
     display: flex;
     flex-direction: row-reverse;
-    background-color: var(--cor-primaria);
-    border: 1px solid var(--cor-secundaria);
-    border-radius: 10px;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, #fffdfc, #f8eef5);
+    border-radius: 24px;
     margin: 2rem auto;
-    height: 200px;
-    width: 90%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    position: relative;
-    transition: transform 0.3s ease;
-    overflow: visible;
+    width: 95%;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e7d4ea;
 }
 
-/* Conteúdo à esquerda */
-.curso-card-info {
-    flex: 3;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: var(--fonte-paragrafos);
-    position: relative;
+.curso-card-horizontal:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* Título com destaque */
-.curso-card-info h3 {
-    font-family: var(--fonte-titulos);
-    font-size: 1.5rem;
-    margin-bottom: 0.3rem;
-    color: var(--cor-titulo);
-    text-align: start;
-}
-
-/* Descrição mais visual */
-.curso-card-info p {
-    font-size: 1rem;
-    color: var(--cor-paragrafos);
-    margin-bottom: 0.8rem;
-    line-height: 1.4;
-    text-align: start;
-}
-
-/* Características centralizadas */
-.curso-card-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1.2rem;
-    font-size: 0.85rem;
-    color: var(--cor-neutra);
-}
-
-/* Botão centralizado no CARD */
-.curso-card-btn {
-    background: var(--gradiente-vinho);
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1.5rem;
-    font-size: 0.9rem;
-    font-weight: bold;
-    font-family: var(--fonte-paragrafos);
-    border-radius: 8px;
-    cursor: pointer;
-    position: absolute;
-    bottom: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    transition: background-color 0.3s ease;
-}
-
-.curso-card-btn:hover {
-    background-color: var(--cor-vinho);
-}
-
-.catalogo__pdf {
-    text-align: center;
-    margin-top: 3rem;
-}
-
-/* Imagem no lado direito */
+/* === Imagem === */
 .curso-card-img {
     flex: 1;
-    max-width: 25%; /* Garantir que o contêiner da imagem não ultrapasse 25% */
-    height: 100%;
-    border-radius: 0;
+    min-width: 280px;
+    max-width: 30%;
     overflow: hidden;
-    margin: 0;
-    padding: 0;
-    display: flex;
 }
 
 .curso-card-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-    border-radius: 0 8px 8px 0;
-    /* Agora a imagem será ajustada ao contêiner sem ultrapassar */
+    transition: transform 0.4s ease;
+    border-left: 4px solid var(--cor-vinho);
+}
+
+.curso-card-horizontal:hover .curso-card-img img {
+    transform: scale(1.05);
+}
+
+/* === Conteúdo === */
+.curso-card-info {
+    flex: 2;
+    padding: 2rem;
+    font-family: var(--fonte-paragrafos);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.curso-card-info h3 {
+    font-family: var(--fonte-titulos);
+    font-size: 1.9rem;
+    color: var(--cor-titulo);
+    margin-bottom: 0.8rem;
+    background: var(--gradiente-vinho);
+    background: var(--gradiente-vinho);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.curso-card-info p {
+    font-size: 1rem;
+    color: var(--cor-paragrafos);
+    margin-bottom: 0.7rem;
+    line-height: 1.6;
+}
+
+.curso-card-info p strong {
+    color: var(--cor-vinho);
+    font-size: 1.05rem;
+}
+
+/* === Ícones resumo === */
+.curso-card-icons {
+    display: flex;
+    gap: 1.2rem;
+    font-size: 0.92rem;
+    color: #555;
+    background: #f7f3f9;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    margin-top: 0.6rem;
+    margin-bottom: 1.2rem;
+}
+
+/* === Botão CTA principal === */
+.curso-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--gradiente-vinho);
+    color: white;
+    padding: 0.9rem 1.4rem;
+    border-radius: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.curso-cta:hover {
+    background-color: var(--cor-vinho);
+    transform: translateY(-3px);
+}
+
+/* === Botão Ver mais === */
+.curso-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--cor-vinho);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+.curso-toggle-btn:hover {
+    color: #8c1a3b;
+}
+
+/* === Conteúdo extra === */
+.curso-card-extra {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.6s ease, opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.curso-card-horizontal.ativo .curso-card-extra {
+    max-height: 1500px;
+    opacity: 1;
+    margin-top: 1rem;
+    pointer-events: auto;
+}
+
+.curso-card-extra h4 {
+    margin-top: 1.4rem;
+    margin-bottom: 0.6rem;
+    color: var(--cor-vinho);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.curso-card-extra ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.curso-card-extra li {
+    margin-bottom: 0.5rem;
+    color: #444;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 0.5rem;
 }
 
 /* Seção de agendamento */
