@@ -254,6 +254,7 @@ h3 {
     align-items: center;
     z-index: 3;
     color: var(--cor-vinho-escuro);
+    margin-top: .5rem;
 }
 
 .scroll-text {
@@ -495,168 +496,145 @@ h3 {
 }
 
 /* Seção Cursos */
-.curso-card-horizontal {
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    background: linear-gradient(135deg, #fffdfc, #f8eef5);
-    border-radius: 24px;
-    margin: 2rem auto;
-    width: 95%;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #e7d4ea;
-}
-
-.curso-card-horizontal:hover {
-    transform: scale(1.01);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
-
-/* === Imagem === */
-.curso-card-img {
-    flex: 1;
-    min-width: 280px;
-    max-width: 30%;
-    overflow: hidden;
-}
-
-.curso-card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-    border-left: 4px solid var(--cor-vinho);
-}
-
-.curso-card-horizontal:hover .curso-card-img img {
-    transform: scale(1.05);
-}
-
-/* === Conteúdo === */
-.curso-card-info {
-    flex: 2;
-    padding: 2rem;
-    font-family: var(--fonte-paragrafos);
+/* Seção Cursos (Nova Versão Minimalista - Estilizada e Otimizada - Com Microinterações) */
+.cursos__lista {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
 }
 
-.curso-card-info h3 {
-    font-family: var(--fonte-titulos);
-    font-size: 1.9rem;
-    color: var(--cor-titulo);
-    margin-bottom: 0.8rem;
-    background: var(--gradiente-vinho);
+.curso-card-minimal {
+    display: flex;
+    width: 100%;
+    background-color: var(--cor-fundo-branco);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    border: 1px solid #e7d4ea;
+    align-items: stretch;
+    min-height: 150px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transição para elevação */
+}
+
+.curso-card-minimal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.curso-card-minimal__conteudo {
+    flex: 2;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.curso-card-minimal__titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.4rem;
+    color: var(--cor-texto-titulo);
+    margin-bottom: 0.4rem;
     background: var(--gradiente-vinho);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-    -webkit-text-fill-color: transparent;
 }
 
-.curso-card-info p {
+.curso-card-minimal__chamada {
+    font-family: var(--fonte-corpo);
     font-size: 1rem;
-    color: var(--cor-paragrafos);
-    margin-bottom: 0.7rem;
-    line-height: 1.6;
-}
-
-.curso-card-info p strong {
     color: var(--cor-vinho);
-    font-size: 1.05rem;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
 }
 
-/* === Ícones resumo === */
-.curso-card-icons {
+.curso-card-minimal__incentivo {
+    font-size: 0.9rem;
+    color: var(--cor-dourado);
+    font-style: italic;
+    margin-bottom: 0.6rem;
+    transition: transform 0.15s ease-in-out; /* Transição para o "fogo" */
+}
+
+.curso-card-minimal__incentivo:hover {
+    transform: scale(1.01); /* Leve aumento no hover */
+}
+
+.curso-card-minimal__botoes {
     display: flex;
-    gap: 1.2rem;
-    font-size: 0.92rem;
-    color: #555;
-    background: #f7f3f9;
-    padding: 0.8rem 1rem;
-    border-radius: 12px;
-    margin-top: 0.6rem;
-    margin-bottom: 1.2rem;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
 }
 
-/* === Botão CTA principal === */
-.curso-cta {
+.curso-card-minimal__cta,
+.curso-card-minimal__pdf-link {
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease-in-out; /* Transição geral dos botões */
+    text-decoration: none;
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.curso-card-minimal__cta {
     background: var(--gradiente-vinho);
-    color: white;
-    padding: 0.9rem 1.4rem;
-    border-radius: 14px;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, background-color 0.3s;
-    margin-top: 1rem;
+    color: var(--cor-fundo-branco);
+    box-shadow: 0 3px 6px rgba(var(--cor-vinho-rgb, 140, 31, 31), 0.4);
 }
 
-.curso-cta:hover {
-    background-color: var(--cor-vinho);
-    transform: translateY(-3px);
+.curso-card-minimal__cta:hover {
+    background: var(--cor-vinho-escuro);
+    box-shadow: 0 4px 8px rgba(var(--cor-vinho-rgb, 140, 31, 31), 0.5);
+    transform: translateY(-1px);
 }
 
-/* === Botão Ver mais === */
-.curso-toggle-btn {
-    background: none;
+.curso-card-minimal__pdf-link {
+    background-color: transparent;
+    color: var(--cor-vinho);
     border: none;
+}
+
+.curso-card-minimal__pdf-link:hover {
+    background-color: var(--cor-fundo-creme);
     color: var(--cor-vinho);
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
-    align-self: flex-start;
-    margin-top: 1rem;
 }
 
-.curso-toggle-btn:hover {
-    color: #8c1a3b;
+.curso-card-minimal__pdf-link i {
+    margin-right: 0.4rem;
+    font-size: 1rem;
+    transition: transform 0.2s ease-in-out; /* Transição para o ícone */
 }
 
-/* === Conteúdo extra === */
-.curso-card-extra {
+.curso-card-minimal__pdf-link:hover i {
+    transform: rotate(15deg); /* Leve rotação no hover */
+}
+
+.curso-card-minimal__imagem {
+    flex: 1;
+    max-width: 40%;
     overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    transition: max-height 0.6s ease, opacity 0.4s ease;
-    pointer-events: none;
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    align-items: stretch;
 }
 
-.curso-card-horizontal.ativo .curso-card-extra {
-    max-height: 1500px;
-    opacity: 1;
-    margin-top: 1rem;
-    pointer-events: auto;
+.curso-card-minimal__imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.2s ease-in-out;
 }
 
-.curso-card-extra h4 {
-    margin-top: 1.4rem;
-    margin-bottom: 0.6rem;
-    color: var(--cor-vinho);
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.curso-card-extra ul {
-    padding-left: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.curso-card-extra li {
-    margin-bottom: 0.5rem;
-    color: #444;
-    font-size: 0.95rem;
-    position: relative;
-    padding-left: 0.5rem;
+.curso-card-minimal__imagem:hover img {
+    opacity: 0.9; /* Leve escurecimento no hover da imagem (opcional) */
 }
 
 /* Seção de agendamento */
@@ -1025,6 +1003,8 @@ h3 {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    color: white;
+    font-weight: bold;
 }
 
 /* Animação de saída para a direita */
@@ -1032,4 +1012,71 @@ h3 {
     opacity: 0;
     transform: translateX(50px); /* Move para a direita */
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; /* Suave ao sair */
+}
+
+/* Barra Lateral de Redes Sociais (Adaptada com Ícones - Tamanho Reduzido) */
+.social-bar {
+    position: fixed;
+    left: -40px; /* Menos escondida inicialmente */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(var(--cor-fundo-branco-rgb, 255, 255, 255), 0.9); /* Ligeiramente mais transparente */
+    backdrop-filter: blur(8px); /* Desfoque um pouco menor */
+    padding: 10px 8px; /* Menos padding */
+    border-radius: 0 8px 8px 0; /* Bordas menores */
+    box-shadow: 1px 0 8px rgba(0, 0, 0, 0.15); /* Sombra mais sutil */
+    z-index: 9999;
+    transition: left 0.3s ease-in-out;
+}
+
+.social-bar.visible {
+    left: 0;
+}
+
+.social-icon {
+    margin: 8px 0; /* Menos margem entre os ícones */
+    font-size: 20px; /* Ícones menores */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    color: var(--cor-texto-neutro);
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Efeito de hover mais sutil */
+    opacity: 0.8;
+}
+
+.social-icon.instagram {
+    color: #E1306C;
+}
+
+.social-icon.facebook {
+    color: #1877F2;
+}
+
+.social-icon.pinterest {
+    color: #E60023;
+}
+
+.social-icon.tiktok {
+    color: #000000;
+}
+
+.newsletter {
+    margin-top: 15px; /* Menos margem */
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 12px; /* Texto menor */
+    color: var(--cor-texto-titulo);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.newsletter:hover {
+    color: var(--cor-vinho);
+    transform: translateY(-3px); /* Menos elevação no hover */
 }

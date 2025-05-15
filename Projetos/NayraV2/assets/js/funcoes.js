@@ -49,13 +49,43 @@ const slides = [
     {
         nome: "Ana Souza",
         texto: "Amei o atendimento! Profissional maravilhosa e ambiente acolhedor.",
-        imagem: "assets/img/Feedbacks/Cliente03.avif"
+        imagem: "assets/img/Feedbacks/Cliente01.avif"
     },
     {
         nome: "Bianca Lima",
         texto: "Meu cílios ficaram perfeitos, exatamente como eu queria!",
+        imagem: "assets/img/Feedbacks/Cliente02.avif"
+    },
+    {
+        nome: "Camila Torres",
+        texto: "Nunca recebi tantos elogios pelas minhas sobrancelhas. Recomendo de olhos fechados!",
         imagem: "assets/img/Feedbacks/Cliente03.avif"
     },
+    {
+        nome: "Débora Martins",
+        texto: "O resultado superou minhas expectativas. Atendimento atencioso do início ao fim.",
+        imagem: "assets/img/Feedbacks/Cliente04.avif"
+    },
+    {
+        nome: "Fernanda Alves",
+        texto: "Ambiente impecável e técnica incrível. Me senti muito segura durante todo o procedimento.",
+        imagem: "assets/img/Feedbacks/Cliente05.avif"
+    },
+    {
+        nome: "Gabriela Rocha",
+        texto: "Saí renovada! O cuidado e o carinho fazem toda a diferença. Voltarei sempre!",
+        imagem: "assets/img/Feedbacks/Cliente06.avif"
+    },
+    {
+        nome: "Helena Dias",
+        texto: "Profissional detalhista e dedicada. Meus cílios ficaram lindos e super naturais.",
+        imagem: "assets/img/Feedbacks/Cliente07.avif"
+    },
+    {
+        nome: "Isabela Ferreira",
+        texto: "Experiência maravilhosa! Atendimento humanizado e resultado impecável.",
+        imagem: "assets/img/Feedbacks/Cliente08.avif"
+    }
 ];
 
 const wrapper = document.getElementById('swiper-wrapper');
@@ -99,95 +129,30 @@ const swiper = new Swiper('.swiper', {
 });
 
 
-
-// Cursos
+// Cursos (adaptados para a estrutura minimalista)
 const cursos = [
     {
-        titulo: "Desperte seu Olhar de Artista com o Curso de Extensão de Cílios",
-        beneficio: "Domine a técnica de Lash Clássico e inicie sua carreira com confiança!",
-        destaque: "Curso ideal para iniciantes, com prática supervisionada.",
-        duracao: "6h",
-        nivel: "Iniciante",
-        certificado: true,
-        imagem: "assets/img/Feedbacks/Cliente03.avif",
-        mensagemWhats: "Olá! Gostaria de saber mais sobre o curso de Lash Iniciante.",
-        detalhes: {
-            mensagemNayra: "Esse curso é o primeiro passo para você transformar seu talento em uma carreira de sucesso. Eu mesma vou te acompanhar e te mostrar como comecei do zero e conquistei meus primeiros resultados.",
-            modulos: [
-                "Fundamentos da extensão fio a fio",
-                "Anatomia dos cílios e biossegurança",
-                "Escolha e aplicação correta dos fios",
-                "Mapeamento, simetria e colagem precisa",
-                "Atendimento ao cliente e fotografia básica"
-            ],
-            bonus: [
-                "Checklist de atendimento profissional",
-                "Modelo de ficha de anamnese",
-                "Grupo exclusivo de alunas"
-            ],
-            publico: "Mulheres que querem começar na área da beleza, mesmo sem experiência.",
-            porQueNayra: "Sou especialista em cílios com centenas de alunas presenciais e online, focada em te ensinar com empatia, acolhimento e técnica.",
-            conclusao: "Esse curso é pra você que deseja começar do zero com segurança, apoio e conteúdo prático. Bora juntas dar o primeiro passo?"
-        }
+        titulo: "Desperte seu Olhar de Artista com Extensão de Cílios",
+        beneficio: "Inicie sua carreira Lash com o curso para iniciantes!",
+        imagem: "assets/img/cursos/cilios.jpg",
+        mensagemWhats: "Olá! Quero me inscrever no curso de Lash Iniciante.",
+        pdfLink: "/caminho/para/o/pdf-do-curso-1.pdf"
     },
     {
-        titulo: "By Perfect Lash – Domine a Técnica Mais Desejada pelas Clientes",
-        beneficio: "Aprenda fios perfeitos e conquistadores com o volume brasileiro!",
-        destaque: "Ideal para quem já aplicou fios clássicos e quer elevar o nível.",
-        duracao: "8h",
-        nivel: "Intermediário",
-        certificado: true,
-        imagem: "assets/img/Feedbacks/Cliente02.avif",
-        mensagemWhats: "Olá! Gostaria de saber mais sobre o curso By Perfect Lash.",
-        detalhes: {
-            mensagemNayra: "Esse curso é meu xodó! Ensinei essa técnica para dezenas de alunas que hoje transformam o olhar das clientes com confiança e precisão.",
-            modulos: [
-                "Fundamentos do volume brasileiro",
-                "Construção e posicionamento de fans",
-                "Mapeamento avançado e camadas",
-                "Fotografia, atendimento e fidelização",
-                "Correções e acabamentos impecáveis"
-            ],
-            bonus: [
-                "Presets de foto profissional para celular",
-                "Tabela de mapeamentos exclusivos",
-                "Mentoria ao vivo de 1h após o curso"
-            ],
-            publico: "Profissionais que já aplicam lash clássico e querem dominar o volume brasileiro.",
-            porQueNayra: "Domino essa técnica há anos e desenvolvi um método visual, direto e aplicável desde o primeiro modelo real.",
-            conclusao: "Esse curso é a virada de chave pra você se destacar com cílios de alto padrão. Pronta pra isso?"
-        }
+        titulo: "By Perfect Lash: Volume Brasileiro que Conquista",
+        beneficio: "Domine a técnica mais desejada e eleve seu nível!",
+        imagem: "assets/img/cursos/lash.jpg",
+        mensagemWhats: "Olá! Quero saber sobre o curso By Perfect Lash.",
+        pdfLink: "/caminho/para/o/pdf-do-curso-2.pdf"
     },
     {
-        titulo: "Sobrancelhas Perfeitas – Design, Henna e Geometria Real",
-        beneficio: "Crie designs simétricos, harmoniosos e lucrativos!",
-        destaque: "Curso completo com prática, design personalizado e uso de henna.",
-        duracao: "5h",
-        nivel: "Iniciante/Intermediário",
-        certificado: true,
-        imagem: "assets/img/Feedbacks/Cliente01.avif",
-        mensagemWhats: "Olá! Gostaria de saber mais sobre o curso de Sobrancelhas.",
-        detalhes: {
-            mensagemNayra: "Nada valoriza tanto o rosto quanto sobrancelhas bem feitas. Te ensino o passo a passo para criar um design único para cada rosto.",
-            modulos: [
-                "Medição com paquímetro e visagismo",
-                "Correção com linha e pinça profissional",
-                "Colorimetria e aplicação da henna",
-                "Geometria e simetria natural",
-                "Atendimento e precificação"
-            ],
-            bonus: [
-                "Modelo de ficha de cliente",
-                "Tabela de visagismo por formato de rosto",
-                "Acesso a aula de sobrancelha masculina"
-            ],
-            publico: "Iniciantes ou profissionais que querem dominar o design profissional e lucrativo.",
-            porQueNayra: "Tenho mais de 7 anos de experiência com sobrancelhas reais e te ensino com empatia e firmeza o que realmente importa.",
-            conclusao: "Se você quer viver da beleza e transformar olhares com sobrancelhas únicas, esse curso foi feito pra você."
-        }
+        titulo: "Sobrancelhas Perfeitas: Design, Henna e Geometria",
+        beneficio: "Transforme olhares com designs simétricos e lucrativos!",
+        imagem: "assets/img/cursos/sobrancelhas.jpg",
+        mensagemWhats: "Olá! Tenho interesse no curso de Sobrancelhas.",
+        pdfLink: "/caminho/para/o/pdf-do-curso-3.pdf"
     }
 ];
-
 
 const lista = document.getElementById("cursos-lista");
 
@@ -198,63 +163,22 @@ function abrirWhatsApp(mensagem) {
 
 cursos.forEach(curso => {
     const card = document.createElement("div");
-    card.className = "curso-card-horizontal";
+    card.className = "curso-card-minimal";
     card.innerHTML = `
-        <div class="curso-card-img">
-            <img src="${curso.imagem}" alt="${curso.titulo}">
+        <div class="curso-card-minimal__conteudo">
+            <h3 class="curso-card-minimal__titulo texto-com-gradiente">${curso.titulo}</h3>
+            <p class="curso-card-minimal__chamada">${curso.beneficio}</p>
+            <p class="curso-card-minimal__incentivo">🔥 Vagas Limitadas! Transforme sua paixão agora!</p>
+            <div class="curso-card-minimal__botoes">
+                <a href="https://wa.me/5519981559831?text=${encodeURIComponent(curso.mensagemWhats)}" target="_blank" class="curso-card-minimal__cta">Quero me inscrever!</a>
+                <a href="${curso.pdfLink}" target="_blank" class="curso-card-minimal__pdf-link"><i class="fas fa-file-pdf"></i> Ver Detalhes</a>
+            </div>
         </div>
-        <div class="curso-card-info">
-            <h3 class="texto-com-gradiente">${curso.titulo}</h3>
-            <p><strong>${curso.beneficio}</strong></p>
-            <p>${curso.destaque}</p>
-            <div class="curso-card-icons">
-                <span title="Duração">⏳ ${curso.duracao}</span>
-                <span title="Nível">📈 ${curso.nivel}</span>
-                <span title="Certificado">🎓 ${curso.certificado ? "Sim" : "Não"}</span>
-            </div>
-
-            <div class="curso-card-extra">
-                <p><strong>Mensagem da Nayra:</strong> ${curso.detalhes.mensagemNayra}</p>
-                
-                <h4>Você vai aprender:</h4>
-                <ul>${curso.detalhes.modulos.map(item => `<li>✔️ ${item}</li>`).join("")}</ul>
-
-                <h4>Bônus Exclusivos:</h4>
-                <ul>${curso.detalhes.bonus.map(b => `<li>🎁 ${b}</li>`).join("")}</ul>
-
-                <h4>Para quem é o curso?</h4>
-                <p>${curso.detalhes.publico}</p>
-
-                <h4>Por que aprender com a Nayra?</h4>
-                <p>${curso.detalhes.porQueNayra}</p>
-
-                <p><strong>Conclusão:</strong> ${curso.detalhes.conclusao}</p>
-
-                <a class="curso-cta" href="https://wa.me/5519981559831?text=${encodeURIComponent(curso.mensagemWhats)}" target="_blank">💬 Quero me inscrever via WhatsApp</a>
-            </div>
-
-            <button class="curso-toggle-btn">Ver mais +</button>
+        <div class="curso-card-minimal__imagem">
+            <img src="${curso.imagem}" alt="${curso.titulo}">
         </div>
     `;
     lista.appendChild(card);
-
-    const toggleBtn = card.querySelector(".curso-toggle-btn");
-    const extraContent = card.querySelector(".curso-card-extra");
-
-    toggleBtn.addEventListener("click", () => {
-        const allCards = document.querySelectorAll(".curso-card-horizontal");
-
-        allCards.forEach(outroCard => {
-            if (outroCard !== card) {
-                outroCard.classList.remove("ativo");
-                outroCard.querySelector(".curso-toggle-btn").textContent = "Ver mais +";
-            }
-        });
-
-        const isOpen = card.classList.contains("ativo");
-        card.classList.toggle("ativo");
-        toggleBtn.textContent = isOpen ? "Ver mais +" : "Ver menos -";
-    });
 });
 
 
@@ -405,3 +329,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener(
+    "scroll",
+    debounce(() => {
+        const socialBar = document.getElementById("socialBar");
+
+        if (window.scrollY > 100) {
+            socialBar.classList.add("visible");
+        } else {
+            socialBar.classList.remove("visible");
+        }
+    }, 100)
+);
+
+// Função debounce para otimizar o desempenho
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
