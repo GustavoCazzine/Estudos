@@ -102,6 +102,28 @@
                     <i class="fa-solid fa-file-pdf"></i> Ver Catálogo Completo em PDF
                 </a>
             </div>
+
+            <div id="quiz-modal" class="quiz__modal">
+                <div class="quiz__content">
+                    <button class="quiz__fechar" onclick="fecharQuiz()">✖</button>
+                    <h3>✨ Descubra o serviço ideal para você</h3>
+                    <div id="quiz-container">
+                        <div id="pergunta"></div>
+                        <div id="opcoes"></div>
+                        <button id="proximo-btn" style="display:none;" onclick="proximaPergunta()">Próximo</button>
+                        <div id="resultado" style="display:none;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalogo__quiz">
+                <a href="#" id="abrir-quiz-link" class="catalogo__quiz__link">
+                    Não sabe qual serviço escolher? <span>Faça nosso quiz rápido.</span>
+                </a>
+            </div>
+
+
+
         </section>
 
 
@@ -183,7 +205,6 @@
             </a>
             <a href="https://www.instagram.com/studionayraananias" target="_blank" class="newsletter">FOLLOW</a>
         </div>
-        
     </main>
 
     <footer class="site-footer">
