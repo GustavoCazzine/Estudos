@@ -160,7 +160,7 @@ h3 {
 #fundo01,
 #fundo02 {
     width: 50%;
-    height: 99%;
+    height: 465px;
     display: flex;
     align-items: center;
 }
@@ -181,26 +181,14 @@ h3 {
     transform: rotate(180deg);
     font-size: 60px;
     color: rgba(0, 0, 0, 0.07); /* Ajustei a opacidade */
-    font-family: var(--fonte-principal);
-    font-weight: 900;
+    font-family: var(--fonte-destaque);
+    font-weight: bold;
     line-height: 1.3;
     border-left: 2px solid rgba(0, 0, 0, 0.06); /* Ajustei a opacidade */
     border-right: 2px solid rgba(0, 0, 0, 0.06); /* Ajustei a opacidade */
     padding: 50px 0;
     text-transform: uppercase;
     transition: color var(--transition-duration) ease;
-}
-
-.secao-principal__fundo__paragrafo:hover {
-    opacity: 1;
-    color: rgba(0, 0, 0, 0.1);
-}
-
-#fundo01 .secao-principal__fundo__paragrafo {
-    margin-left: 5%;
-}
-#fundo02 .secao-principal__fundo__paragrafo {
-    margin-right: 5%;
 }
 
 .secao-principal__conteudo {
@@ -212,7 +200,6 @@ h3 {
 }
 
 .textos-titulo {
-    background-color: var(--cor-fundo-branco);
     width: 100%;
     padding: var(--espacamento-medio);
     display: flex;
@@ -242,7 +229,7 @@ h3 {
 
 .foto-wrapper {
     position: relative;
-    width: 100%;
+    width: 150%;
     display: flex;
     justify-content: center;
     z-index: 2;
@@ -262,12 +249,11 @@ h3 {
 
 .secao-principal__foto {
     width: 75%;
-    max-width: 320px;
+    max-width: 250px; /* Reduzindo o tamanho máximo da foto */
     aspect-ratio: 1/1;
     object-fit: cover;
     z-index: 2;
     border-radius: var(--espacamento-pequeno);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .scroll-indicator {
@@ -1427,5 +1413,183 @@ h3 {
 
     .container {
         max-width: 2400px; /* Ajuste conforme necessário */
+    }
+}
+
+/* ---------------------------- CABEÇALHO - MEDIA QUERIES ---------------------------- */
+
+/* Media Query para Notebook (a partir de 1024px) */
+@media (min-width: 1024px) {
+    .cabecalho {
+        justify-content: center; /* Alinha a logo à esquerda */
+        padding: var(--espacamento-medio) var(--espacamento-grande);
+    }
+
+    .cabecalho__logo {
+        width: 7em; /* Logo um pouco maior */
+    }
+}
+
+/* Media Query para Desktop (a partir de 1441px) */
+@media (min-width: 1441px) {
+    .cabecalho__logo {
+        width: 8em; /* Logo ligeiramente maior */
+    }
+}
+
+/* Media Query para TV (a partir de 1921px) */
+@media (min-width: 1921px) {
+    .cabecalho {
+        padding: var(--espacamento-grande) calc((100% - 2400px) / 2 + var(--espacamento-grande));
+    }
+
+    .cabecalho__logo {
+        width: 9em; /* Logo maior */
+    }
+}
+
+/* ---------------------------- SEÇÃO PRINCIPAL - MEDIA QUERIES (AJUSTES FINAIS) ---------------------------- */
+@media (min-width: 550px) {
+    #fundo01, #fundo02 {
+    justify-content: center;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .secao-principal__fundo {
+        height: 790px;
+        top: 0;
+    }
+
+    #fundo01,
+    #fundo02 {
+        justify-content: center;
+        height: 73.5%;
+
+    }
+
+    .secao-principal__fundo__paragrafo {
+        font-size: 100px;
+    }
+
+    .secao-principal__conteudo {
+        background-color: transparent;
+    }
+
+    .textos-titulo {
+        align-items: center;
+        text-align: center;
+        padding: 0; /* Removendo padding do container de textos */
+        margin-bottom: var(--espacamento-medio);
+    }
+
+    .secao-principal__titulo {
+        font-size: 3rem;
+        margin-bottom: var(--espacamento-pequeno);
+    }
+
+    .secao-principal__subtitulo {
+        font-size: 1.5rem;
+        max-width: 70%;
+        margin-bottom: var(--espacamento-grande);
+    }
+
+    .foto-wrapper {
+        margin-top: var(--espacamento-medio);
+        margin-bottom: var(--espacamento-grande);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .foto-wrapper::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 150%;
+        height: 40%;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--cor-fundo-creme) 100%);
+        z-index: 3;
+        pointer-events: none;
+    }
+
+    .secao-principal__foto {
+        max-width: 500px; /* Reduzindo o tamanho máximo da foto */
+        width: auto;
+        height: auto;
+        object-fit: contain; /* Garante que a imagem apareça inteira */
+    }
+
+    .scroll-indicator {
+        margin-top: var(--espacamento-grande);
+        padding-bottom: var(--espacamento-grande);
+    }
+}
+
+/* Media Query para Desktop (a partir de 1441px) */
+@media (min-width: 1441px) {
+    .secao-principal__fundo {
+        height: 910px; /* Ajuste sutil na altura do fundo */
+    }
+
+    #fundo01,
+    #fundo02 {
+        height: 75%; /* Pequeno ajuste na altura das divs de fundo */
+    }
+
+    .secao-principal__fundo__paragrafo {
+        font-size: 160px; /* Aumenta um pouco o texto de fundo */
+    }
+
+    .secao-principal__titulo {
+        font-size: 3.5rem; /* Título um pouco maior */
+    }
+
+    .secao-principal__subtitulo {
+        font-size: 1.7rem; /* Subtítulo um pouco maior */
+        max-width: 60%; /* Reduz um pouco a largura máxima */
+    }
+
+    .secao-principal__foto {
+        max-width: 600px; /* Foto um pouco maior */
+    }
+
+    .foto-wrapper::after {
+        width: 200%; /* Aumenta um pouco a largura do gradiente */
+    }
+}
+
+/* Media Query para TV (a partir de 1921px) */
+@media (min-width: 1921px) {
+    .secao-principal__fundo {
+        height: 1000px; /* Aumenta a altura do fundo */
+    }
+
+    #fundo01,
+    #fundo02 {
+        height: 78%; /* Aumenta a altura das divs de fundo */
+    }
+
+    .secao-principal__fundo__paragrafo {
+        font-size: 140px; /* Aumenta o texto de fundo */
+    }
+
+    .secao-principal__titulo {
+        font-size: 4rem; /* Título maior */
+    }
+
+    .secao-principal__subtitulo {
+        font-size: 2rem; /* Subtítulo maior */
+        max-width: 50%; /* Reduz mais a largura máxima */
+    }
+
+    .secao-principal__foto {
+        max-width: 700px; /* Foto maior */
+    }
+
+    .foto-wrapper::after {
+        width: 250%; /* Aumenta mais a largura do gradiente */
     }
 }
