@@ -367,7 +367,6 @@
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: var(--swiper-pagination-bottom, 8px);
-  top: var(--swiper-pagination-top, auto);
   left: 0;
   width: 100%;
 }
@@ -408,7 +407,7 @@
 }
 button.swiper-pagination-bullet {
   border: none;
-  margin: 0;
+  margin: 0 0.3;
   padding: 0;
   box-shadow: none;
   -webkit-appearance: none;

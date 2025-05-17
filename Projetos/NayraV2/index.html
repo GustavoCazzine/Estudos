@@ -1,46 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9X1XNMXJF4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        
+
         gtag('config', 'G-9X1XNMXJF4');
     </script>
     <link rel="preload" href="https://studionayraananias.com.br/assets/img/Foto_Nayra.avif" as="image" media="(max-width: 1024px)">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.css"> <link rel="icon" href="assets/img/logo_nayra_1.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    <!-- Favicon .ico (mais compatível) -->
-    <link rel="icon" href="assets/img/logo_nayra_1.ico" type="image/x-icon">
-
-    <!-- Favicon em formato PNG para navegadores que não suportam .ico -->
     <link rel="icon" href="assets/img/logo_nayra.png" type="image/png">
 
-    <!-- Favicon para dispositivos Apple (tamanho recomendado: 180x180px) -->
     <link rel="apple-touch-icon" href="assets/img/logo_nayra.png">
 
-    <!-- Favicon para navegadores Android (tamanho recomendado: 192x192px) -->
     <link rel="icon" href="assets/img/logo_nayra.png" sizes="192x192" type="image/png">
-    
+
     <title>Studio Nayra Ananias</title>
-    <link rel="stylesheet" href="assets/css/swiper-bundle.css">
-    <link rel="stylesheet" href="/assets/css/desktop.css">
-    <link rel="stylesheet" href="/assets/css/notebook.css">
-    <link rel="stylesheet" href="/assets/css/tablet.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Arquivos estáticos (imagem, CSS, JS) -->
     <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
-    
-    <!-- Para páginas HTML dinâmicas -->
-    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, proxy-revalidate">    <meta name="description" content="Transforme seu olhar com extensão de cílios, design de sobrancelhas e outros procedimentos estéticos. Atendimento especializado e personalizado para mulheres que buscam beleza e autoestima. Agende agora!">
+
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, proxy-revalidate">     <meta name="description" content="Transforme seu olhar com extensão de cílios, design de sobrancelhas e outros procedimentos estéticos. Atendimento especializado e personalizado para mulheres que buscam beleza e autoestima. Agende agora!">
 </head>
 
 <body>
@@ -49,184 +35,192 @@
     </header>
 
     <main class="pagina__geral">
-        <!-- Seção Principal -->
-        <section class="secao-principal">
-        <div class="secao-principal__fundo">
-            <div id="fundo01">
-            <p class="secao-principal__fundo__paragrafo">Lash</p>
-            </div>
-            <div id="fundo02">
-            <p class="secao-principal__fundo__paragrafo">Designer</p>
-            </div>
-        </div>
-
-        <div class="secao-principal__conteudo">
-            <div class="foto-wrapper">
-            <img src="assets/img/Foto_Nayra.avif" alt="Foto Nayra Ananias" class="secao-principal__foto" loading="lazy" width="400px" height="400px">
-            </div>
-
-            <div class="textos-titulo">
-            <h2 class="secao-principal__titulo texto-com-gradiente">Nayra Ananias</h2>
-            <h1 class="secao-principal__subtitulo">
-                Especialista em extensão de cílios e design de sobrancelhas em Piracicaba.
-            </h1>
-            </div>
-
-            <div class="scroll-indicator">
-            <span class="scroll-text">Desça para conhecer</span>
-            <div class="mouse-scroll">
-                <div class="wheel"></div>
-            </div>
-            </div>
-        </div>
-        </section>
-
-        
-
-            
-        <section class="container__conteudo catalogo" id="catalogo">
-            <h2 class="container__conteudo__titulo texto-com-gradiente">Catálogo</h2>
-            <p class="container__conteudo__descricao">
-                Escolha uma das opções abaixo para visualizar os serviços disponíveis. Clique nos cards para ver detalhes de cada técnica.
-            </p>
-
-            <div class="catalogo__menu">
-                <button class="catalogo__botao ativo" onclick="mostrarServicos('sobrancelhas')">Sobrancelhas</button>
-                <button class="catalogo__botao" onclick="mostrarServicos('cilios')">Cílios</button>
-            </div>
-
-            <div class="catalogo__carrossel" id="catalogo-carrossel"></div>
-
-            <div class="catalogo__pdf">
-                <a href="assets/pdf/CatálogoNayraAnanias.pdf" class="catalogo__pdf__link texto-com-gradiente" target="_blank">
-                    <i class="fa-solid fa-file-pdf"></i> Ver Catálogo Completo em PDF
-                </a>
-            </div>
-
-            <div id="quiz-modal" class="quiz__modal">
-                <div class="quiz__content">
-                    <button class="quiz__fechar" onclick="fecharQuiz()">✖</button>
-                    <h3>✨ Descubra o serviço ideal para você</h3>
-                    <div id="quiz-container">
-                        <div id="pergunta"></div>
-                        <div id="opcoes"></div>
-                        <button id="proximo-btn" style="display:none;" onclick="proximaPergunta()">Próximo</button>
-                        <div id="resultado" style="display:none;"></div>
+        <div class="container">
+            <!-- Seção Principal -->
+            <section class="secao-principal">
+                <div class="secao-principal__fundo">
+                    <div id="fundo01">
+                    <p class="secao-principal__fundo__paragrafo">Lash</p>
+                    </div>
+                    <div id="fundo02">
+                    <p class="secao-principal__fundo__paragrafo">Designer</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="catalogo__quiz">
-                <a href="#" id="abrir-quiz-link" class="catalogo__quiz__link">
-                    Não sabe qual serviço escolher? <span>Faça nosso quiz rápido.</span>
-                </a>
-            </div>
+                <div class="secao-principal__conteudo">
+                    <div class="foto-wrapper">
+                    <img src="assets/img/Foto_Nayra.avif" alt="Foto Nayra Ananias" class="secao-principal__foto" loading="lazy" width="400px" height="400px">
+                    </div>
 
+                    <div class="textos-titulo">
+                    <h2 class="secao-principal__titulo texto-com-gradiente">Nayra Ananias</h2>
+                    <h1 class="secao-principal__subtitulo">
+                        Especialista em extensão de cílios e design de sobrancelhas em Piracicaba.
+                    </h1>
+                    </div>
 
-
-        </section>
-
-
-
-        <section class="cursos">
-            <h2 class="cursos__titulo texto-com-gradiente">Cursos Disponíveis</h2>
-            <div class="cursos__lista" id="cursos-lista"></div>
-        </section>
-
-        <!-- Agendamentos -->
-        <section class="agendamento">
-            <h2 class="agendamento__titulo texto-com-gradiente">Agendamentos</h2>
-            <div class="agendamento__conteudo">
-                <div class="agendamento__imagem">
-                    <img src="assets/img/Divs/agendamentos.jpg" alt="Designer Nayra Ananias - Agendamentos" width="800" height="600" loading="lazy">
+                    <div class="scroll-indicator">
+                    <span class="scroll-text">Desça para conhecer</span>
+                    <div class="mouse-scroll">
+                        <div class="wheel"></div>
+                    </div>
+                    </div>
                 </div>
-                <div class="agendamento__info">
-                    <p>Agende seu horário com a Nayra Ananias para realçar ainda mais sua beleza! Clique no botão abaixo para marcar seu horário diretamente no WhatsApp.</p>
-                    <a href="https://wa.me/5519999670165?text=Oi%20Nayra!%20😊%20Poderia%20me%20ajudar%20a%20agendar%20um%20horário%20disponivel?" target="_blank" class="agendamento__link">Marcar Horário</a>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Feecbacks -->
-        <section class="feedbacks">
-            <h2 class="feedback-section-title texto-com-gradiente">Feedbacks de Clientes</h2>
-            <div class="swiper">
-                <div class="swiper-wrapper" id="swiper-wrapper"></div>
+            
 
-                <!-- Paginação -->
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
-
-        <section class="location">
-            <h2 class="texto-com-gradiente">Nos Encontre</h2>
-            <p>Estamos ansiosos para te receber! Nossa localização é de fácil acesso:</p>
-
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.846779817919!2d-47.66382432354898!3d-22.19580837970395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c63b03e451b2b1%3A0x901cb8981f44991!2sR.%20Ing%C3%A1%2C%2062%20-%20Paulic%C3%A9ia%2C%20Piracicaba%20-%20SP%2C%2013401-521!5e0!3m2!1spt-BR!2sbr!4v1715814907935"
-                        width="100%"
-                        height="450"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Localização do Studio Nayra Ananias no Google Maps">
-                </iframe>
-            </div>
-
-            <div class="location-details">
-                <p class="location-address">
-                    <i class="fas fa-map-marker-alt"></i> Rua Ingá, 62 - Paulicéia, Piracicaba, São Paulo
+                
+            <section class="container__conteudo catalogo" id="catalogo">
+                <h2 class="container__conteudo__titulo texto-com-gradiente">Catálogo</h2>
+                <p class="container__conteudo__descricao">
+                    Escolha uma das opções abaixo para visualizar os serviços disponíveis. Clique nos cards para ver detalhes de cada técnica.
                 </p>
 
+                <div class="catalogo__menu">
+                    <button class="catalogo__botao ativo" onclick="mostrarServicos('sobrancelhas')">Sobrancelhas</button>
+                    <button class="catalogo__botao" onclick="mostrarServicos('cilios')">Cílios</button>
                 </div>
-        </section>
+
+                <div class="catalogo__carrossel" id="catalogo-carrossel"></div>
+
+                <div class="catalogo__pdf">
+                    <a href="assets/pdf/CatálogoNayraAnanias.pdf" class="catalogo__pdf__link texto-com-gradiente" target="_blank">
+                        <i class="fa-solid fa-file-pdf"></i> Ver Catálogo Completo em PDF
+                    </a>
+                </div>
+
+                <div id="quiz-modal" style="display:none">
+                    <div id="quiz-container">
+                        <button onclick="fecharQuizExterno()" class="quiz-fechar-botao">X</button>
+                        <h2 id="pergunta"></h2>
+                        <div id="opcoes"></div>
+                        <div id="quiz-progresso">
+                            <div style="width: 0%; height: 100%; background-color: var(--cor-dourado); border-radius: 5px; text-align: center; color: white; font-size: 0.8em; line-height: 10px;">0%</div>
+                        </div>
+                    </div>
+                    <div id="resultado" style="display:none">
+                        <button onclick="fecharQuizExterno()" class="quiz-fechar-botao">X</button>
+                        <h2>Descubra seu tratamento ideal</h2>
+                        <div id="servico-recomendado-msg"></div>
+                        <a id="whatsapp-link" style="display:none" target="_blank">Agendar pelo WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="catalogo__quiz">
+                    <a href="#" id="abrir-quiz-link" class="catalogo__quiz__link">
+                        Não sabe qual serviço escolher? <span>Faça nosso quiz rápido.</span>
+                    </a>
+                </div>
+
+            </section>
 
 
-        <div class="whatsapp-button">
-            <div class="whatsapp-tooltip">Clique aqui para falar conosco!</div>
-            <a href="https://wa.me/5519999670165?text=Oi%20Nayra!%20😊%20Poderia%20me%20ajudar%20a%20agendar%20um%20horário%20disponivel?" target="_blank" aria-label="WhatsApp">
-                <img src="assets/img/whatsapp1.avif" alt="WhatsApp" width="100" height="100" loading="lazy">
-            </a>
-        </div>
 
-        <div class="social-bar" id="socialBar">
-            <a href="https://www.instagram.com/studionayraananias" target="_blank" class="social-icon instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/seupagina" target="_blank" class="social-icon facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://pinterest.com/seuperfil" target="_blank" class="social-icon pinterest">
-                <i class="fab fa-pinterest"></i>
-            </a>
-            <a href="https://www.tiktok.com/@seuperfil" target="_blank" class="social-icon tiktok">
-                <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.instagram.com/studionayraananias" target="_blank" class="newsletter">FOLLOW</a>
+            <section class="cursos">
+                <h2 class="cursos__titulo texto-com-gradiente">Cursos Disponíveis</h2>
+                <div class="cursos__lista" id="cursos-lista"></div>
+            </section>
+
+            <!-- Agendamentos -->
+            <section class="agendamento">
+                <h2 class="agendamento__titulo texto-com-gradiente">Agendamentos</h2>
+                <div class="agendamento__conteudo">
+                    <div class="agendamento__imagem">
+                        <img src="assets/img/Divs/agendamentos.jpg" alt="Designer Nayra Ananias - Agendamentos" width="800" height="600" loading="lazy">
+                    </div>
+                    <div class="agendamento__info">
+                        <p>Agende seu horário com a Nayra Ananias para realçar ainda mais sua beleza! Clique no botão abaixo para marcar seu horário diretamente no WhatsApp.</p>
+                        <a href="https://wa.me/5519999670165?text=Oi%20Nayra!%20😊%20Poderia%20me%20ajudar%20a%20agendar%20um%20horário%20disponivel?" target="_blank" class="agendamento__link">Marcar Horário</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feecbacks -->
+            <section class="feedbacks">
+                <div class="feedbacks__container">
+                    <h2 class="feedback-section-title texto-com-gradiente">Feedbacks de Clientes</h2>
+                </div>
+                <div class="swiper">
+                    <div class="swiper-wrapper" id="swiper-wrapper">
+                        </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <section class="location">
+                <div class="location__container">
+                    <h2 class="texto-com-gradiente">Nos Encontre</h2>
+                    <p>Estamos ansiosos para te receber! Nossa localização é de fácil acesso:</p>
+
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.846779817919!2d-47.66382432354898!3d-22.19580837970395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c63b03e451b2b1%3A0x901cb8981f44991!2sR.%20Ing%C3%A1%2C%2062%20-%20Paulic%C3%A9ia%2C%20Piracicaba%20-%20SP%2C%2013401-521!5e0!3m2!1spt-BR!2sbr!4v1715814907935"
+                                width="100%"
+                                height="450"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Localização do Studio Nayra Ananias no Google Maps">
+                        </iframe>
+                    </div>
+
+                    <div class="location-details">
+                        <p class="location-address">
+                            <i class="fas fa-map-marker-alt"></i> Rua Ingá, 62 - Paulicéia, Piracicaba, São Paulo
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+                <div class="whatsapp-button">
+                    <div class="whatsapp-tooltip">Clique aqui para falar conosco!</div>
+                    <a href="https://wa.me/5519999670165?text=Oi%20Nayra!%20😊%20Poderia%20me%20ajudar%20a%20agendar%20um%20horário%20disponivel?" target="_blank" aria-label="WhatsApp">
+                        <img src="assets/img/whatsapp1.avif" alt="WhatsApp" width="100" height="100" loading="lazy">
+                    </a>
+                </div>
+
+                <div class="social-bar" id="socialBar">
+                    <a href="https://www.instagram.com/studionayraananias" target="_blank" class="social-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/seupagina" target="_blank" class="social-icon facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://pinterest.com/seuperfil" target="_blank" class="social-icon pinterest">
+                        <i class="fab fa-pinterest"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@seuperfil" target="_blank" class="social-icon tiktok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.instagram.com/studionayraananias" target="_blank" class="newsletter">FOLLOW</a>
+                </div>
+        
+
+            <footer class="site-footer">
+                <div class="site-footer__container">
+                    <div class="footer-credits">
+                        <p>© 2025 <a href="https://www.instagram.com/studionayraananias?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Nayra Ananias</a> - Todos os direitos reservados.</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/studionayraananias" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/seupagina" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://pinterest.com/seuperfil" target="_blank" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@seuperfil" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </footer>
         </div>
     </main>
-
-    <footer class="site-footer">
-        <div class="footer-credits">
-            <p>© 2025 <a href="https://www.instagram.com/studionayraananias?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Nayra Ananias</a> - Todos os direitos reservados.</p>
-        </div>
-        <div class="footer-social">
-            <a href="https://www.instagram.com/studionayraananias" target="_blank" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/seupagina" target="_blank" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://pinterest.com/seuperfil" target="_blank" aria-label="Pinterest">
-                <i class="fab fa-pinterest"></i>
-            </a>
-            <a href="https://www.tiktok.com/@seuperfil" target="_blank" aria-label="TikTok">
-                <i class="fab fa-tiktok"></i>
-            </a>
-        </div>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/funcoes.js"></script>
     <script src="assets/js/swiper-bundle.js" defer></script>

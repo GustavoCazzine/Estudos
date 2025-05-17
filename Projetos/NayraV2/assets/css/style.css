@@ -1,4 +1,4 @@
-/* ---------------------------- FONTS ---------------------------- */
+/* ---------------------------- FONTES ---------------------------- */
 @font-face {
     font-family: 'PlayfairDisplay-Bold';
     src: url('../fonts/PlayfairDisplay/PlayfairDisplay-Bold.woff2') format('woff2'),
@@ -6,9 +6,8 @@
 }
 
 @font-face {
-    font-family: 'OldStandardTT-Bold';
-    src: url('../fonts/Old_Standard_TT/OldStandardTT-Bold.woff2') format('woff2'),
-        url('../fonts/Old_Standard_TT/OldStandardTT-Bold.woff') format('woff');
+    font-family: 'Julius Sans One';
+    src: url('../fonts/Julius_Sans_One/JuliusSansOne-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -20,28 +19,46 @@
 /* ---------------------------- ROOT VARIABLES ---------------------------- */
 
 :root {
-  /* 🎨 Cores principais */
+    /* 🎨 Cores principais */
     --cor-fundo-branco: #ffffff;
     --cor-fundo-creme: #fdfdfa;
     --cor-dourado: #D4B483;
 
-  /* 🎯 Cores de marca e ação */
+    /* 🎯 Cores de marca e ação */
     --cor-vinho: #8C1F1F;
     --cor-vinho-escuro: #721111;
 
     /* Gradientes */
-    --gradiente-vinho:  linear-gradient(to right, #8C1F1F, #721111); /* ou as cores que quiser */
+    --gradiente-vinho: linear-gradient(to right, var(--cor-vinho), var(--cor-vinho-escuro));
 
-
-  /* 🖋️ Cores de texto */
+    /* 🖋️ Cores de texto */
     --cor-texto-titulo: #000000;
     --cor-texto-corpo: #6b6657;
     --cor-texto-neutro: #555555;
 
-  /* 🔠 Fontes */
+    /* 🔠 Fontes */
     --fonte-titulo: 'PlayfairDisplay-Bold', serif;
     --fonte-corpo: 'OpenSans-Bold', sans-serif;
     --fonte-destaque: 'Julius Sans One', sans-serif;
+
+    /* ⏱️ Transições */
+    --transition-duration: 0.3s;
+    --transition-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* 📏 Tamanhos de Texto (Rem) - Vamos adicionar um padrão */
+    --tamanho-h1: 2.5rem;
+    --tamanho-h2: 2.0rem;
+    --tamanho-h3: 1.5rem;
+    --tamanho-texto-base: 1.0rem; /* Para parágrafos e textos gerais */
+    --tamanho-subtitulo: 1.1rem;
+    --tamanho-botao: 1.0rem;
+    --tamanho-link: 1.0rem;
+    --tamanho-texto-pequeno: 0.9rem;
+
+    /* 📐 Espaçamentos (Rem) - Podemos adicionar conforme necessário */
+    --espacamento-pequeno: 0.5rem;
+    --espacamento-medio: 1.0rem;
+    --espacamento-grande: 2.0rem;
 }
 
 /* ---------------------------- RESET ---------------------------- */
@@ -65,21 +82,32 @@ body::-webkit-scrollbar {
 
 /* ---------------------------- BASE ---------------------------- */
 body {
-    font-family: var(--fonte-paragrafos);
+    width: 100%; /* Garante que o body ocupe toda a largura */
+    font-family: var(--fonte-corpo);
     line-height: 1.6;
     background-color: var(--cor-fundo-creme);
+    max-width: 1200px; /* Mantém a largura máxima */
 }
 
 p {
-    font-size: 1rem;
+    font-size: var(--tamanho-texto-base); /* Usando a variável para o tamanho base do texto */
     color: var(--cor-paragrafos);
 }
 
 h3 {
-    font-family: var(--fonte-paragrafos);
-    font-size: 1.25rem;
+    font-family: var(--fonte-paragrafos); /* Mantendo a fonte de parágrafos para h3 */
+    font-size: var(--tamanho-h3); /* Usando a variável para o tamanho de h3 */
     font-weight: 400;
     color: var(--cor-titulo);
+}
+
+/* Estilos gerais para o container */
+.container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ---------------------------- CABEÇALHO ---------------------------- */
@@ -92,6 +120,7 @@ h3 {
     width: 100%;
     z-index: 10;
     margin-top: -0.5em; /* Mais sutil */
+    padding: var(--espacamento-pequeno) 0; /* Adicionando um pouco de padding vertical */
 }
 
 .cabecalho__logo {
@@ -106,6 +135,8 @@ h3 {
     height: auto;
     display: block;
 }
+
+
 /* ---------------------------- SEÇÃO PRINCIPAL ---------------------------- */
 .secao-principal {
     position: relative;
@@ -136,27 +167,28 @@ h3 {
 
 #fundo01 {
     justify-content: start;
-    background-color: #fff;
+    background-color: var(--cor-fundo-branco);
 }
 
 
 #fundo02 {
     justify-content: end;
-  background-color: #e2c99c; /* dourado mais suave */
+    background-color: var(--cor-dourado); /* dourado mais suave */
 }
 
 .secao-principal__fundo__paragrafo {
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     font-size: 60px;
-    color: #00000012;
+    color: rgba(0, 0, 0, 0.07); /* Ajustei a opacidade */
     font-family: var(--fonte-principal);
     font-weight: 900;
     line-height: 1.3;
-    border-left: 2px solid #00000010;
-    border-right: 2px solid #00000010;
+    border-left: 2px solid rgba(0, 0, 0, 0.06); /* Ajustei a opacidade */
+    border-right: 2px solid rgba(0, 0, 0, 0.06); /* Ajustei a opacidade */
     padding: 50px 0;
     text-transform: uppercase;
+    transition: color var(--transition-duration) ease;
 }
 
 .secao-principal__fundo__paragrafo:hover {
@@ -180,9 +212,9 @@ h3 {
 }
 
 .textos-titulo {
-    background-color: #fff;
+    background-color: var(--cor-fundo-branco);
     width: 100%;
-    padding: 1rem 1rem 1rem;
+    padding: var(--espacamento-medio);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -191,17 +223,21 @@ h3 {
 
 .secao-principal__titulo {
     margin-top: -2.5rem; /* Subiu o título até alinhar com o fim da foto */
-    font-size: 2.5rem;
+    font-size: var(--tamanho-h1);
     text-transform: uppercase;
     letter-spacing: 1px;
     z-index: 2;
+    color: var(--cor-texto-titulo);
+    font-family: var(--fonte-titulo);
 }
 
 .secao-principal__subtitulo {
     text-align: center;
-    font-size: 1rem;
+    font-size: var(--tamanho-subtitulo);
     font-weight: 300;
     max-width: 90%;
+    color: var(--cor-texto-corpo);
+    margin-top: var(--espacamento-pequeno);
 }
 
 .foto-wrapper {
@@ -230,22 +266,8 @@ h3 {
     aspect-ratio: 1/1;
     object-fit: cover;
     z-index: 2;
-}
-
-.secao-principal__titulo {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    z-index: 1;
-}
-
-.secao-principal__subtitulo {
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 300;
-    max-width: 90%;
-    margin-top: 0.5rem;
-    z-index: 2;
+    border-radius: var(--espacamento-pequeno);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .scroll-indicator {
@@ -254,12 +276,12 @@ h3 {
     align-items: center;
     z-index: 3;
     color: var(--cor-vinho-escuro);
-    margin-top: .5rem;
+    margin-top: var(--espacamento-grande);
 }
 
 .scroll-text {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+    font-size: var(--tamanho-texto-pequeno);
+    margin-bottom: var(--espacamento-pequeno);
 }
 
 .mouse-scroll {
@@ -302,14 +324,14 @@ h3 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text; /* para navegadores modernos */
-    color: transparent;    /* fallback */
+    color: transparent;     /* fallback */
     font-weight: bold;
-    font-size: 2rem;
+    font-size: var(--tamanho-h1);
 }
 
 /* ---------------------------- SEÇÃO CATÁLOGO ---------------------------- */
 .catalogo {
-    padding: 4rem 1.5rem;
+    padding: var(--espacamento-grande) 1.5rem;
     background-color: #fafafa;
     font-family: var(--fonte-paragrafos);
     max-width: 1200px;
@@ -319,18 +341,18 @@ h3 {
 
 .catalogo__titulo {
     font-family: var(--fonte-titulos);
-    font-size: 2rem;
+    font-size: var(--tamanho-h2);
     color: var(--cor-titulo);
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--espacamento-grande);
 }
 
 .catalogo__menu {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin: 2rem auto;
+    gap: var(--espacamento-medio);
+    margin: var(--espacamento-grande) auto;
 }
 
 .catalogo__botao {
@@ -338,10 +360,10 @@ h3 {
     color: var(--cor-fundo-creme);
     border: none;
     padding: 0.6rem 1.4rem;
-    font-size: 1rem;
-    border-radius: 8px;
+    font-size: var(--tamanho-texto-base);
+    border-radius: var(--espacamento-pequeno);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-duration) ease;
 
 }
 
@@ -356,7 +378,7 @@ h3 {
 .catalogo__carrossel {
     display: flex;
     overflow-x: auto;
-    gap: 1rem;
+    gap: var(--espacamento-medio);
     padding-bottom: 1.5rem;
     scroll-snap-type: x mandatory;
     scroll-padding: 1rem;
@@ -380,11 +402,12 @@ h3 {
     max-width: 320px;
     background-color: var(--cor-fundo-branco);
     border: 1px solid var(--cor-fundo-creme);
-    border-radius: 15px;
+    border-radius: var(--espacamento-medio);
     scroll-snap-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--transition-duration) ease,
+                box-shadow var(--transition-duration) ease;
 }
 
 /* Efeitos nos cards */
@@ -406,57 +429,57 @@ h3 {
 }
 
 .catalogo__card__conteudo {
-    padding: 1.5rem;
+    padding: var(--espacamento-medio);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: var(--espacamento-pequeno);
 }
 
 .catalogo__card__titulo {
     font-family: var(--fonte-titulos);
-    font-size: 1.2rem;
+    font-size: var(--tamanho-subtitulo);
     color: var(--cor-titulo);
     margin: 0;
 }
 
 .catalogo__card__descricao {
-    font-size: 1rem;
+    font-size: var(--tamanho-texto-base);
     color: var(--cor-paragrafos);
     line-height: 1.5;
 }
 
 .catalogo__card__caracteristicas {
     display: flex;
-    gap: 0.5rem;
+    gap: var(--espacamento-pequeno);
     flex-wrap: wrap;
-    margin-top: 0.5rem;
+    margin-top: var(--espacamento-pequeno);
 }
 
 .catalogo__card__caracteristicas span {
     background-color: var(--cor-dourado);
     color: var(--cor-fundo-creme);
     padding: 0.1rem 0.8rem;
-    border-radius: 8px;
+    border-radius: var(--espacamento-pequeno);
     font-size: 0.70rem;
     font-weight: bold;
 }
 
 .catalogo__cta {
-    margin-top: 1rem;
+    margin-top: var(--espacamento-medio);
     text-align: center;
 }
 
 .catalogo__cta a {
-    background: linear-gradient(135deg, #8C1F1f, #721111);
-    color: #fff;
+    background: var(--gradiente-vinho);
+    color: var(--cor-fundo-branco);
     text-decoration: none;
     padding: 0.7rem 1.6rem;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: var(--espacamento-pequeno);
+    font-size: var(--tamanho-texto-base);
     font-weight: bold;
-    transition: filter 0.3s ease;
+    transition: filter var(--transition-duration) ease;
 }
 
 .catalogo__cta a:hover {
@@ -464,19 +487,19 @@ h3 {
 }
 
 .catalogo__pdf {
-    margin-top: 2rem;
+    margin-top: var(--espacamento-grande);
     text-align: center;
 }
 
 .catalogo__pdf__link {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: var(--espacamento-pequeno);
     padding: 0.8rem 1.4rem;
     border-radius: 30px;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    font-weight: bold;
+    font-size: var(--tamanho-texto-base);
+    transition: all var(--transition-duration) ease;
     text-decoration: none;
     transition: .1s;
 }
@@ -484,7 +507,6 @@ h3 {
 .catalogo__pdf__link:hover {
     background: var(--gradiente-vinho);
     color: var(--cor-fundo-creme);
-    font-weight: bold;
     -webkit-text-fill-color: var(--cor-fundo-creme);
     background-clip: border-box;
     -webkit-background-clip: border-box;
@@ -495,202 +517,287 @@ h3 {
     font-size: 1.2rem;
 }
 
-/* Quiz */
-/* Quiz Modal */
-.quiz__modal {
+/* ---------------------------- QUIZ ---------------------------- */
+
+#quiz-modal {
     display: none;
     position: fixed;
     z-index: 1000;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: var(--espacamento-grande);
+    overflow: auto;
 }
 
-.quiz__content {
-    background: var(--cor-fundo-creme);
-    border-radius: 1.5rem;
-    padding: 2rem;
-    max-width: 500px;
-    width: 100%;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+#quiz-container,
+#resultado {
+    background-color: var(--cor-fundo-branco);
+    border-radius: var(--espacamento-medio);
+    padding: var(--espacamento-medio); /* Reduzi o padding geral do card */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 550px;
+    width: 95%;
     position: relative;
-    font-family: var(--fonte-corpo);
-    text-align: center;
+    display: flex; /* Para ordenar os elementos internos */
+    flex-direction: column; /* Para colocar a barra de progresso abaixo */
 }
 
-.quiz__content h3 {
+#quiz-container h2 {
     font-family: var(--fonte-titulo);
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    color: var(--cor-texto-titulo);
-}
-
-.quiz__fechar {
-    position: absolute;
-    top: 0.8rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--cor-texto-neutro);
-    transition: color 0.3s ease;
-    line-height: 1;
-    padding: 0;
-}
-
-.quiz__fechar:hover {
     color: var(--cor-vinho);
+    margin-bottom: var(--espacamento-pequeno); /* Reduzi a margem inferior */
+    font-size: var(--tamanho-h2);
+    font-weight: bold;
 }
 
-/* Quiz Container */
-#quiz-container {
-    text-align: center;
-    margin-top: 1.5rem;
+/* Removendo o estilo do h2 principal dentro de #resultado, ele não será mais usado como título */
+#resultado h2 {
+    display: none;
+}
+
+#resultado h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-vinho);
+    margin-bottom: var(--espacamento-pequeno); /* Reduzi a margem inferior */
+    font-size: var(--tamanho-h2);
+    font-weight: bold;
 }
 
 #pergunta {
-    font-size: 1.2rem;
+    font-size: var(--tamanho-texto-base);
     font-weight: bold;
     color: var(--cor-texto-titulo);
-    margin-bottom: 1rem;
-    font-family: var(--fonte-titulo);
+    margin-bottom: var(--espacamento-pequeno); /* Reduzi a margem inferior */
+    margin-top: var(--espacamento-grande);
 }
 
 #opcoes {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacamento-pequeno); /* Reduzi o gap entre as opções */
+    margin-bottom: var(--espacamento-grande); /* Reduzi a margem inferior */
 }
 
 #opcoes button {
-    background: none;
-    border: 2px solid var(--cor-vinho);
-    color: var(--cor-vinho-escuro);
-    padding: 0.75rem 1rem;
-    border-radius: 0.75rem;
-    font-size: 0.95rem;
+    background-color: var(--cor-fundo-creme);
+    border: 1px solid var(--cor-vinho);
+    color: var(--cor-vinho);
+    padding: 8px 12px; /* Reduzi o padding dos botões */
+    border-radius: var(--espacamento-pequeno);
+    font-size: var(--tamanho-texto-pequeno);
     font-family: var(--fonte-corpo);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color var(--transition-duration) ease,
+                color var(--transition-duration) ease,
+                box-shadow 0.1s ease,
+                transform 0.1s ease;
 }
 
 #opcoes button:hover {
-    background: var(--gradiente-vinho);
-    color: white;
-}
-
-#proximo-btn {
-    background: var(--cor-vinho);
+    background-color: var(--cor-vinho);
     color: var(--cor-fundo-branco);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.75rem;
-    font-size: 1rem;
-    font-family: var(--fonte-corpo);
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: scale(1.01);
 }
 
-#proximo-btn:hover {
-    background: var(--cor-vinho-escuro);
+#opcoes button.selecionado {
+    background-color: var(--cor-vinho); /* Mantém o hover color como seleção */
+    color: var(--cor-fundo-branco);
+    font-weight: bold;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
 }
 
-#resultado {
-    text-align: center;
+/* Estilos para a exibição do resultado */
+#servico-recomendado-msg {
+    display: flex;
+    flex-direction: column; /* Centralizar os itens horizontalmente */
+    align-items: center; /* Centralizar os itens horizontalmente */
+    gap: var(--espacamento-medio); /* Reduzi o espaçamento entre os itens do resultado */
+    text-align: center; /* Alinhar o texto ao centro */
 }
 
-#resultado p {
-    font-size: 1.1rem;
-    color: var(--cor-texto-corpo);
-    margin-bottom: 1rem;
+#servico-recomendado-msg > div {
+    background-color: var(--cor-fundo-branco);
+    border-radius: var(--espacamento-pequeno);
+    padding: var(--espacamento-pequeno); /* Reduzi o padding interno do container do serviço */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    width: 100%; /* Ocupar a largura total do container */
+    max-width: 350px; /* Reduzi a largura máxima para o combo */
+    display: flex;
+    flex-direction: column; /* Um item abaixo do outro */
+    align-items: center; /* Centralizar os itens horizontalmente dentro de cada div */
+    text-align: center; /* Centralizar o texto dentro de cada div */
+    justify-content: center;
 }
 
-#resultado a {
-    display: inline-block;
-    margin-top: 1rem;
-    font-size: 0.95rem;
+#servico-recomendado-msg h3 {
     color: var(--cor-vinho);
-    text-decoration: underline;
-    transition: opacity 0.3s ease;
+    margin-top: var(--espacamento-pequeno);
+    margin-bottom: var(--espacamento-pequeno); /* Reduzi a margem inferior */
+    font-size: var(--tamanho-h2); /* Ajustei o tamanho do título do serviço */
+    font-weight: bold;
 }
 
-#resultado a:hover {
-    opacity: 0.8;
+#servico-recomendado-msg strong {
+    color: var(--cor-vinho);
+    margin-top: 0;
+    margin-bottom: var(--espacamento-pequeno); /* Reduzi a margem inferior */
+    font-size: var(--tamanho-subtitulo); /* Ajustei o tamanho do título do serviço */
+    font-weight: bold;
 }
 
-#resultado button {
-    background: none;
-    border: 2px solid var(--cor-vinho);
-    color: var(--cor-vinho-escuro);
-    padding: 0.75rem 1rem;
-    margin-top: 1rem;
-    border-radius: 0.75rem;
-    font-size: 0.95rem;
-    font-family: var(--fonte-corpo);
-    cursor: pointer;
-    transition: all 0.3s ease;
+#servico-recomendado-msg img {
+    max-width: 100px; /* Reduzi o tamanho máximo da imagem */
+    height: auto;
+    border-radius: var(--espacamento-pequeno);
+    margin-bottom: var(--espacamento-pequeno); /* Reduzi a margem inferior */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
-#resultado button:hover {
+/* Estilo para o combo no resultado (um serviço abaixo do outro) */
+#servico-recomendado-msg > div > div {
+    display: flex;
+    flex-direction: column; /* Um item abaixo do outro */
+    align-items: center; /* Centralizar os itens horizontalmente dentro de cada div */
+    text-align: center; /* Centralizar o texto dentro de cada div */
+    margin-bottom: var(--espacamento-pequeno); /* Reduzi o espaçamento entre os serviços do combo */
+    width: 100%; /* Ocupar a largura total do container */
+}
+
+#servico-recomendado-msg > div > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#servico-recomendado-msg > div > div > div > img {
+    max-width: 80px; /* Reduzi a imagem do combo */
+    height: auto;
+    border-radius: var(--espacamento-pequeno);
+    margin-bottom: var(--espacamento-pequeno); /* Reduzi a margem da imagem do combo */
+}
+
+#whatsapp-link {
+    display: inline-block;
     background: var(--gradiente-vinho);
-    color: white;
+    color: var(--cor-fundo-branco) !important;
+    padding: 10px 20px; /* Reduzi o padding do link */
+    border-radius: var(--espacamento-pequeno);
+    font-size: var(--tamanho-texto-pequeno);
+    text-decoration: none !important;
+    transition: transform var(--transition-duration) ease-in-out,
+                box-shadow var(--transition-duration) ease-in-out;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+    margin-top: var(--espacamento-pequeno); /* Reduzi a margem superior */
+}
+
+#whatsapp-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Botão de fechar o modal */
+.quiz-fechar-botao {
+    position: absolute;
+    top: var(--espacamento-pequeno);
+    right: var(--espacamento-pequeno);
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--cor-vinho-escuro);
+    cursor: pointer;
+    transition: color var(--transition-duration) ease-in-out;
+    padding: 0;
+    line-height: 1;
+}
+
+.quiz-fechar-botao:hover {
+    color: var(--cor-dourado);
+}
+
+/* Barra de progresso movida para baixo */
+#quiz-progresso {
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: var(--espacamento-pequeno);
+    margin-top: var(--espacamento-pequeno); /* Espaçamento acima da barra */
+    height: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: flex; /* Para alinhar o div interno */
+    align-items: center; /* Alinhar verticalmente */
+}
+
+#quiz-progresso > div {
+    background: var(--gradiente-vinho);
+    height: 100%;
+    border-radius: var(--espacamento-pequeno);
+    text-align: center;
+    color: var(--cor-fundo-branco);
+    font-weight: bold;
+    font-size: 0.8em;
+    line-height: 10px;
+    width: 0%; /* Inicialmente 0 */
+    transition: width 0.3s ease-out;
 }
 
 /* Link para abrir o quiz no catálogo */
 .catalogo__quiz {
-    margin-top: 1.5rem;
+    margin-top: var(--espacamento-grande); /* Reduzi a margem superior */
     text-align: center;
 }
 
 .catalogo__quiz__link {
     font-family: var(--fonte-destaque);
-    font-size: 1rem;
+    font-size: var(--tamanho-texto-base);
     color: var(--cor-texto-corpo);
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.catalogo__quiz__link:hover {
-    color: var(--cor-vinho);
-    text-decoration: underline;
+    padding: var(--espacamento-pequeno) var(--espacamento-medio); /* Reduzi o padding do link */
+    border-radius: var(--espacamento-pequeno);
+    transition: color var(--transition-duration) ease-in-out;
 }
 
 .catalogo__quiz__link span {
     font-weight: bold;
-    background: var(--gradiente-vinho);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    color: var(--cor-vinho);
 }
 
-/* Seção Cursos */
+.catalogo__quiz__link:hover {
+    color: var(--cor-vinho-escuro);
+}
+
+/* Esconde inicialmente a div de resultado */
+#resultado {
+    display: none;
+}
+
+/* ---------------------------- SEÇÃO DE CURSOS ---------------------------- */
+
 .cursos__lista {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
+    gap: var(--espacamento-medio);
+    padding: var(--espacamento-medio);
 }
 
 .curso-card-minimal {
     display: flex;
     width: 100%;
     background-color: var(--cor-fundo-branco);
-    border-radius: 12px;
+    border-radius: var(--espacamento-medio); /* 12px */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
     overflow: hidden;
     border: 1px solid #e7d4ea;
     align-items: stretch;
     min-height: 150px;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transição para elevação */
+    transition: transform var(--transition-duration) var(--transition-timing),
+                box-shadow var(--transition-duration) var(--transition-timing); /* Transição para elevação */
 }
 
 .curso-card-minimal:hover {
@@ -700,7 +807,7 @@ h3 {
 
 .curso-card-minimal__conteudo {
     flex: 2;
-    padding: 1rem;
+    padding: var(--espacamento-medio);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -708,9 +815,9 @@ h3 {
 
 .curso-card-minimal__titulo {
     font-family: var(--fonte-titulo);
-    font-size: 1.4rem;
+    font-size: var(--tamanho-h3);
     color: var(--cor-texto-titulo);
-    margin-bottom: 0.4rem;
+    margin-bottom: var(--espacamento-pequeno);
     background: var(--gradiente-vinho);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -720,17 +827,17 @@ h3 {
 
 .curso-card-minimal__chamada {
     font-family: var(--fonte-corpo);
-    font-size: 1rem;
+    font-size: var(--tamanho-texto-base);
     color: var(--cor-vinho);
-    margin-bottom: 0.8rem;
+    margin-bottom: var(--espacamento-medio);
     font-weight: bold;
 }
 
 .curso-card-minimal__incentivo {
-    font-size: 0.9rem;
+    font-size: var(--tamanho-texto-pequeno);
     color: var(--cor-dourado);
     font-style: italic;
-    margin-bottom: 0.6rem;
+    margin-bottom: var(--espacamento-pequeno);
     transition: transform 0.15s ease-in-out; /* Transição para o "fogo" */
 }
 
@@ -741,17 +848,17 @@ h3 {
 .curso-card-minimal__botoes {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    margin-top: 1rem;
+    gap: var(--espacamento-pequeno);
+    margin-top: var(--espacamento-medio);
 }
 
 .curso-card-minimal__cta,
 .curso-card-minimal__pdf-link {
     padding: 0.7rem 1.2rem;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.2s ease-in-out; /* Transição geral dos botões */
+    border-radius: var(--espacamento-pequeno);
+    font-weight: bold;
+    font-size: var(--tamanho-texto-base);
+    transition: all var(--transition-duration) var(--transition-timing); /* Transição geral dos botões */
     text-decoration: none;
     cursor: pointer;
     display: inline-flex;
@@ -763,12 +870,12 @@ h3 {
 .curso-card-minimal__cta {
     background: var(--gradiente-vinho);
     color: var(--cor-fundo-branco);
-    box-shadow: 0 3px 6px rgba(var(--cor-vinho-rgb, 140, 31, 31), 0.4);
+    box-shadow: 0 3px 6px rgba(140, 31, 31, 0.4); /* Usando valores fixos para o rgba */
 }
 
 .curso-card-minimal__cta:hover {
     background: var(--cor-vinho-escuro);
-    box-shadow: 0 4px 8px rgba(var(--cor-vinho-rgb, 140, 31, 31), 0.5);
+    box-shadow: 0 4px 8px rgba(140, 31, 31, 0.5); /* Usando valores fixos para o rgba */
     transform: translateY(-1px);
 }
 
@@ -784,9 +891,9 @@ h3 {
 }
 
 .curso-card-minimal__pdf-link i {
-    margin-right: 0.4rem;
-    font-size: 1rem;
-    transition: transform 0.2s ease-in-out; /* Transição para o ícone */
+    margin-right: var(--espacamento-pequeno);
+    font-size: var(--tamanho-texto-base);
+    transition: transform var(--transition-duration) var(--transition-timing); /* Transição para o ícone */
 }
 
 .curso-card-minimal__pdf-link:hover i {
@@ -797,42 +904,41 @@ h3 {
     flex: 1;
     max-width: 40%;
     overflow: hidden;
-    border-radius: 0 12px 12px 0;
+    border-radius: 0 var(--espacamento-medio) var(--espacamento-medio) 0;
     display: flex;
     align-items: stretch;
     position: relative;
 }
 
-
-
 .curso-card-minimal__imagem img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity var(--transition-duration) var(--transition-timing);
 }
 
 .curso-card-minimal__imagem:hover img {
     opacity: 0.9; /* Leve escurecimento no hover da imagem (opcional) */
 }
 
-/* Seção de agendamento */
+/* ---------------------------- SEÇÃO DE AGENDAMENTO ---------------------------- */
+
 .agendamento {
-    margin: 2rem auto;
-    padding: 2rem;
+    margin: var(--espacamento-grande) auto;
+    padding: var(--espacamento-grande);
     max-width: 75rem; /* 1200px */
     background-color: var(--cor-alternativa); /* Cor de fundo clara */
-    border-radius: 0.5rem; /* 8px */
+    border-radius: var(--espacamento-pequeno); /* 8px */
     text-align: center; /* Centraliza o texto dentro da seção */
 }
 
 /* Título da seção */
 .agendamento__titulo {
-    font-size: clamp(1.75rem, 4vw, 2rem);
+    font-size: clamp(1.75rem, 4vw, var(--tamanho-h2));
     font-weight: bold;
-    color: var(--cor-titulo);
+    color: var(--cor-texto-titulo);
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--espacamento-medio);
     font-family: var(--fonte-titulo);
 }
 
@@ -840,7 +946,7 @@ h3 {
 .agendamento__conteudo {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: var(--espacamento-grande);
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
     align-items: center; /* Centraliza o conteúdo verticalmente */
     text-align: center; /* Garante que o texto dentro do container também fique centralizado */
@@ -850,7 +956,7 @@ h3 {
 .agendamento__imagem img {
     max-width: 100%;
     height: auto;
-    border-radius: 0.5rem;
+    border-radius: var(--espacamento-pequeno);
     box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
 }
 
@@ -866,10 +972,10 @@ h3 {
 
 /* Texto explicativo */
 .agendamento__info p {
-    font-size: 1.1rem;
+    font-size: var(--tamanho-subtitulo);
     color: var(--cor-paragrafos);
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--espacamento-medio);
     text-align: center; /* Centraliza o texto */
 }
 
@@ -877,47 +983,51 @@ h3 {
 .agendamento__link {
     display: block; /* Faz o botão ocupar toda a largura necessária */
     padding: 0.8rem 2rem;
-    font-size: 1.2rem;
+    font-size: var(--tamanho-botao);
     font-weight: bold;
     text-transform: uppercase;
     background: var(--gradiente-vinho);
     color: var(--cor-fundo-branco);
-    border-radius: 0.5rem;
+    border-radius: var(--espacamento-pequeno);
     text-decoration: none;
     text-align: center;
     margin: 0 auto; /* Centraliza o botão */
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-duration) var(--transition-timing);
 }
 
 /* Hover no botão */
 .agendamento__link:hover {
-    background-color: var(--cor-destaque); /* Mudar essa cor, caso precise de um efeito mais claro */
+    background-color: var(--cor-vinho-escuro); /* Usando o tom mais escuro no hover */
 }
 
-/* ****** Carrossel */
+/* ---------------------------- CARROSSEL DE FEEDBACKS ---------------------------- */
+
 /* Estilo geral da seção de feedbacks */
 .feedbacks {
-    padding: 2rem 1rem;
+    padding: var(--espacamento-grande) var(--espacamento-medio);
     width: 100%;
     max-width: 75rem; /* 1200px */
+    height: auto;
     margin: 0 auto;
+    padding-bottom: 1rem;
 }
 
 /* Título da seção */
 .feedback-section-title {
     text-align: center;
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
-    color: var(--cor-destaque);
-    margin-bottom: 2rem;
-    font-weight: 600;
+    font-size: clamp(1.5rem, 3vw, var(--tamanho-h2)); /* Usando tamanho de h2 como máximo */
+    color: var(--cor-vinho); /* Usando a cor vinho como destaque */
+    margin-bottom: var(--espacamento-grande);
+    font-weight: bold;
     font-family: var(--fonte-titulo);
 }
 
 /* Container do Swiper */
 .swiper {
     width: 100%;
+    max-width: 75rem; /* 1200px */
     margin: 0 auto;
-    padding: 1rem;
+    padding: var(--espacamento-medio);
     overflow: hidden;
 }
 
@@ -928,25 +1038,54 @@ h3 {
     align-items: center;
 }
 
+.swiper-pagination {
+    position: relative; /* Garante que a paginação seja posicionada corretamente */
+    bottom: 0; /* Posição padrão, ajuste se necessário */
+    left: 0;
+    width: 100%;
+    text-align: center; /* Centraliza as bolinhas */
+    margin-top: 2rem; /* Adiciona espaço acima das bolinhas */
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    width: 8px; /* Tamanho das bolinhas */
+    height: 8px; /* Tamanho das bolinhas */
+    display: inline-block; /* Permite margens horizontais */
+    border-radius: 50%; /* Faz as bolinhas redondas */
+    background: var(--cor-texto-neutro); /* Cor padrão das bolinhas */
+    opacity: 0.5; /* Opacidade padrão */
+    margin: 0 0.5rem; /* Espaçamento horizontal entre as bolinhas */
+    cursor: pointer; /* Indica que é clicável */
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+    opacity: 1; /* Bolinha ativa fica totalmente visível */
+    background: var(--cor-vinho); /* Cor da bolinha ativa */
+}
+
+.swiper-container {
+    padding-bottom: 5rem; /* Adiciona espaço abaixo do carrossel para a paginação */
+}
+
 /* Card estilo rede social */
 .card-feedback {
     background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 1rem; /* 16px */
+    border-radius: var(--espacamento-medio);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
+    padding: var(--espacamento-grande);
     max-width: 31.25rem; /* 500px */
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    font-family: var(--fonte-subtitulo);
+    gap: var(--espacamento-medio);
+    font-family: var(--fonte-corpo); /* Usando fonte do corpo */
 }
 
 /* Cabeçalho do card com imagem e nome */
 .card-feedback .header {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: var(--espacamento-medio);
     flex-wrap: nowrap;
 }
 
@@ -956,7 +1095,7 @@ h3 {
     height: 4rem;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--cor-destaque);
+    border: 2px solid var(--cor-vinho); /* Usando a cor vinho como destaque */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -968,28 +1107,28 @@ h3 {
 }
 
 .card-feedback .user-info strong {
-    color: var(--cor-titulo);
-    font-size: 1.1rem;
+    color: var(--cor-texto-titulo);
+    font-size: var(--tamanho-subtitulo);
     text-transform: capitalize;
 }
 
 .card-feedback .user-info span {
-    color: var(--cor-secundaria);
-    font-size: 0.9rem;
+    color: var(--cor-texto-neutro); /* Usando cor neutra */
+    font-size: var(--tamanho-texto-pequeno);
 }
 
 /* Comentário com aspas */
 .card-feedback .comment {
-    font-size: 0.9rem;
+    font-size: var(--tamanho-texto-base);
     color: var(--cor-paragrafos);
     line-height: 1.6;
     display: flex;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: var(--espacamento-pequeno);
     text-align: center;
     position: relative;
     padding-left: 2rem;
-    margin-top: 1rem;
+    margin-top: var(--espacamento-medio);
 }
 
 .card-feedback .comment::before {
@@ -1006,46 +1145,41 @@ h3 {
     margin: 0;
 }
 
-/* Espaçamento inferior do swiper */
-.swiper-wrapper {
-    margin-bottom: 3rem;
-}
+/* ---------------------------- SEÇÃO DE LOCALIZAÇÃO ---------------------------- */
 
-
-/* Estilo da seção de localização */
 .location {
     text-align: center;
-    padding: 2.5rem 1.25rem; /* 40px 20px */
-    background-color: var(--cor-primaria);
-    color: var(--cor-neutra);
-    border-radius: 0.5rem; /* 8px */
+    padding: var(--espacamento-grande) var(--espacamento-medio); /* Usando espaçamentos variáveis */
+    background-color: var(--cor-fundo-creme); /* Assumindo que --cor-primaria seria o fundo creme */
+    color: var(--cor-texto-neutro); /* Usando cor neutra para texto geral da seção */
+    border-radius: var(--espacamento-pequeno); /* Usando espaçamento pequeno para o raio da borda */
 }
 
 /* Título */
 .location h2 {
-    font-size: 1.8rem;
-    color: var(--cor-destaque);
+    font-size: var(--tamanho-h2); /* Usando tamanho de h2 */
+    color: var(--cor-vinho); /* Usando a cor vinho como destaque */
     font-family: var(--fonte-titulo);
-    margin-bottom: 1rem;
+    margin-bottom: var(--espacamento-medio);
 }
 
 /* Parágrafos */
 .location p {
-    font-size: 0.95rem;
+    font-size: var(--tamanho-texto-base); /* Usando tamanho base para parágrafos */
     color: var(--cor-paragrafos);
-    font-family: var(--fonte-subtitulo);
-    margin-bottom: 1.5rem;
+    font-family: var(--fonte-corpo); /* Usando a fonte do corpo */
+    margin-bottom: var(--espacamento-grande);
 }
 
 /* Container do mapa */
 .map-container {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--espacamento-grande);
     max-width: 100%;
 }
 
 .map-container iframe {
     width: 100%;
-    border-radius: 0.75rem; /* 12px */
+    border-radius: var(--espacamento-medio); /* Usando espaçamento médio para o raio da borda */
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
@@ -1053,28 +1187,28 @@ h3 {
 .location-address {
     font-weight: bold;
     color: var(--cor-vinho);
-    font-size: 1rem;
+    font-size: var(--tamanho-texto-base); /* Usando tamanho base para o endereço */
     font-family: var(--fonte-corpo);
 }
 
 .location-address i {
-    margin-right: 0.375rem; /* 6px */
+    margin-right: var(--espacamento-pequeno);
     color: var(--cor-vinho);
 }
 
+/* ---------------------------- RODAPÉ ---------------------------- */
 
-/* Estilo geral do rodapé */
 .site-footer {
     background-color: var(--cor-fundo-branco);
-    color: var(--cor-paragrafos);
+    color: var(--cor-texto-corpo); /* Usando a cor de corpo para o texto geral */
     text-align: center;
-    padding: 1rem;
+    padding: var(--espacamento-medio); /* Usando espaçamento padrão */
 }
 
 .site-footer a,
 .site-footer p {
-    font-family: var(--fonte-principal);
-    font-size: 0.875rem; /* 14px */
+    font-family: var(--fonte-corpo); /* Usando a fonte do corpo */
+    font-size: var(--tamanho-texto-pequeno); /* Tamanho menor para o rodapé */
     line-height: 1.4;
 }
 
@@ -1082,32 +1216,32 @@ h3 {
 .site-footer a {
     color: var(--cor-vinho);
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
+    font-weight: bold; /* Links um pouco mais destacados */
+    transition: color var(--transition-duration) var(--transition-timing);
 }
 
 /* Hover nos links */
 .site-footer a:hover {
-    color: var(--cor-vinho); /* Mantém o destaque */
+    color: var(--cor-vinho-escuro); /* Ligeira mudança na cor no hover */
 }
 
 /* Ícones sociais */
 .footer-social {
-    margin-top: 0.5rem;
+    margin-top: var(--espacamento-pequeno);
 }
 
 .footer-social a {
-    margin: 0 0.5rem;
+    margin: 0 var(--espacamento-pequeno);
     color: var(--cor-vinho);
     font-size: 1.2rem;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform var(--transition-duration) var(--transition-timing),
+                color var(--transition-duration) var(--transition-timing);
 }
 
 .footer-social a:hover {
-    color: var(--cor-vinho);
+    color: var(--cor-vinho-escuro);
     transform: scale(1.2);
 }
-
 
 /* Botão fixo do WhatsApp */
 .whatsapp-button {
@@ -1207,7 +1341,7 @@ h3 {
     padding: 10px 8px; /* Menos padding */
     border-radius: 0 8px 8px 0; /* Bordas menores */
     box-shadow: 1px 0 8px rgba(0, 0, 0, 0.15); /* Sombra mais sutil */
-    z-index: 9999;
+    z-index: 10;
     transition: left 0.3s ease-in-out;
 }
 
@@ -1260,3 +1394,38 @@ h3 {
     transform: translateY(-3px); /* Menos elevação no hover */
 }
 
+
+/* ---------------------------- MEDIA QUERIES ---------------------------- */
+
+/* Para notebooks (geralmente a partir de 1024px de largura) */
+@media (min-width: 1024px) {
+    body {
+        max-width: 1440px; /* Uma largura comum para notebooks */
+    }
+
+    .container {
+        max-width: 1380px; /* Ajuste conforme necessário */
+    }
+}
+
+/* Para desktops (geralmente a partir de 1441px de largura) */
+@media (min-width: 1441px) {
+    body {
+        max-width: 1920px; /* Uma largura comum para desktops */
+    }
+
+    .container {
+        max-width: 1800px; /* Ajuste conforme necessário */
+    }
+}
+
+/* Para TVs (geralmente a partir de 1921px de largura) */
+@media (min-width: 1921px) {
+    body {
+        max-width: 2560px; /* Uma largura comum para TVs 4K */
+    }
+
+    .container {
+        max-width: 2400px; /* Ajuste conforme necessário */
+    }
+}
