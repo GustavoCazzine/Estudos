@@ -404,7 +404,7 @@ const quizPerguntas = [
         condicao: (respostas) => respostas.areas?.sobrancelhas > 0 || respostas.areas?.ambos > 0
     },
     {
-        pergunta: "Para seus cílios, você busca mais volume ou curvatura/alongamento?",
+        pergunta: "Para seus cílios, você busca mais volume ou curvatura e alongamento?",
         tipo: "unica",
         opcoes: ["Volume", "Curvatura/Alongamento"],
         pontuacao: {
@@ -539,9 +539,6 @@ function abrirQuiz() {
         barraInterna.textContent = `0%`;
     }
 
-    console.log("--- Abrir Quiz ---");
-    console.log("perguntaAtualIndex:", perguntaAtualIndex);
-    console.log("respostasUsuario:", respostasUsuario);
     atualizarProgresso(); // Chamar a atualização imediatamente após resetar
 
     mostrarPergunta();
