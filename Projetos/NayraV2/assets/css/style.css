@@ -26,10 +26,10 @@
 
     /* 🎯 Cores de marca e ação */
     --cor-vinho: #8C1F1F;
-    --cor-vinho-escuro: #721111;
+    --cor-vinho-escuro: #8f1515;
 
     /* Gradientes */
-    --gradiente-vinho: linear-gradient(to right, var(--cor-vinho), var(--cor-vinho-escuro));
+    --gradiente-vinho: linear-gradient(to right, var(--cor-vinho), var(--cor-vinho-escuro), var(--cor-dourado));
 
     /* 🖋️ Cores de texto */
     --cor-texto-titulo: #000000;
@@ -104,8 +104,6 @@ h3 {
 /* Estilos gerais para o container */
 .container {
     width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -240,7 +238,7 @@ h3 {
     position: absolute;
     bottom: -5px;
     left: 0;
-    width: 100%;
+    width: 150%;
     height: 40%; /* Aumente se quiser um degradê mais longo */
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--cor-fundo-creme) 100%);
     z-index: 3; /* abaixo da imagem mas acima do fundo */
@@ -1380,7 +1378,6 @@ h3 {
     transform: translateY(-3px); /* Menos elevação no hover */
 }
 
-
 /* ---------------------------- MEDIA QUERIES ---------------------------- */
 
 /* Para notebooks (geralmente a partir de 1024px de largura) */
@@ -1591,5 +1588,1131 @@ h3 {
 
     .foto-wrapper::after {
         width: 250%; /* Aumenta mais a largura do gradiente */
+    }
+}
+
+/* ---------------------------- SEÇÃO CATÁLOGO - MEDIA QUERIES ---------------------------- */
+
+/* Para notebooks (a partir de 1024px) */
+@media (min-width: 1024px) {
+    .catalogo {
+        padding: var(--espacamento-grande) 3rem;
+    }
+
+    .container__conteudo__descricao {
+        padding-bottom: 1rem;
+    }
+
+    .catalogo__titulo {
+        font-size: var(--tamanho-h1);
+        margin-bottom: var(--espacamento-grande) * 1.5;
+    }
+
+    .catalogo__menu {
+        margin: var(--espacamento-grande) * 1.5 auto;
+    }
+
+    .catalogo__botao {
+        padding: 0.8rem 1.8rem;
+        font-size: var(--tamanho-subtitulo);
+    }
+
+    .catalogo__carrossel {
+        padding: 2rem 0;
+    }
+
+    .catalogo__card {
+        max-width: 360px; /* Aumento sutil do max-width */
+    }
+
+    .catalogo__card img {
+        height: 260px; /* Aumento sutil da altura da imagem */
+    }
+
+    .catalogo__card__titulo {
+        font-size: var(--tamanho-h2);
+    }
+
+    .catalogo__card__descricao {
+        font-size: var(--tamanho-texto-base) * 1.1;
+    }
+
+    .catalogo__card__caracteristicas span {
+        font-size: 0.8rem;
+        padding: 0.2rem 1rem;
+    }
+
+    .catalogo__cta a {
+        padding: 0.9rem 2rem;
+        font-size: var(--tamanho-subtitulo);
+    }
+
+    .catalogo__pdf {
+        margin-top: var(--espacamento-grande) * 1.5;
+    }
+
+    .catalogo__pdf__link {
+        padding: 1rem 1.8rem;
+        font-size: var(--tamanho-subtitulo);
+    }
+
+    .catalogo__pdf__link i {
+        font-size: 1.4rem;
+    }
+}
+
+/* Para desktops (a partir de 1441px) */
+@media (min-width: 1441px) {
+    .catalogo__titulo {
+        font-size: calc(var(--tamanho-h1) * 1.1);
+    }
+
+    .catalogo__menu {
+        margin: var(--espacamento-grande) * 2 auto;
+    }
+
+    .catalogo__botao {
+        font-size: var(--tamanho-h2);
+    }
+    
+    .catalogo__card {
+        max-width: 420px; /* Aumento sutil do max-width */
+    }
+
+    .catalogo__card img {
+        height: 300px; /* Aumento sutil da altura da imagem */
+    }
+
+    .catalogo__card__titulo {
+        font-size: calc(var(--tamanho-h2) * 1.1);
+    }
+
+    .catalogo__card__descricao {
+        font-size: var(--tamanho-texto-base) * 1.2;
+    }
+
+    .catalogo__card__caracteristicas span {
+        font-size: 0.9rem;
+    }
+
+    .catalogo__cta a {
+        font-size: var(--tamanho-h2);
+    }
+
+    .catalogo__pdf {
+        margin-top: var(--espacamento-grande) * 2;
+    }
+
+    .catalogo__pdf__link {
+        font-size: var(--tamanho-h2);
+    }
+
+    .catalogo__pdf__link i {
+        font-size: 1.6rem;
+    }
+}
+
+/* Para TVs (a partir de 1921px) */
+@media (min-width: 1921px) {
+    .catalogo__titulo {
+        font-size: calc(var(--tamanho-h1) * 1.2);
+    }
+
+    .catalogo__menu {
+        margin: var(--espacamento-grande) * 2.5 auto;
+    }
+
+    .catalogo__botao {
+        font-size: calc(var(--tamanho-h2) * 1.1);
+    }
+
+    .catalogo__carrossel {
+        gap: var(--espacamento-grande) * 1.5; /* Aumentando o gap */
+    }
+
+    .catalogo__card {
+        max-width: 480px; /* Aumento sutil do max-width */
+        margin: 0 1rem;
+    }
+
+    .catalogo__card img {
+        height: 340px; /* Aumento sutil da altura da imagem */
+    }
+
+    .catalogo__card__titulo {
+        font-size: calc(var(--tamanho-h2) * 1.2);
+    }
+
+    .catalogo__card__descricao {
+        font-size: var(--tamanho-texto-base) * 1.3;
+    }
+
+    .catalogo__card__caracteristicas span {
+        font-size: 1rem;
+    }
+
+    .catalogo__cta a {
+        font-size: calc(var(--tamanho-h2) * 1.1);
+    }
+
+    .catalogo__pdf {
+        margin-top: var(--espacamento-grande) * 2.5;
+    }
+
+    .catalogo__pdf__link {
+        font-size: calc(var(--tamanho-h2) * 1.1);
+    }
+
+    .catalogo__pdf__link i {
+        font-size: 1.8rem;
+    }
+}
+
+/* ---------------------------- QUIZ MODAL - MEDIA QUERIES ---------------------------- */
+
+/* Para notebooks (a partir de 1024px) */
+@media (min-width: 1024px) {
+    #quiz-container,
+    #resultado {
+        max-width: 700px; /* Aumenta a largura máxima do modal */
+        padding: var(--espacamento-medio) * 1.5; /* Aumenta o padding interno */
+        padding: 2rem 2rem;
+    }
+
+    #quiz-container h2,
+    #resultado h3 {
+        font-size: var(--tamanho-h1); /* Título maior */
+        margin-bottom: var(--espacamento-medio);
+    }
+
+    #pergunta {
+        font-size: var(--tamanho-subtitulo); /* Pergunta maior */
+        margin-bottom: var(--espacamento-medio);
+        margin-top: var(--espacamento-grande) * 1.5;;
+    }
+
+    #opcoes {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Layout de grid mais espaçoso */
+        gap: var(--espacamento-medio);
+        margin-bottom: var(--espacamento-grande) * 1.5;
+    }
+
+    #opcoes button {
+        padding: 12px 16px; /* Botões maiores */
+        font-size: var(--tamanho-texto-base);
+    }
+
+    #servico-recomendado-msg {
+        gap: var(--espacamento-grande);
+    }
+
+    #servico-recomendado-msg > div {
+        max-width: 500px; /* Largura máxima maior para o resultado */
+        padding: var(--espacamento-medio);
+    }
+
+    #servico-recomendado-msg h3 {
+        font-size: var(--tamanho-h1);
+        margin-bottom: var(--espacamento-medio);
+    }
+
+    #servico-recomendado-msg strong {
+        font-size: var(--tamanho-h2);
+        margin-bottom: var(--espacamento-medio);
+    }
+
+    #servico-recomendado-msg img {
+        max-width: 150px;
+        margin-bottom: var(--espacamento-medio);
+    }
+
+    #whatsapp-link {
+        padding: 12px 24px;
+        font-size: var(--tamanho-texto-base);
+        margin-top: var(--espacamento-medio);
+    }
+
+    .quiz-fechar-botao {
+        font-size: 2rem;
+        top: var(--espacamento-medio);
+        right: var(--espacamento-medio);
+    }
+
+    #quiz-progresso {
+        height: 12px;
+        margin-top: var(--espacamento-medio);
+    }
+
+    #quiz-progresso > div {
+        font-size: 1em;
+        line-height: 12px;
+    }
+}
+
+/* Para desktops (a partir de 1441px) */
+@media (min-width: 1441px) {
+    #quiz-container,
+    #resultado {
+        max-width: 800px;
+        padding: var(--espacamento-grande);
+    }
+
+    #quiz-container h2,
+    #resultado h3 {
+        font-size: calc(var(--tamanho-h1) * 1.1);
+    }
+
+    #pergunta {
+        font-size: var(--tamanho-h2);
+    }
+
+    #opcoes {
+        gap: var(--espacamento-grande);
+    }
+
+    #opcoes button {
+        font-size: var(--tamanho-subtitulo);
+        padding: 15px 20px;
+    }
+
+    #servico-recomendado-msg h3 {
+        font-size: calc(var(--tamanho-h1) * 1.1);
+    }
+
+    #servico-recomendado-msg strong {
+        font-size: var(--tamanho-h1);
+    }
+
+    #servico-recomendado-msg img {
+        max-width: 180px;
+    }
+
+    #whatsapp-link {
+        font-size: var(--tamanho-subtitulo);
+        padding: 15px 30px;
+    }
+
+    .quiz-fechar-botao {
+        font-size: 2.2rem;
+    }
+
+    #quiz-progresso {
+        height: 14px;
+    }
+
+    #quiz-progresso > div {
+        font-size: 1.1em;
+        line-height: 14px;
+    }
+}
+
+/* Para TVs (a partir de 1921px) */
+@media (min-width: 1921px) {
+    #quiz-container,
+    #resultado {
+        max-width: 900px;
+        padding: var(--espacamento-grande) * 1.5;
+        padding: 2rem 2rem;
+
+    }
+
+    #quiz-container h2,
+    #resultado h3 {
+        font-size: calc(var(--tamanho-h1) * 1.2);
+    }
+
+    #pergunta {
+        font-size: calc(var(--tamanho-h2) * 1.1);
+    }
+
+    #opcoes {
+        gap: 1rem;
+
+    }
+
+    #opcoes button {
+        font-size: var(--tamanho-h2);
+        padding: 18px 24px;
+    }
+
+    #servico-recomendado-msg h3 {
+        font-size: calc(var(--tamanho-h1) * 1.2);
+    }
+
+    #servico-recomendado-msg strong {
+        font-size: calc(var(--tamanho-h1) * 1.1);
+    }
+
+    #servico-recomendado-msg img {
+        max-width: 200px;
+    }
+
+    #whatsapp-link {
+        font-size: var(--tamanho-h2);
+        padding: 18px 36px;
+    }
+
+    .quiz-fechar-botao {
+        font-size: 2.4rem;
+    }
+
+    #quiz-progresso {
+        height: 16px;
+    }
+
+    #quiz-progresso > div {
+        font-size: 1.2em;
+        line-height: 16px;
+    }
+}
+
+/* ---------------------------- SEÇÃO CURSOS - MEDIA QUERIES ---------------------------- */
+
+/* Para notebooks (a partir de 1024px) */
+@media (min-width: 1024px) {
+    .cursos__lista {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: var(--espacamento-grande);
+    }
+
+    .curso-card-minimal {
+        max-width: 100%;
+        flex-direction: row;
+        align-items: center;
+        min-height: 180px; /* Reduzindo a altura mínima */
+    }
+
+    .curso-card-minimal__conteudo {
+        flex: 1;
+        padding: var(--espacamento-grande);
+    }
+
+    .curso-card-minimal__titulo {
+        font-size: var(--tamanho-h2);
+        margin-bottom: var(--espacamento-medio);
+    }
+
+    .curso-card-minimal__chamada {
+        font-size: var(--tamanho-subtitulo);
+        margin-bottom: var(--espacamento-grande);
+    }
+
+    .curso-card-minimal__incentivo {
+        font-size: var(--tamanho-texto-base);
+        margin-bottom: var(--espacamento-medio);
+    }
+
+    .curso-card-minimal__botoes {
+        flex-direction: row;
+        gap: var(--espacamento-medio);
+        margin-top: var(--espacamento-medio); /* Reduzindo a margem superior dos botões */
+    }
+
+    .curso-card-minimal__cta,
+    .curso-card-minimal__pdf-link {
+        padding: 0.8rem 1.4rem; /* Reduzindo o padding dos botões */
+        font-size: var(--tamanho-texto-base); /* Reduzindo o tamanho da fonte dos botões */
+    }
+
+    .curso-card-minimal__pdf-link i {
+        font-size: var(--tamanho-texto-base);
+    }
+
+    .curso-card-minimal__imagem {
+        max-width: 350px; /* Diminuindo a largura máxima da imagem */
+        min-width: 250px;
+        height: auto;
+        border-radius:  0 0 var(--espacamento-medio);
+    }
+}
+
+/* Para desktops (a partir de 1441px) */
+@media (min-width: 1441px) {
+    .cursos__lista {
+        max-width: 1000px;
+        padding: var(--espacamento-grande) * 1.2;
+    }
+
+    .curso-card-minimal {
+        min-height: 200px; /* Reduzindo a altura mínima */
+    }
+
+    .curso-card-minimal__titulo {
+        font-size: calc(var(--tamanho-h2) * 1.1);
+    }
+
+    .curso-card-minimal__chamada {
+        font-size: var(--tamanho-subtitulo);
+    }
+
+    .curso-card-minimal__incentivo {
+        font-size: var(--tamanho-texto-base);
+    }
+
+    .curso-card-minimal__cta,
+    .curso-card-minimal__pdf-link {
+        padding: 0.9rem 1.6rem;
+        font-size: var(--tamanho-subtitulo);
+    }
+
+    .curso-card-minimal__pdf-link i {
+        font-size: var(--tamanho-subtitulo);
+    }
+
+    .curso-card-minimal__imagem {
+        max-width: 400px; /* Diminuindo a largura máxima da imagem */
+        min-width: 300px;
+    }
+}
+
+/* Para TVs (a partir de 1921px) */
+@media (min-width: 1921px) {
+    .cursos__lista {
+        max-width: 1200px;
+        padding: var(--espacamento-grande) * 1.5;
+    }
+
+    .curso-card-minimal {
+        min-height: 220px; /* Reduzindo a altura mínima */
+    }
+
+    .curso-card-minimal__titulo {
+        font-size: calc(var(--tamanho-h2) * 1.2);
+    }
+
+    .curso-card-minimal__chamada {
+        font-size: calc(var(--tamanho-subtitulo) * 1.1);
+    }
+
+    .curso-card-minimal__incentivo {
+        font-size: var(--tamanho-texto-base) * 1.1;
+    }
+
+    .curso-card-minimal__cta,
+    .curso-card-minimal__pdf-link {
+        padding: 1rem 1.8rem;
+        font-size: var(--tamanho-h2);
+    }
+
+    .curso-card-minimal__pdf-link i {
+        font-size: var(--tamanho-h2);
+    }
+
+    .curso-card-minimal__imagem {
+        max-width: 450px; /* Diminuindo a largura máxima da imagem */
+        min-width: 350px;
+    }
+}
+
+/* ---------------------------- SEÇÃO AGENDAMENTO - MEDIA QUERIES ---------------------------- */
+
+/* Para notebooks (a partir de 1024px) */
+@media (min-width: 1024px) {
+    .agendamento {
+        padding: var(--espacamento-grande) * 2;
+        text-align: left;
+        max-width: 800px; /* Limita a largura da seção */
+        margin: 5rem auto; /* Centraliza a seção */
+    }
+
+    .agendamento__titulo {
+        font-size: var(--tamanho-h1);
+        text-align: left;
+        margin-bottom: var(--espacamento-grande);
+    }
+
+    .agendamento__conteudo {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center; /* Alinha verticalmente ao centro */
+        text-align: left;
+    }
+
+    .agendamento__imagem {
+        flex-shrink: 0;
+        max-width: 35%; /* Diminui a largura máxima da imagem */
+    }
+
+    .agendamento__info {
+        flex: 1;
+        max-width: none;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .agendamento__info p {
+        font-size: var(--tamanho-h3);
+        text-align: left;
+        margin-bottom: var(--espacamento-grande);
+    }
+
+    .agendamento__link {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        font-size: var(--tamanho-subtitulo);
+        margin: 0;
+    }
+}
+
+/* Para desktops (a partir de 1441px) */
+@media (min-width: 1441px) {
+    .agendamento {
+        padding: var(--espacamento-grande) * 3;
+        max-width: 1200px; /* Mantém ou ajusta a largura máxima */
+    }
+
+    .agendamento__titulo {
+        font-size: calc(var(--tamanho-h1) * 1.1);
+        margin-bottom: var(--espacamento-grande) * 1.5;
+    }
+
+    .agendamento__imagem {
+        max-width: 30%; /* Diminui ainda mais em telas maiores se necessário */
+    }
+
+    .agendamento__info p {
+        font-size: calc(var(--tamanho-h2) * 1.1);
+        margin-bottom: var(--espacamento-grande) * 1.5;
+    }
+
+    .agendamento__link {
+        padding: 1.2rem 3rem;
+        font-size: var(--tamanho-h2);
+    }
+}
+
+/* Para TVs (a partir de 1921px) */
+@media (min-width: 1921px) {
+    .agendamento {
+        padding: var(--espacamento-grande) * 4;
+        max-width: 1000px; /* Ajusta para telas muito grandes */
+    }
+
+    .agendamento__titulo {
+        font-size: calc(var(--tamanho-h1) * 1.2);
+        margin-bottom: var(--espacamento-grande) * 2;
+    }
+
+    .agendamento__imagem {
+        max-width: 25%; /* Diminui mais ainda em telas muito grandes */
+    }
+
+    .agendamento__info p {
+        font-size: calc(var(--tamanho-h2) * 1.2);
+        margin-bottom: var(--espacamento-grande) * 2;
+    }
+
+    .agendamento__link {
+        padding: 1.4rem 3.5rem;
+        font-size: calc(var(--tamanho-h2) * 1.1);
+    }
+}
+
+/* ---------------------------- SEÇÃO FEEDBACKS - MEDIA QUERIES ---------------------------- */
+
+/* Para notebooks (a partir de 1024px) */
+@media (min-width: 1024px) {
+    .feedbacks {
+        padding: var(--espacamento-grande) 3rem;
+    }
+
+    .feedback-section-title {
+        font-size: var(--tamanho-h1);
+        margin-bottom: var(--espacamento-grande) * 1.5;
+    }
+
+    .swiper {
+        max-width: 80rem; /* Aumenta a largura máxima do Swiper */
+        padding: var(--espacamento-grande);
+    }
+
+    .card-feedback {
+        max-width: 35rem; /* Aumenta um pouco a largura máxima do card */
+        padding: var(--espacamento-grande) * 1.5;
+        gap: var(--espacamento-grande);
+        padding: 2rem;
+    }
+
+    .card-feedback img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .card-feedback .user-info strong {
+        font-size: var(--tamanho-h2);
+    }
+
+    .card-feedback .user-info span {
+        font-size: var(--tamanho-texto-base);
+    }
+
+    .card-feedback .comment {
+        font-size: var(--tamanho-subtitulo);
+        padding-left: 2.5rem;
+    }
+
+    .card-feedback .comment::before {
+        font-size: 3rem;
+    }
+
+    .swiper-pagination {
+        margin-top: 3rem;
+    }
+
+    .swiper-pagination .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        margin: 0 0.75rem;
+    }
+}
+
+/* Para desktops (a partir de 1441px) */
+@media (min-width: 1441px) {
+    .feedbacks {
+        padding: var(--espacamento-grande) 4rem;
+    }
+
+    .feedback-section-title {
+        font-size: calc(var(--tamanho-h1) * 1.1);
+        margin-bottom: var(--espacamento-grande) * 2;
+    }
+
+    .swiper {
+        max-width: 90rem;
+    }
+
+    .card-feedback {
+        max-width: 40rem;
+        padding: var(--espacamento-grande) * 2;
+        gap: var(--espacamento-grande) * 1.2;
+    }
+
+    .card-feedback img {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .card-feedback .user-info strong {
+        font-size: calc(var(--tamanho-h2) * 1.1);
+    }
+
+    .card-feedback .user-info span {
+        font-size: var(--tamanho-subtitulo);
+    }
+
+    .card-feedback .comment {
+        font-size: calc(var(--tamanho-subtitulo) * 1.1);
+        padding-left: 3rem;
+    }
+
+    .card-feedback .comment::before {
+        font-size: 3.5rem;
+    }
+
+    .swiper-pagination {
+        margin-top: 4rem;
+    }
+
+    .swiper-pagination .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        margin: 0 1rem;
+    }
+}
+
+/* Para TVs (a partir de 1921px) */
+@media (min-width: 1921px) {
+    .feedbacks {
+        padding: var(--espacamento-grande) 5rem;
+    }
+
+    .feedback-section-title {
+        font-size: calc(var(--tamanho-h1) * 1.2);
+        margin-bottom: var(--espacamento-grande) * 2.5;
+    }
+
+    .swiper {
+        max-width: 100rem;
+    }
+
+    .card-feedback {
+        max-width: 45rem;
+        padding: var(--espacamento-grande) * 2.5;
+        gap: var(--espacamento-grande) * 1.5;
+        padding: 3rem 2rem;
+    }
+
+    .card-feedback img {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .card-feedback .user-info strong {
+        font-size: calc(var(--tamanho-h2) * 1.2);
+    }
+
+    .card-feedback .user-info span {
+        font-size: calc(var(--tamanho-subtitulo) * 1.1);
+    }
+
+    .card-feedback .comment {
+        font-size: calc(var(--tamanho-subtitulo) * 1.2);
+        padding-left: 3.5rem;
+    }
+
+    .card-feedback .comment::before {
+        font-size: 4rem;
+    }
+
+    .swiper-pagination {
+        margin-top: 5rem;
+    }
+
+    .swiper-pagination .swiper-pagination-bullet {
+        width: 14px;
+        height: 14px;
+        margin: 0 1.25rem;
+    }
+}
+
+/* ---------------------------- SEÇÃO LOCALIZAÇÃO - MEDIA QUERIES ---------------------------- */
+
+/* Para notebooks (a partir de 1024px) */
+@media (min-width: 1024px) {
+    .location {
+        padding: var(--espacamento-grande) 3rem;
+    }
+
+    .location__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .location h2 {
+        font-size: var(--tamanho-h1);
+    }
+
+    .location p {
+        font-size: var(--tamanho-subtitulo);
+        margin-bottom: var(--espacamento-grande) * 1.5;
+    }
+
+    .map-container {
+        display: block; /* Garante que é um elemento de bloco */
+        max-width: 80%; /* Largura do mapa */
+        width: 100%;
+        margin: 0 auto var(--espacamento-grande) * 1.5; /* Centraliza */
+    }
+
+    .map-container iframe {
+        min-height: 400px;
+    }
+
+    .location-address {
+        font-size: var(--tamanho-subtitulo);
+    }
+
+    .location-address i {
+        font-size: var(--tamanho-subtitulo);
+        margin-right: var(--espacamento-medio);
+    }
+}
+
+/* Para desktops (a partir de 1441px) */
+@media (min-width: 1441px) {
+    .location {
+        padding: var(--espacamento-grande) 4rem;
+    }
+
+    .location h2 {
+        font-size: calc(var(--tamanho-h1) * 1.1);
+        margin-bottom: var(--espacamento-grande) * 1.5;
+    }
+
+    .location p {
+        font-size: calc(var(--tamanho-subtitulo) * 1.1);
+        margin-bottom: var(--espacamento-grande) * 2;
+    }
+
+    .map-container {
+        display: block; /* Garante que é um elemento de bloco */
+        max-width: 80%; /* Largura do mapa */
+        width: 100%;
+        margin: 0 auto var(--espacamento-grande) * 2; /* Centraliza */
+    }
+
+    .map-container iframe {
+        min-height: 500px;
+    }
+
+    .location-address {
+        font-size: var(--tamanho-h2);
+    }
+
+    .location-address i {
+        font-size: var(--tamanho-h2);
+        margin-right: var(--espacamento-medio);
+    }
+}
+
+/* Para TVs (a partir de 1921px) */
+@media (min-width: 1921px) {
+    .location {
+        padding: var(--espacamento-grande) 5rem;
+    }
+
+    .location h2 {
+        font-size: calc(var(--tamanho-h1) * 1.2);
+        margin-bottom: var(--espacamento-grande) * 2;
+    }
+
+    .location p {
+        font-size: calc(var(--tamanho-subtitulo) * 1.2);
+        margin-bottom: var(--espacamento-grande) * 2.5;
+    }
+
+    .map-container {
+        display: block; /* Garante que é um elemento de bloco */
+        max-width: 70%; /* Largura do mapa */
+        width: 100%;
+        margin: 0 auto var(--espacamento-grande) * 2.5; /* Centraliza */
+    }
+
+    .map-container iframe {
+        min-height: 600px;
+    }
+
+    .location-address {
+        font-size: calc(var(--tamanho-h2) * 1.1);
+    }
+
+    .location-address i {
+        font-size: calc(var(--tamanho-h2) * 1.1);
+        margin-right: var(--espacamento-grande);
+    }
+}
+
+/* ---------------------------- SEÇÃO FOOTER - MEDIA QUERIES ---------------------------- */
+
+/* Para notebooks (a partir de 1024px) */
+@media (min-width: 1024px) {
+    .site-footer {
+        padding: var(--espacamento-grande) 3rem;
+        width: 80%;
+        max-width: 1200px; /* Limita a largura do footer */
+        margin: 0 auto; /* Centraliza o footer */
+        text-align: left;
+    }
+
+    .site-footer__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer-content {
+        text-align: left;
+    }
+
+    .site-footer a,
+    .site-footer p {
+        font-size: var(--tamanho-texto-base);
+    }
+
+    .footer-social {
+        margin-top: 0; /* Remove a margem superior */
+        display: flex;
+        gap: var(--espacamento-grande);
+        margin-right: 5rem;
+    }
+
+    .footer-social a {
+        font-size: 1.4rem;
+        margin: 0 var(--espacamento-medio);
+    }
+}
+
+/* Para desktops (a partir de 1441px) */
+@media (min-width: 1441px) {
+    .site-footer {
+        padding: var(--espacamento-grande) * 1.5 4rem;
+        max-width: 1400px; /* Aumenta um pouco a largura máxima */
+    }
+
+    .site-footer a,
+    .site-footer p {
+        font-size: var(--tamanho-subtitulo);
+    }
+
+    .footer-social a {
+        font-size: 1.6rem;
+        margin: 0 var(--espacamento-grande);
+    }
+}
+
+/* Para TVs (a partir de 1921px) */
+@media (min-width: 1921px) {
+    .site-footer {
+        padding: var(--espacamento-grande) * 2 5rem;
+        max-width: 1600px; /* Aumenta mais a largura máxima */
+    }
+
+    .site-footer a,
+    .site-footer p {
+        font-size: var(--tamanho-h2);
+    }
+
+    .footer-social a {
+        font-size: 1.8rem;
+        margin: 0 var(--espacamento-grande) * 1.5;
+    }
+}
+
+/* ---------------------------- BOTÃO WHATSAPP FIXO - MEDIA QUERIES ---------------------------- */
+
+/* Para tablets e notebooks (acima de 768px) */
+@media (min-width: 768px) {
+    .whatsapp-button {
+        width: 70px;
+        height: 70px;
+        bottom: 30px;
+        right: -110px;
+    }
+
+    .whatsapp-button.visible {
+        transform: translateX(-130px);
+    }
+
+    .whatsapp-tooltip {
+        bottom: 80px;
+        right: 20px;
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    .whatsapp-tooltip::after {
+        bottom: -8px;
+        right: 20px;
+        border-width: 8px 8px 0 8px;
+    }
+}
+
+/* Para desktops (a partir de 1200px) */
+@media (min-width: 1200px) {
+    .whatsapp-button {
+        width: 80px;
+        height: 80px;
+        bottom: 40px;
+        right: -120px;
+    }
+
+    .whatsapp-button.visible {
+        transform: translateX(-140px);
+    }
+
+    .whatsapp-tooltip {
+        bottom: 90px;
+        right: 30px;
+        font-size: 18px;
+        padding: 12px 18px;
+    }
+
+    .whatsapp-tooltip::after {
+        bottom: -10px;
+        right: 25px;
+        border-width: 10px 10px 0 10px;
+    }
+}
+
+/* Para telas muito grandes */
+@media (min-width: 1600px) {
+    .whatsapp-button {
+        width: 90px;
+        height: 90px;
+        bottom: 50px;
+        right: -130px;
+    }
+
+    .whatsapp-button.visible {
+        transform: translateX(-150px);
+    }
+
+    .whatsapp-tooltip {
+        bottom: 100px;
+        right: 40px;
+        font-size: 20px;
+        padding: 14px 20px;
+    }
+
+    .whatsapp-tooltip::after {
+        bottom: -12px;
+        right: 30px;
+        border-width: 12px 12px 0 12px;
+    }
+}
+
+/* ---------------------------- BARRA LATERAL DE REDES SOCIAIS - MEDIA QUERIES ---------------------------- */
+
+/* Para telas menores (até 767px) - Ocultar para não ocupar espaço em telas pequenas */
+@media (max-width: 767px) {
+    .social-bar {
+        display: none;
+    }
+}
+
+/* Para tablets (a partir de 768px) */
+@media (min-width: 768px) {
+    .social-bar {
+        left: 10px; /* Mais visível por padrão em tablets */
+        padding: 15px 10px;
+    }
+
+    .social-icon {
+        font-size: 22px;
+        margin: 10px 0;
+    }
+
+    .newsletter {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+}
+
+/* Para notebooks (a partir de 1024px) */
+@media (min-width: 1024px) {
+    .social-bar {
+        left: 20px; /* Mais afastada da borda */
+        padding: 20px 12px;
+    }
+
+    .social-icon {
+        font-size: 24px;
+        margin: 12px 0;
+    }
+
+    .newsletter {
+        font-size: 16px;
+        margin-top: 25px;
+    }
+}
+
+/* Para desktops (a partir de 1441px) */
+@media (min-width: 1441px) {
+    .social-bar {
+        left: 30px;
+    }
+
+    .social-icon {
+        font-size: 26px;
+        margin: 15px 0;
+    }
+
+    .newsletter {
+        font-size: 18px;
+        margin-top: 30px;
     }
 }
