@@ -106,6 +106,9 @@ h3 {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-grande);
 }
 
 /* ---------------------------- CABEÇALHO ---------------------------- */
@@ -1537,7 +1540,7 @@ h3 {
     }
 
     .secao-principal__fundo__paragrafo {
-        font-size: 160px; /* Aumenta um pouco o texto de fundo */
+        font-size: 100px; /* Aumenta um pouco o texto de fundo */
     }
 
     .secao-principal__titulo {
@@ -1593,6 +1596,8 @@ h3 {
 
 /* ---------------------------- SEÇÃO CATÁLOGO - MEDIA QUERIES ---------------------------- */
 
+/* ---------------------------- SEÇÃO CATÁLOGO - MEDIA QUERIES (AJUSTE TELAS GRANDES - VALORES FIXOS MENORES) ---------------------------- */
+
 /* Para notebooks (a partir de 1024px) */
 @media (min-width: 1024px) {
     .catalogo {
@@ -1605,16 +1610,75 @@ h3 {
 
     .catalogo__titulo {
         font-size: var(--tamanho-h1);
-        margin-bottom: var(--espacamento-grande) * 1.5;
+        margin-bottom: calc(var(--espacamento-grande) * 1.5);
     }
 
     .catalogo__menu {
-        margin: var(--espacamento-grande) * 1.5 auto;
+        margin: calc(var(--espacamento-grande) * 1.5) auto;
     }
 
     .catalogo__botao {
-        padding: 0.8rem 1.8rem;
+        padding: 0.3rem 0.8rem; /* Menor */
         font-size: var(--tamanho-subtitulo);
+    }
+
+    .catalogo__carrossel {
+        padding: 1.5rem 0; /* Menor */
+    }
+
+    .catalogo__card {
+        max-width: 340px; /* Menor */
+    }
+
+    .catalogo__card img {
+        height: 240px; /* Menor */
+    }
+
+    .catalogo__card__titulo {
+        font-size: var(--tamanho-h2);
+    }
+
+    .catalogo__card__descricao {
+        font-size: calc(var(--tamanho-texto-base) * 1.05); /* Menor */
+    }
+
+    .catalogo__card__caracteristicas span {
+        font-size: 0.75rem; /* Menor */
+        padding: 0.15rem 0.8rem; /* Menor */
+    }
+
+    .catalogo__cta a {
+        padding: 0.7rem 1.5rem; /* Menor */
+        font-size: var(--tamanho-subtitulo);
+    }
+
+    .catalogo__pdf {
+        margin-top: calc(var(--espacamento-grande) * 1.2); /* Menor */
+    }
+
+    .catalogo__pdf__link {
+        padding: 0.8rem 1.4rem; /* Menor */
+        font-size: var(--tamanho-subtitulo);
+    }
+
+    .catalogo__pdf__link i {
+        font-size: 1.2rem; /* Menor */
+    }
+}
+
+/* Para desktops (a partir de 1441px) */
+@media (min-width: 1441px) {
+    .catalogo__titulo {
+        font-size: 3.3rem; /* Menor */
+    }
+
+    .catalogo__menu {
+        margin: calc(var(--espacamento-grande) * 1.8) auto; /* Menor */
+    }
+
+    .catalogo__botao {
+        font-size: 1.7rem; /* Menor */
+        padding: 0.3rem 0.8rem; /* Menor */
     }
 
     .catalogo__carrossel {
@@ -1622,149 +1686,169 @@ h3 {
     }
 
     .catalogo__card {
-        max-width: 360px; /* Aumento sutil do max-width */
+        max-width: 400px; /* Menor */
     }
 
     .catalogo__card img {
-        height: 260px; /* Aumento sutil da altura da imagem */
+        height: 280px; /* Menor */
     }
 
     .catalogo__card__titulo {
-        font-size: var(--tamanho-h2);
+        font-size: 2.1rem; /* Menor */
     }
 
     .catalogo__card__descricao {
-        font-size: var(--tamanho-texto-base) * 1.1;
+        font-size: calc(var(--tamanho-texto-base) * 1.1); /* Menor */
     }
 
     .catalogo__card__caracteristicas span {
-        font-size: 0.8rem;
-        padding: 0.2rem 1rem;
+        font-size: 0.8rem; /* Menor */
+        padding: 0.2rem 0.9rem; /* Menor */
     }
 
     .catalogo__cta a {
-        padding: 0.9rem 2rem;
-        font-size: var(--tamanho-subtitulo);
+        font-size: 1.7rem; /* Menor */
+        padding: 0.8rem 1.8rem; /* Menor */
     }
 
     .catalogo__pdf {
-        margin-top: var(--espacamento-grande) * 1.5;
+        margin-top: calc(var(--espacamento-grande) * 1.5); /* Menor */
     }
 
     .catalogo__pdf__link {
-        padding: 1rem 1.8rem;
-        font-size: var(--tamanho-subtitulo);
+        font-size: 1.7rem; /* Menor */
+        padding: 0.9rem 1.6rem; /* Menor */
     }
 
     .catalogo__pdf__link i {
-        font-size: 1.4rem;
-    }
-}
-
-/* Para desktops (a partir de 1441px) */
-@media (min-width: 1441px) {
-    .catalogo__titulo {
-        font-size: calc(var(--tamanho-h1) * 1.1);
-    }
-
-    .catalogo__menu {
-        margin: var(--espacamento-grande) * 2 auto;
-    }
-
-    .catalogo__botao {
-        font-size: var(--tamanho-h2);
-    }
-    
-    .catalogo__card {
-        max-width: 420px; /* Aumento sutil do max-width */
-    }
-
-    .catalogo__card img {
-        height: 300px; /* Aumento sutil da altura da imagem */
-    }
-
-    .catalogo__card__titulo {
-        font-size: calc(var(--tamanho-h2) * 1.1);
-    }
-
-    .catalogo__card__descricao {
-        font-size: var(--tamanho-texto-base) * 1.2;
-    }
-
-    .catalogo__card__caracteristicas span {
-        font-size: 0.9rem;
-    }
-
-    .catalogo__cta a {
-        font-size: var(--tamanho-h2);
-    }
-
-    .catalogo__pdf {
-        margin-top: var(--espacamento-grande) * 2;
-    }
-
-    .catalogo__pdf__link {
-        font-size: var(--tamanho-h2);
-    }
-
-    .catalogo__pdf__link i {
-        font-size: 1.6rem;
+        font-size: 1.4rem; /* Menor */
     }
 }
 
 /* Para TVs (a partir de 1921px) */
 @media (min-width: 1921px) {
     .catalogo__titulo {
-        font-size: calc(var(--tamanho-h1) * 1.2);
+        font-size: 3.0rem; /* Menor */
     }
 
     .catalogo__menu {
-        margin: var(--espacamento-grande) * 2.5 auto;
+        margin: var(--espacamento-grande) * 0.8 auto; /* Menor */
     }
 
     .catalogo__botao {
-        font-size: calc(var(--tamanho-h2) * 1.1);
+        font-size: 1.8rem; /* Menor */
+        padding: 0.3rem 0.8rem; /* Menor */
     }
 
     .catalogo__carrossel {
-        gap: var(--espacamento-grande) * 1.5; /* Aumentando o gap */
+        padding: 2rem 0;
+        gap: var(--espacamento-grande); /* Menor gap */
     }
 
     .catalogo__card {
-        max-width: 480px; /* Aumento sutil do max-width */
-        margin: 0 1rem;
+        max-width: 440px; /* Menor */
+        margin: 0 0.8rem; /* Menor margem */
     }
 
     .catalogo__card img {
-        height: 340px; /* Aumento sutil da altura da imagem */
+        height: 300px; /* Menor */
     }
 
     .catalogo__card__titulo {
-        font-size: calc(var(--tamanho-h2) * 1.2);
+        font-size: 2.2rem; /* Menor */
     }
 
     .catalogo__card__descricao {
-        font-size: var(--tamanho-texto-base) * 1.3;
+        font-size: calc(var(--tamanho-texto-base) * 1.15); /* Menor */
     }
 
     .catalogo__card__caracteristicas span {
-        font-size: 1rem;
+        font-size: 0.85rem; /* Menor */
+        padding: 0.2rem 0.9rem; /* Menor */
     }
 
     .catalogo__cta a {
-        font-size: calc(var(--tamanho-h2) * 1.1);
+        font-size: 1.8rem; /* Menor */
+        padding: 0.9rem 1.8rem; /* Menor */
     }
 
     .catalogo__pdf {
-        margin-top: var(--espacamento-grande) * 2.5;
+        margin-top: calc(var(--espacamento-grande) * 1.8); /* Menor */
     }
 
     .catalogo__pdf__link {
-        font-size: calc(var(--tamanho-h2) * 1.1);
+        font-size: 1.8rem; /* Menor */
+        padding: 1rem 1.6rem; /* Menor */
     }
 
     .catalogo__pdf__link i {
-        font-size: 1.8rem;
+        font-size: 1.5rem; /* Menor */
+    }
+}
+
+/* Para telas muito grandes (a partir de 2000px) */
+@media (min-width: 2000px) {
+    .catalogo {
+        padding: 30px 4rem; /* Menor padding */
+    }
+
+    .catalogo__titulo {
+        font-size: 2.6rem; /* Bem menor */
+        margin-bottom: 30px; /* Menor margem */
+    }
+
+    .catalogo__menu {
+        margin: 30px auto; /* Menor margem */
+    }
+
+    .catalogo__botao {
+        padding: 0.2rem 0.6rem; /* Bem menor */
+        font-size: 1.4rem; /* Bem menor */
+    }
+
+    .catalogo__carrossel {
+        padding: 1rem 0; /* Menor */
+        gap: 20px; /* Menor gap */
+    }
+
+    .catalogo__card {
+        max-width: 380px; /* Menor */
+        margin: 0 0.6rem; /* Menor margem */
+    }
+
+    .catalogo__card img {
+        height: 260px; /* Menor */
+    }
+
+    .catalogo__card__titulo {
+        font-size: 1.8rem; /* Bem menor */
+    }
+
+    .catalogo__card__descricao {
+        font-size: 1.2rem; /* Bem menor */
+    }
+
+    .catalogo__card__caracteristicas span {
+        font-size: 0.7rem; /* Bem menor */
+        padding: 0.1rem 0.6rem; /* Bem menor */
+    }
+
+    .catalogo__cta a {
+        font-size: 1.4rem; /* Bem menor */
+        padding: 0.6rem 1.2rem; /* Bem menor */
+    }
+
+    .catalogo__pdf {
+        margin-top: 25px; /* Menor margem */
+    }
+
+    .catalogo__pdf__link {
+        font-size: 1.4rem; /* Bem menor */
+        padding: 0.7rem 1.2rem; /* Bem menor */
+    }
+
+    .catalogo__pdf__link i {
+        font-size: 1.2rem; /* Bem menor */
     }
 }
 
@@ -1980,7 +2064,7 @@ h3 {
         max-width: 100%;
         flex-direction: row;
         align-items: center;
-        min-height: 180px; /* Reduzindo a altura mínima */
+        min-height: 160px; /* Reduzindo a altura mínima */
     }
 
     .curso-card-minimal__conteudo {
@@ -2110,10 +2194,10 @@ h3 {
 /* Para notebooks (a partir de 1024px) */
 @media (min-width: 1024px) {
     .agendamento {
-        padding: var(--espacamento-grande) * 2;
+        padding: calc(var(--espacamento-grande) * 2);
         text-align: left;
-        max-width: 800px; /* Limita a largura da seção */
-        margin: 5rem auto; /* Centraliza a seção */
+        max-width: 800px;
+        margin: 5rem auto;
     }
 
     .agendamento__titulo {
@@ -2123,15 +2207,16 @@ h3 {
     }
 
     .agendamento__conteudo {
+        display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
-        align-items: center; /* Alinha verticalmente ao centro */
+        align-items: center;
         text-align: left;
     }
 
     .agendamento__imagem {
         flex-shrink: 0;
-        max-width: 35%; /* Diminui a largura máxima da imagem */
+        max-width: 35%;
     }
 
     .agendamento__info {
@@ -2158,58 +2243,86 @@ h3 {
 /* Para desktops (a partir de 1441px) */
 @media (min-width: 1441px) {
     .agendamento {
-        padding: var(--espacamento-grande) * 3;
-        max-width: 1200px; /* Mantém ou ajusta a largura máxima */
+        padding: calc(var(--espacamento-grande) * 3);
+        max-width: 1200px;
     }
 
     .agendamento__titulo {
-        font-size: calc(var(--tamanho-h1) * 1.1);
-        margin-bottom: var(--espacamento-grande) * 1.5;
+        font-size: 3.5rem; /* Menor */
+        margin-bottom: calc(var(--espacamento-grande) * 1.2);
     }
 
     .agendamento__imagem {
-        max-width: 30%; /* Diminui ainda mais em telas maiores se necessário */
+        max-width: 30%;
     }
 
     .agendamento__info p {
-        font-size: calc(var(--tamanho-h2) * 1.1);
-        margin-bottom: var(--espacamento-grande) * 1.5;
+        font-size: 2.2rem; /* Menor */
+        margin-bottom: calc(var(--espacamento-grande) * 1.2);
     }
 
     .agendamento__link {
         padding: 1.2rem 3rem;
-        font-size: var(--tamanho-h2);
+        font-size: 1.8rem; /* Menor */
     }
 }
 
 /* Para TVs (a partir de 1921px) */
 @media (min-width: 1921px) {
     .agendamento {
-        padding: var(--espacamento-grande) * 4;
-        max-width: 1000px; /* Ajusta para telas muito grandes */
+        padding: calc(var(--espacamento-grande) * 3.5); /* Menor */
+        max-width: 1100px; /* Menor */
     }
 
     .agendamento__titulo {
-        font-size: calc(var(--tamanho-h1) * 1.2);
-        margin-bottom: var(--espacamento-grande) * 2;
+        font-size: 3.2rem; /* Menor */
+        margin-bottom: calc(var(--espacamento-grande) * 1);
     }
 
     .agendamento__imagem {
-        max-width: 25%; /* Diminui mais ainda em telas muito grandes */
+        max-width: 28%; /* Menor */
     }
 
     .agendamento__info p {
-        font-size: calc(var(--tamanho-h2) * 1.2);
-        margin-bottom: var(--espacamento-grande) * 2;
+        font-size: 2.0rem; /* Menor */
+        margin-bottom: calc(var(--espacamento-grande) * 1);
     }
 
     .agendamento__link {
-        padding: 1.4rem 3.5rem;
-        font-size: calc(var(--tamanho-h2) * 1.1);
+        padding: 1.3rem 3.2rem; /* Menor */
+        font-size: 1.7rem; /* Menor */
     }
 }
 
-/* ---------------------------- SEÇÃO FEEDBACKS - MEDIA QUERIES ---------------------------- */
+/* Para telas muito grandes (a partir de 2000px) */
+@media (min-width: 2000px) {
+    .agendamento {
+        padding: 50px; /* Valor fixo menor */
+        max-width: 1000px; /* Valor fixo menor */
+        margin: 4rem auto; /* Valor fixo menor */
+    }
+
+    .agendamento__titulo {
+        font-size: 2.8rem; /* Valor fixo bem menor */
+        margin-bottom: 25px; /* Valor fixo menor */
+    }
+
+    .agendamento__imagem {
+        max-width: 25%; /* Valor fixo menor */
+    }
+
+    .agendamento__info p {
+        font-size: 1.8rem; /* Valor fixo bem menor */
+        margin-bottom: 25px; /* Valor fixo menor */
+    }
+
+    .agendamento__link {
+        padding: 1rem 2.5rem; /* Valor fixo menor */
+        font-size: 1.5rem; /* Valor fixo bem menor */
+    }
+}
+
+/* ---------------------------- SEÇÃO FEEDBACKS - MEDIA QUERIES (AJUSTE TELAS GRANDES - VALORES FIXOS MENORES) ---------------------------- */
 
 /* Para notebooks (a partir de 1024px) */
 @media (min-width: 1024px) {
@@ -2219,19 +2332,18 @@ h3 {
 
     .feedback-section-title {
         font-size: var(--tamanho-h1);
-        margin-bottom: var(--espacamento-grande) * 1.5;
+        margin-bottom: calc(var(--espacamento-grande) * 1.5);
     }
 
     .swiper {
-        max-width: 80rem; /* Aumenta a largura máxima do Swiper */
+        max-width: 80rem;
         padding: var(--espacamento-grande);
     }
 
     .card-feedback {
-        max-width: 35rem; /* Aumenta um pouco a largura máxima do card */
-        padding: var(--espacamento-grande) * 1.5;
-        gap: var(--espacamento-grande);
+        max-width: 35rem;
         padding: 2rem;
+        gap: var(--espacamento-grande);
     }
 
     .card-feedback img {
@@ -2274,109 +2386,163 @@ h3 {
     }
 
     .feedback-section-title {
-        font-size: calc(var(--tamanho-h1) * 1.1);
-        margin-bottom: var(--espacamento-grande) * 2;
+        font-size: 3.3rem; /* Menor */
+        margin-bottom: calc(var(--espacamento-grande) * 1.8);
     }
 
     .swiper {
-        max-width: 90rem;
+        max-width: 85rem; /* Menor */
     }
 
     .card-feedback {
-        max-width: 40rem;
-        padding: var(--espacamento-grande) * 2;
-        gap: var(--espacamento-grande) * 1.2;
+        max-width: 38rem; /* Menor */
+        padding: 1.5rem; /* Menor */
+        gap: calc(var(--espacamento-grande) * 0.9); /* Menor */
     }
 
     .card-feedback img {
-        width: 6rem;
-        height: 6rem;
+        width: 4.5rem; /* Menor */
+        height: 4.5rem; /* Menor */
     }
 
     .card-feedback .user-info strong {
-        font-size: calc(var(--tamanho-h2) * 1.1);
+        font-size: 2.0rem; /* Menor */
     }
 
     .card-feedback .user-info span {
-        font-size: var(--tamanho-subtitulo);
+        font-size: 1.4rem; /* Menor */
     }
 
     .card-feedback .comment {
-        font-size: calc(var(--tamanho-subtitulo) * 1.1);
-        padding-left: 3rem;
+        font-size: 1.6rem; /* Menor */
+        padding-left: 2.8rem; /* Menor */
     }
 
     .card-feedback .comment::before {
-        font-size: 3.5rem;
+        font-size: 2.8rem; /* Menor */
     }
 
     .swiper-pagination {
-        margin-top: 4rem;
+        margin-top: 3rem; /* Menor */
     }
 
     .swiper-pagination .swiper-pagination-bullet {
-        width: 12px;
-        height: 12px;
-        margin: 0 1rem;
+        width: 9px; /* Menor */
+        height: 9px; /* Menor */
+        margin: 0 0.6rem; /* Menor */
     }
 }
 
 /* Para TVs (a partir de 1921px) */
 @media (min-width: 1921px) {
     .feedbacks {
-        padding: var(--espacamento-grande) 5rem;
+        padding: var(--espacamento-grande) 3.5rem; /* Menor */
     }
 
     .feedback-section-title {
-        font-size: calc(var(--tamanho-h1) * 1.2);
-        margin-bottom: var(--espacamento-grande) * 2.5;
+        font-size: 3.0rem; /* Menor */
+        margin-bottom: calc(var(--espacamento-grande) * 1.5);
     }
 
     .swiper {
-        max-width: 100rem;
+        max-width: 80rem; /* Menor */
     }
 
     .card-feedback {
-        max-width: 45rem;
-        padding: var(--espacamento-grande) * 2.5;
-        gap: var(--espacamento-grande) * 1.5;
-        padding: 3rem 2rem;
+        max-width: 35rem; /* Menor */
+        padding: 1.2rem; /* Menor */
+        gap: calc(var(--espacamento-grande) * 0.8); /* Menor */
     }
 
     .card-feedback img {
-        width: 7rem;
-        height: 7rem;
+        width: 4rem; /* Menor */
+        height: 4rem; /* Menor */
     }
 
     .card-feedback .user-info strong {
-        font-size: calc(var(--tamanho-h2) * 1.2);
+        font-size: 1.8rem; /* Menor */
     }
 
     .card-feedback .user-info span {
-        font-size: calc(var(--tamanho-subtitulo) * 1.1);
+        font-size: 1.3rem; /* Menor */
     }
 
     .card-feedback .comment {
-        font-size: calc(var(--tamanho-subtitulo) * 1.2);
-        padding-left: 3.5rem;
+        font-size: 1.5rem; /* Menor */
+        padding-left: 2.5rem; /* Menor */
     }
 
     .card-feedback .comment::before {
-        font-size: 4rem;
+        font-size: 2.5rem; /* Menor */
     }
 
     .swiper-pagination {
-        margin-top: 5rem;
+        margin-top: 2.5rem; /* Menor */
     }
 
     .swiper-pagination .swiper-pagination-bullet {
-        width: 14px;
-        height: 14px;
-        margin: 0 1.25rem;
+        width: 8px; /* Menor */
+        height: 8px; /* Menor */
+        margin: 0 0.5rem; /* Menor */
     }
 }
 
-/* ---------------------------- SEÇÃO LOCALIZAÇÃO - MEDIA QUERIES ---------------------------- */
+/* Para telas muito grandes (a partir de 2000px) */
+@media (min-width: 2000px) {
+    .feedbacks {
+        padding: 20px 4rem; /* Menor */
+    }
+
+    .feedback-section-title {
+        font-size: 2.6rem; /* Bem menor */
+        margin-bottom: 20px; /* Menor */
+    }
+
+    .swiper {
+        max-width: 75rem; /* Menor */
+        padding: 20px; /* Menor */
+    }
+
+    .card-feedback {
+        max-width: 32rem; /* Menor */
+        padding: 1rem; /* Menor */
+        gap: 15px; /* Menor */
+    }
+
+    .card-feedback img {
+        width: 3.5rem; /* Bem menor */
+        height: 3.5rem; /* Bem menor */
+    }
+
+    .card-feedback .user-info strong {
+        font-size: 1.6rem; /* Bem menor */
+    }
+
+    .card-feedback .user-info span {
+        font-size: 1.2rem; /* Bem menor */
+    }
+
+    .card-feedback .comment {
+        font-size: 1.4rem; /* Bem menor */
+        padding-left: 2.2rem; /* Menor */
+    }
+
+    .card-feedback .comment::before {
+        font-size: 2.2rem; /* Bem menor */
+    }
+
+    .swiper-pagination {
+        margin-top: 2rem; /* Menor */
+    }
+
+    .swiper-pagination .swiper-pagination-bullet {
+        width: 7px; /* Bem menor */
+        height: 7px; /* Bem menor */
+        margin: 0 0.4rem; /* Menor */
+    }
+}
+
+/* ---------------------------- SEÇÃO LOCALIZAÇÃO - MEDIA QUERIES (AJUSTE TELAS GRANDES) ---------------------------- */
 
 /* Para notebooks (a partir de 1024px) */
 @media (min-width: 1024px) {
@@ -2397,14 +2563,14 @@ h3 {
 
     .location p {
         font-size: var(--tamanho-subtitulo);
-        margin-bottom: var(--espacamento-grande) * 1.5;
+        margin-bottom: calc(var(--espacamento-grande) * 1.5);
     }
 
     .map-container {
-        display: block; /* Garante que é um elemento de bloco */
-        max-width: 80%; /* Largura do mapa */
+        display: block;
+        max-width: 80%;
         width: 100%;
-        margin: 0 auto var(--espacamento-grande) * 1.5; /* Centraliza */
+        margin: 0 auto calc(var(--espacamento-grande) * 1.5);
     }
 
     .map-container iframe {
@@ -2428,32 +2594,30 @@ h3 {
     }
 
     .location h2 {
-        font-size: calc(var(--tamanho-h1) * 1.1);
-        margin-bottom: var(--espacamento-grande) * 1.5;
+        font-size: 3.0rem; /* Menor */
+        margin-bottom: calc(var(--espacamento-grande) * 1);
     }
 
     .location p {
-        font-size: calc(var(--tamanho-subtitulo) * 1.1);
-        margin-bottom: var(--espacamento-grande) * 2;
+        font-size: 1.5rem; /* Menor */
+        margin-bottom: calc(var(--espacamento-grande) * 1.2);
     }
 
     .map-container {
-        display: block; /* Garante que é um elemento de bloco */
-        max-width: 80%; /* Largura do mapa */
-        width: 100%;
-        margin: 0 auto var(--espacamento-grande) * 2; /* Centraliza */
+        max-width: 60%; /* Ligeiramente menor */
+        margin: 0 auto calc(var(--espacamento-grande) * 1.2);
     }
 
     .map-container iframe {
-        min-height: 500px;
+        min-height: 400px; /* Menor */
     }
 
     .location-address {
-        font-size: var(--tamanho-h2);
+        font-size: 1.8rem; /* Menor */
     }
 
     .location-address i {
-        font-size: var(--tamanho-h2);
+        font-size: 1.8rem; /* Menor */
         margin-right: var(--espacamento-medio);
     }
 }
@@ -2461,53 +2625,86 @@ h3 {
 /* Para TVs (a partir de 1921px) */
 @media (min-width: 1921px) {
     .location {
-        padding: var(--espacamento-grande) 5rem;
+        padding: var(--espacamento-grande) 3rem; /* Menor padding */
     }
 
     .location h2 {
-        font-size: calc(var(--tamanho-h1) * 1.2);
-        margin-bottom: var(--espacamento-grande) * 2;
+        font-size: 2.6rem; /* Menor */
+        margin-bottom: calc(var(--espacamento-grande) * 0.8);
     }
 
     .location p {
-        font-size: calc(var(--tamanho-subtitulo) * 1.2);
-        margin-bottom: var(--espacamento-grande) * 2.5;
+        font-size: 1.4rem; /* Menor */
+        margin-bottom: calc(var(--espacamento-grande) * 1);
     }
 
     .map-container {
-        display: block; /* Garante que é um elemento de bloco */
-        max-width: 70%; /* Largura do mapa */
-        width: 100%;
-        margin: 0 auto var(--espacamento-grande) * 2.5; /* Centraliza */
+        max-width: 50%; /* Menor */
+        margin: 0 auto calc(var(--espacamento-grande) * 1);
     }
 
     .map-container iframe {
-        min-height: 600px;
+        min-height: 350px; /* Menor */
     }
 
     .location-address {
-        font-size: calc(var(--tamanho-h2) * 1.1);
+        font-size: 1.6rem; /* Menor */
     }
 
     .location-address i {
-        font-size: calc(var(--tamanho-h2) * 1.1);
-        margin-right: var(--espacamento-grande);
+        font-size: 1.6rem; /* Menor */
+        margin-right: var(--espacamento-pequeno);
     }
 }
 
-/* ---------------------------- SEÇÃO FOOTER - MEDIA QUERIES ---------------------------- */
+/* Para telas muito grandes (a partir de 2000px) */
+@media (min-width: 2000px) {
+    .location {
+        padding: 25px 4rem; /* Menor padding */
+    }
+
+    .location h2 {
+        font-size: 2.2rem; /* Bem menor */
+        margin-bottom: 20px; /* Menor margem */
+    }
+
+    .location p {
+        font-size: 1.3rem; /* Bem menor */
+        margin-bottom: 25px; /* Menor margem */
+    }
+
+    .map-container {
+        max-width: 45%; /* Menor */
+        margin-bottom: 25px; /* Menor margem */
+    }
+
+    .map-container iframe {
+        min-height: 300px; /* Bem menor */
+    }
+
+    .location-address {
+        font-size: 1.4rem; /* Bem menor */
+    }
+
+    .location-address i {
+        font-size: 1.4rem; /* Bem menor */
+        margin-right: 10px; /* Menor margem */
+    }
+}
+
+/* ---------------------------- SEÇÃO FOOTER - MEDIA QUERIES (AJUSTE TELAS GRANDES - VALORES FIXOS) ---------------------------- */
 
 /* Para notebooks (a partir de 1024px) */
 @media (min-width: 1024px) {
     .site-footer {
         padding: var(--espacamento-grande) 3rem;
         width: 80%;
-        max-width: 1200px; /* Limita a largura do footer */
-        margin: 0 auto; /* Centraliza o footer */
+        max-width: 1200px;
+        margin: 0 auto;
         text-align: left;
     }
 
-    .site-footer__container{
+    .site-footer__container {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -2524,9 +2721,9 @@ h3 {
     }
 
     .footer-social {
-        margin-top: 0; /* Remove a margem superior */
+        margin-top: 0;
         display: flex;
-        gap: var(--espacamento-grande);
+        gap: var(--espacamento-pequeno);
         margin-right: 5rem;
     }
 
@@ -2539,8 +2736,8 @@ h3 {
 /* Para desktops (a partir de 1441px) */
 @media (min-width: 1441px) {
     .site-footer {
-        padding: var(--espacamento-grande) * 1.5 4rem;
-        max-width: 1400px; /* Aumenta um pouco a largura máxima */
+        padding: 48px 4rem; /* Supondo que --espacamento-grande seja 32px */
+        max-width: 1400px;
     }
 
     .site-footer a,
@@ -2557,8 +2754,8 @@ h3 {
 /* Para TVs (a partir de 1921px) */
 @media (min-width: 1921px) {
     .site-footer {
-        padding: var(--espacamento-grande) * 2 5rem;
-        max-width: 1600px; /* Aumenta mais a largura máxima */
+        padding: 64px 5rem; /* Supondo que --espacamento-grande seja 32px */
+        max-width: 1600px;
     }
 
     .site-footer a,
@@ -2568,11 +2765,31 @@ h3 {
 
     .footer-social a {
         font-size: 1.8rem;
-        margin: 0 var(--espacamento-grande) * 1.5;
+        margin: 0 48px; /* Supondo que --espacamento-grande seja 32px */
     }
 }
 
-/* ---------------------------- BOTÃO WHATSAPP FIXO - MEDIA QUERIES ---------------------------- */
+/* Para telas muito grandes (a partir de 2000px) */
+@media (min-width: 2000px) {
+    .site-footer {
+        padding: 80px 6rem; /* Valor fixo */
+        max-width: 1800px; /* Valor fixo */
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .site-footer a,
+    .site-footer p {
+        font-size: 1.6rem; /* Valor fixo */
+    }
+
+    .footer-social a {
+        font-size: 1.6rem; /* Valor fixo */
+        margin: 0 1.5rem; /* Valor fixo */
+    }
+}
+
+/* ---------------------------- BOTÃO WHATSAPP FIXO - MEDIA QUERIES (AJUSTE TELAS GRANDES - VALORES FIXOS) ---------------------------- */
 
 /* Para tablets e notebooks (acima de 768px) */
 @media (min-width: 768px) {
@@ -2631,33 +2848,33 @@ h3 {
 /* Para telas muito grandes */
 @media (min-width: 1600px) {
     .whatsapp-button {
-        width: 90px;
-        height: 90px;
-        bottom: 50px;
-        right: -130px;
+        width: 85px;
+        height: 85px;
+        bottom: 45px;
+        right: -125px;
     }
 
     .whatsapp-button.visible {
-        transform: translateX(-150px);
+        transform: translateX(-145px);
     }
 
     .whatsapp-tooltip {
-        bottom: 100px;
-        right: 40px;
-        font-size: 20px;
-        padding: 14px 20px;
+        bottom: 95px;
+        right: 35px;
+        font-size: 19px;
+        padding: 13px 19px;
     }
 
     .whatsapp-tooltip::after {
-        bottom: -12px;
-        right: 30px;
-        border-width: 12px 12px 0 12px;
+        bottom: -11px;
+        right: 28px;
+        border-width: 11px 11px 0 11px;
     }
 }
 
-/* ---------------------------- BARRA LATERAL DE REDES SOCIAIS - MEDIA QUERIES ---------------------------- */
+/* ---------------------------- BARRA LATERAL DE REDES SOCIAIS - MEDIA QUERIES (AJUSTE TELAS GRANDES - VALORES FIXOS) ---------------------------- */
 
-/* Para telas menores (até 767px) - Ocultar para não ocupar espaço em telas pequenas */
+/* Para telas menores (até 767px) */
 @media (max-width: 767px) {
     .social-bar {
         display: none;
@@ -2667,7 +2884,7 @@ h3 {
 /* Para tablets (a partir de 768px) */
 @media (min-width: 768px) {
     .social-bar {
-        left: 10px; /* Mais visível por padrão em tablets */
+        left: 10px;
         padding: 15px 10px;
     }
 
@@ -2685,7 +2902,7 @@ h3 {
 /* Para notebooks (a partir de 1024px) */
 @media (min-width: 1024px) {
     .social-bar {
-        left: 20px; /* Mais afastada da borda */
+        left: 20px;
         padding: 20px 12px;
     }
 
@@ -2714,5 +2931,23 @@ h3 {
     .newsletter {
         font-size: 18px;
         margin-top: 30px;
+    }
+}
+
+/* Para telas muito grandes */
+@media (min-width: 1600px) {
+    .social-bar {
+        left: 35px;
+        padding: 18px 10px;
+    }
+
+    .social-icon {
+        font-size: 25px;
+        margin: 10px 0;
+    }
+
+    .newsletter {
+        font-size: 17px;
+        margin-top: 22px;
     }
 }
