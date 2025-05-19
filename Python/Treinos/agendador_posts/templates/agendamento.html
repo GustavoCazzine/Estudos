@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agendar Post</title>
+</head>
+<body>
+    <h1>Agendar Novo Post</h1>
+    <form method="POST" action="/agendar">
+        <div>
+            <label for="mensagem">Mensagem:</label><br>
+            <textarea id="mensagem" name="mensagem" rows="4" cols="50" required></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="data">Data (AAAA-MM-DD):</label>
+            <input type="date" id="data" name="data" required>
+        </div>
+        <br>
+        <div>
+            <label for="hora">Hora (HH:MM):</label>
+            <input type="time" id="hora" name="hora" required>
+        </div>
+        <br>
+        <button type="submit">Agendar</button>
+    </form>
+</body>
+</html>

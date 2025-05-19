@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olá Mundo</title>
+  <title>Condicionais em JavaScript</title>
 </head>
 <body>
-    <h1 id="titulo"></h1>
+  <button id="meuBotao" onclick="mudarTexto()">Clique aqui</button>
+  <p id="mensagem"></p>
+    <button onclick="verificarIdade()">Aperte</but>
+  <script>
+    let estado = false;
+    let elementoBotao = document.getElementById('meuBotao');
+    let elementoMensagem = document.getElementById('mensagem');
 
-    <script src="script.js">
-    </script>
+    function mudarTexto() {
+      if (estado === false) {
+        elementoMensagem.textContent = 'O botão foi clicado!';
+        elementoBotao.textContent = 'Desclicar';
+        estado = true;
+      } else {
+        elementoMensagem.textContent = 'Clique no botão novamente.';
+        elementoBotao.textContent = 'Clique aqui';
+        estado = false;
+      }
+    }
+
+    let idade = 21;
+    function verificarIdade(){
+        if (idade >= 18){
+            alert('Você é maior de idade');
+        } else {
+            alert('Você é menor de idade');
+        }
+
+    }
+  </script>
 </body>
 </html>

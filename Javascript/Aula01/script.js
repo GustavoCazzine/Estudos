@@ -1,1 +1,3 @@
-document.getElementById("titulo").textContent("Olá Mundo")
+function olaMundo() {
+    alert("Olá Mundo!");
+}

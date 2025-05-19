@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const whatsappTooltip = document.querySelector('.whatsapp-tooltip');
     let tooltipShown = false;
 
+    // Função para mostrar/esconder o botão
     function toggleWhatsAppButton() {
         if (window.scrollY > 100) {
             whatsappButton.classList.add('visible');
@@ -36,13 +37,28 @@ document.addEventListener('DOMContentLoaded', function () {
                     }, 500);
                 }, 2000);
             }
+        } else {
+            whatsappButton.classList.remove('visible');
+            whatsappButton.classList.add('hidden');
         }
     }
 
-    window.addEventListener('scroll', debounce(toggleWhatsAppButton, 100));
-    toggleWhatsAppButton(); // Define o estado inicial
-});
+    // Função debounce para evitar chamadas excessivas
+    function debounce(func, wait) {
+        let timeout;
+        return function () {
+            const context = this;
+            const args = arguments;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(context, args), wait);
+        };
+    }
 
+    // Escuta o scroll e chama a função com debounce
+    window.addEventListener('scroll', debounce(toggleWhatsAppButton, 100));
+
+    toggleWhatsAppButton(); // Executa uma vez ao carregar
+});
 
 // Cards Feedbacks
 const slides = [
@@ -162,7 +178,7 @@ const cursos = [
     {
         titulo: "Sobrancelhas Perfeitas: Design, Henna e Geometria",
         beneficio: "Transforme olhares com designs simétricos e lucrativos!",
-        imagem: "assets/img/cursos/sobrancelhas.jpg",
+        imagem: "assets/img/cursos/sobrancelhas.png",
         mensagemWhats: "Olá! Tenho interesse no curso de Sobrancelhas.",
         pdfLink: "/caminho/para/o/pdf-do-curso-3.pdf"
     }
@@ -272,7 +288,7 @@ function mostrarServicos(tipo) {
     const servicos = tipo === "sobrancelhas" ? servicosSobrancelhas : servicosCilios;
 
     // DUPLICAR para simular carrossel infinito
-    const servicosDuplicados = [...servicos, ...servicos];
+    const servicosDuplicados = [...servicos]
 
     servicosDuplicados.forEach((servico) => {
         const card = document.createElement("div");
@@ -344,27 +360,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.addEventListener(
-    "scroll",
-    debounce(() => {
-        const socialBar = document.getElementById("socialBar");
+document.addEventListener("DOMContentLoaded", () => {
+    const socialBar = document.getElementById("socialBar");
+    const toggleBar = document.getElementById("toggleBar");
 
-        if (window.scrollY > 100) {
+    let isVisible = false;
+
+    function updateTogglePosition() {
+        if (isVisible) {
+            toggleBar.classList.remove("floating");
+            toggleBar.classList.add("shifted");
             socialBar.classList.add("visible");
         } else {
+            toggleBar.classList.remove("shifted");
+            toggleBar.classList.add("floating");
             socialBar.classList.remove("visible");
         }
-    }, 100)
-);
+    }
 
-// Função debounce para otimizar o desempenho
-function debounce(func, wait) {
-    let timeout;
-    return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), wait);
-    };
-}
+    toggleBar.addEventListener("click", () => {
+        isVisible = !isVisible;
+        updateTogglePosition();
+    });
+
+    // Inicializa como flutuando
+    updateTogglePosition();
+});
+
+
 
 // Função Quiz
 const listaSobrancelhasQuiz = [
