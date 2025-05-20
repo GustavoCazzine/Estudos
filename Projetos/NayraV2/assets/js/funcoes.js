@@ -389,72 +389,192 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Função Quiz
 const listaSobrancelhasQuiz = [
-    { id: 'brow_lamination', titulo: "Brow Lamination", descricao: "Alinhamento e fixação...", caracteristicas: ["Alinhamento duradouro", "Efeito natural", "Fios disciplinados"], imagem: 'assets/img/servicos/sobrancelhas/BrowLamination.jpg' },
-    { id: 'nanobrows', titulo: "Nanobrows", descricao: "Micropigmentação fio a fio...", caracteristicas: ["Fio a fio realista", "Naturalidade", "Longa duração"], imagem: 'assets/img/servicos/sobrancelhas/Nanobrows.jpg' },
-    { id: 'design_sobrancelhas', titulo: "Design personalizado", descricao: "Modelagem exclusiva...", caracteristicas: ["Personalizado", "Harmônico", "Preciso"], imagem: 'assets/img/servicos/sobrancelhas/DesignerSobrancelhasPersonalizado.jpg' },
-    { id: 'designer_henna', titulo: "Designer com henna", descricao: "Coloração temporária...", caracteristicas: ["Definido", "Coloração temporária", "Preenchimento natural"], imagem: 'assets/img/servicos/sobrancelhas/DesignerHenna.jpg' }
+    { id: 'design_sobrancelha', titulo: "Design de Sobrancelha", descricao: "Trabalhamos com o formato natural...", caracteristicas: ["Formato natural", "Desenho único", "Pode ser natural ou marcado"], imagem: 'assets/img/servicos/sobrancelhas/DesignSobrancelha.jpg' },
+    { id: 'design_com_henna', titulo: "Design com Henna", descricao: "Ideal para quem tem falhas...", caracteristicas: ["Preenchimento de falhas", "Natural", "Levemente marcado"], imagem: 'assets/img/servicos/sobrancelhas/DesignComHenna.jpg' },
+    { id: 'brow_lamination', titulo: "Brow Lamination", descricao: "Alinhamento dos fios por até 8 semanas...", caracteristicas: ["Alinhamento duradouro", "Preenche falhas", "Volume"], imagem: 'assets/img/servicos/sobrancelhas/BrowLamination.jpg' },
+    { id: 'nanobrows', titulo: "NanoBrows", descricao: "Evolução da micropigmentação...", caracteristicas: ["Fios realistas", "Indolor", "Volume", "Correção do formato"], imagem: 'assets/img/servicos/sobrancelhas/NanoBrows.jpg' }
 ];
 
 const listaCiliosQuiz = [
-    { id: 'volume_moana', titulo: "Volume Moana", descricao: "Cílios volumosos e naturais...", caracteristicas: ["Volume leve", "Efeito natural", "Confortável"], imagem: 'assets/img/servicos/cilios/VolumeMoana.jpg' },
-    { id: 'volume_jasmine', titulo: "Volume Jasmine", descricao: "Olhar mais marcante com leques...", caracteristicas: ["Olhar marcante", "Leques leves", "Durabilidade"], imagem: 'assets/img/servicos/cilios/VolumeJasmine.jpg' },
-    { id: 'lash_lifting', titulo: "Lash Lifting", descricao: "Curvatura natural sem extensão...", caracteristicas: ["Sem extensão", "Curvatura duradoura", "Olhar aberto"], imagem: 'assets/img/servicos/cilios/LashLifting.jpg' },
-    { id: 'fox_eyes', titulo: "Fox Eyes", descricao: "Olhar alongado e sensual...", caracteristicas: ["Olhar alongado", "Efeito lifting", "Sensualidade"], imagem: 'assets/img/servicos/cilios/FoxEyes.jpg' }
+    { id: 'lash_lifting', titulo: "Lash Lifting", descricao: "Curvamento dos fios naturais...", caracteristicas: ["Curvamento natural", "Pode tingir", "Hidrata os fios"], imagem: 'assets/img/servicos/cilios/LashLifting.jpg' },
+    { id: 'volume_brasileiro', titulo: "Volume Brasileiro", descricao: "Fios em formato de Y...", caracteristicas: ["Volume", "Preenche 80% a 100% dos fios"], imagem: 'assets/img/servicos/cilios/VolumeBrasileiro.jpg' },
+    { id: 'volume_moana', titulo: "Volume Moana", descricao: "Volume encantador e natural...", caracteristicas: ["Volume", "Naturalidade", "Elegância"], imagem: 'assets/img/servicos/cilios/VolumeMoana.jpg' },
+    { id: 'volume_jasmine', titulo: "Volume Jasmine", descricao: "Volume e olhar encantador...", caracteristicas: ["Volume", "Elegância", "Sofisticação"], imagem: 'assets/img/servicos/cilios/VolumeJasmine.jpg' },
+    { id: 'extensoes_pro', titulo: "Extensões Pro", descricao: "Maior preenchimento e durabilidade...", caracteristicas: ["Preenchimento", "Durabilidade", "Sem manutenção"], imagem: 'assets/img/servicos/cilios/ExtensoesPro.jpg' },
+    { id: 'fox_eyes', titulo: "Efeito Fox Eyes", descricao: "Alonga e levanta os cílios...", caracteristicas: ["Alongamento", "Lifting", "Sofisticado"], imagem: 'assets/img/servicos/cilios/FoxEyes.jpg' },
+     { id: 'volume_shine', titulo: "Volume Shine", descricao: "Volume luminoso e radiante...", caracteristicas: ["Volume", "Luminoso", "Radiante"], imagem: 'assets/img/servicos/cilios/VolumeShine.jpg' }
 ];
 
-// Perguntas do quiz
+// Perguntas do quiz (Você precisará adaptar essas perguntas para cobrir todos os serviços)
 const quizPerguntas = [
     {
-        pergunta: "Qual seu objetivo principal?",
+        pergunta: "Qual área você deseja realçar principalmente?",
         tipo: "unica",
-        opcoes: ["Realçar sobrancelhas", "Realçar cílios", "Realçar ambos"],
+        opcoes: ["Cílios", "Sobrancelhas", "Ambos"],
         pontuacao: {
-            "Realçar sobrancelhas": { areas: { sobrancelhas: 1 } },
-            "Realçar cílios": { areas: { cilios: 1 } },
-            "Realçar ambos": { areas: { sobrancelhas: 1, cilios: 1, ambos: 1 } }
+            "Cílios": { areas: { cilios: 1 } },
+            "Sobrancelhas": { areas: { sobrancelhas: 1 } },
+            "Ambos": { areas: { sobrancelhas: 1, cilios: 1, ambos: 1 } }
         }
     },
-    {
-        pergunta: "Para suas sobrancelhas, você prefere um efeito mais natural ou definido?",
+   {
+        pergunta: "Qual o efeito de cílios que você mais deseja?",
         tipo: "unica",
-        opcoes: ["Natural", "Definido"],
+        opcoes: ["Cílios curvados e alongados naturalmente", "Cílios com volume e preenchimento", "Um olhar mais exótico e marcante"],
         pontuacao: {
-            "Natural": { brow_lamination: 1, design_sobrancelhas: 0.5 },
-            "Definido": { nanobrows: 1, designer_henna: 1 }
-        },
-        condicao: (respostas) => respostas.areas?.sobrancelhas > 0 || respostas.areas?.ambos > 0
-    },
-    {
-        pergunta: "Para seus cílios, você busca mais volume ou curvatura e alongamento?",
-        tipo: "unica",
-        opcoes: ["Volume", "Curvatura/Alongamento"],
-        pontuacao: {
-            "Volume": { volume_moana: 1, volume_jasmine: 1 },
-            "Curvatura/Alongamento": { lash_lifting: 1, fox_eyes: 1 }
+            "Cílios curvados e alongados naturalmente": { lash_lifting: 1, volume_moana: 0.7 },
+            "Cílios com volume e preenchimento": { volume_brasileiro: 0.8, volume_jasmine: 0.9, volume_shine: 0.8 },
+            "Um olhar mais exótico e marcante": { fox_eyes: 1, extensoes_pro: 0.6 }
         },
         condicao: (respostas) => respostas.areas?.cilios > 0 || respostas.areas?.ambos > 0
     },
     {
-        pergunta: "Você prefere um procedimento de longa duração para as sobrancelhas?",
+        pergunta: "Com que frequência você prefere fazer a manutenção dos cílios?",
         tipo: "unica",
-        opcoes: ["Sim", "Não"],
+        opcoes: ["Prefiro um procedimento sem manutenção", "Estou disposta a fazer manutenção regular", "Prefiro algo de curta duração para eventos"],
         pontuacao: {
-            "Sim": { nanobrows: 1 },
-            "Não": { brow_lamination: 0.5, design_sobrancelhas: 0.5, designer_henna: 0.5 }
+            "Prefiro um procedimento sem manutenção": { extensoes_pro: 1 },
+            "Estou disposta a fazer manutenção regular": { volume_brasileiro: 0.7, volume_moana: 0.6, volume_jasmine: 0.7, volume_shine: 0.6, lash_lifting: 0.6, fox_eyes: 0.6 },
+             "Prefiro algo de curta duração para eventos": { lash_lifting: 0.5}
+        },
+        condicao: (respostas) => respostas.areas?.cilios > 0 || respostas.areas?.ambos > 0
+    },
+   {
+        pergunta: "Qual estilo de cílios você acha mais atraente?",
+        tipo: "unica",
+        opcoes: ["Cílios discretos e elegantes", "Cílios mais chamativos e volumosos", "Um estilo que levante o olhar"],
+        pontuacao: {
+            "Cílios discretos e elegantes": { volume_moana: 0.8, lash_lifting: 0.7 },
+            "Cílios mais chamativos e volumosos": { volume_brasileiro: 0.7, volume_jasmine: 0.9, volume_shine: 0.8, extensoes_pro: 0.7 },
+            "Um estilo que levante o olhar": { fox_eyes: 1 }
+        },
+        condicao: (respostas) => respostas.areas?.cilios > 0 || respostas.areas?.ambos > 0
+    },
+    {
+        pergunta: "Você tem alguma sensibilidade nos olhos ou prefere evitar produtos químicos fortes?",
+        tipo: "unica",
+        opcoes: ["Sim, tenho sensibilidade", "Não tenho problemas com isso"],
+        pontuacao: {
+            "Sim, tenho sensibilidade": { lash_lifting: 0.7 },
+            "Não tenho problemas com isso": { lash_lifting: 0.6, volume_brasileiro: 0.6, volume_moana: 0.6, volume_jasmine: 0.6, volume_shine: 0.6, fox_eyes: 0.6, extensoes_pro: 0.6 }
+        },
+         condicao: (respostas) => respostas.areas?.cilios > 0 || respostas.areas?.ambos > 0
+    },
+    {
+         pergunta: "Qual a sua prioridade ao escolher um procedimento para cílios?",
+        tipo: "unica",
+        opcoes: ["Realçar a beleza natural", "Transformar o olhar", "Praticidade e durabilidade"],
+        pontuacao: {
+            "Realçar a beleza natural": { lash_lifting: 0.9, volume_moana: 0.7 },
+            "Transformar o olhar": { volume_brasileiro: 0.7, volume_jasmine: 0.7, volume_shine: 0.7, fox_eyes: 0.6, extensoes_pro: 0.8 },
+            "Praticidade e durabilidade": { extensoes_pro: 0.9, lash_lifting: 0.6 }
+        },
+         condicao: (respostas) => respostas.areas?.cilios > 0 || respostas.areas?.ambos > 0
+    },
+    {
+        pergunta: "Qual o formato de sobrancelha que você mais te agrada?",
+        tipo: "unica",
+        opcoes: ["Natural, seguindo o formato original", "Mais definido e marcado", "Mais volumoso e cheio"],
+        pontuacao: {
+            "Natural, seguindo o formato original": { design_sobrancelha: 1, brow_lamination: 0.7 },
+            "Mais definido e marcado": { design_com_henna: 0.9, nanobrows: 0.8 },
+            "Mais volumoso e cheio": { brow_lamination: 0.9 }
         },
         condicao: (respostas) => respostas.areas?.sobrancelhas > 0 || respostas.areas?.ambos > 0
     },
     {
-        pergunta: "Você prefere cílios com um toque mais natural?",
+        pergunta: "Você busca um procedimento de longa duração para as sobrancelhas?",
         tipo: "unica",
-        opcoes: ["Sim", "Não"],
+        opcoes: ["Sim, quero algo que dure", "Não, prefiro opções temporárias"],
         pontuacao: {
-            "Sim": { volume_moana: 1, lash_lifting: 1 },
-            "Não": { volume_jasmine: 0.5, fox_eyes: 0.5 }
+            "Sim, quero algo que dure": { nanobrows: 1 },
+            "Não, prefiro opções temporárias": { design_sobrancelha: 0.6, design_com_henna: 0.7, brow_lamination: 0.8 }
         },
-        condicao: (respostas) => respostas.areas?.cilios > 0 || respostas.areas?.ambos > 0
+        condicao: (respostas) => respostas.areas?.sobrancelhas > 0 || respostas.areas?.ambos > 0
+    },
+    {
+        pergunta: "Qual a sua maior preocupação com suas sobrancelhas?",
+        tipo: "unica",
+        opcoes: ["Falhas e assimetrias", "Pouca definição e cor", "Fios desalinhados e sem forma"],
+        pontuacao: {
+            "Falhas e assimetrias": { nanobrows: 0.9, design_com_henna: 0.7 },
+            "Pouca definição e cor": { design_sobrancelha: 0.7, brow_lamination: 0.6 },
+            "Fios desalinhados e sem forma": { brow_lamination: 1 }
+        },
+        condicao: (respostas) => respostas.areas?.sobrancelhas > 0 || respostas.areas?.ambos > 0
+    },
+    {
+        pergunta: "Qual estilo de sobrancelha você considera ideal para você?",
+        tipo: "unica",
+        opcoes: ["Sobrancelhas delicadas e sutis", "Sobrancelhas expressivas e marcantes"],
+        pontuacao: {
+            "Sobrancelhas delicadas e sutis": { design_sobrancelha: 0.8, brow_lamination: 0.6 },
+            "Sobrancelhas expressivas e marcantes": { design_com_henna: 0.9, nanobrows: 0.7 }
+        },
+        condicao: (respostas) => respostas.areas?.sobrancelhas > 0 || respostas.areas?.ambos > 0
+    },
+    {
+        pergunta: "O que é mais importante para você em um serviço de sobrancelhas?",
+        tipo: "unica",
+        opcoes: ["Realçar a beleza natural do rosto", "Corrigir imperfeições e definir o olhar", "Praticidade e facilidade no dia a dia"],
+        pontuacao: {
+            "Realçar a beleza natural do rosto": { design_sobrancelha: 0.9, brow_lamination: 0.6 },
+            "Corrigir imperfeições e definir o olhar": { design_com_henna: 0.8, nanobrows: 0.7 },
+            "Praticidade e facilidade no dia a dia": { brow_lamination: 0.8, nanobrows: 0.6 }
+        },
+        condicao: (respostas) => respostas.areas?.sobrancelhas > 0 || respostas.areas?.ambos > 0
+    },
+   {
+        pergunta: "Ao realçar seu olhar, qual área você considera mais importante?",
+        tipo: "unica",
+        opcoes: ["Cílios (para expressividade)", "Sobrancelhas (para moldura do rosto)", "Ambas as áreas igualmente"],
+        pontuacao: {
+            "Cílios (para expressividade)": { lash_lifting: 0.6, volume_brasileiro: 0.5, volume_moana: 0.5, volume_jasmine: 0.5, volume_shine: 0.5, fox_eyes: 0.5, extensoes_pro: 0.5 },
+            "Sobrancelhas (para moldura do rosto)": { design_sobrancelha: 0.6, design_com_henna: 0.6, brow_lamination: 0.6, nanobrows: 0.6 },
+            "Ambas as áreas igualmente": { lash_lifting: 0.5, volume_brasileiro: 0.5, volume_moana: 0.5, volume_jasmine: 0.5, volume_shine: 0.5, fox_eyes: 0.5, extensoes_pro: 0.5, design_sobrancelha: 0.5, design_com_henna: 0.5, brow_lamination: 0.5, nanobrows: 0.5 }
+        },
+         condicao: (respostas) => respostas.areas?.ambos > 0
+    },
+    {
+        pergunta: "Você prefere um visual mais natural ou transformador?",
+        tipo: "unica",
+        opcoes: ["Natural (realçar minha beleza)", "Transformador (mudar meu visual)"],
+        pontuacao: {
+            "Natural (realçar minha beleza)": { lash_lifting: 0.7, volume_moana: 0.6, design_sobrancelha: 0.7, brow_lamination: 0.6 },
+            "Transformador (mudar meu visual)": { volume_brasileiro: 0.6, volume_jasmine: 0.7, volume_shine: 0.6, fox_eyes: 0.7, extensoes_pro: 0.7, design_com_henna: 0.7, nanobrows: 0.7 }
+        },
+         condicao: (respostas) => respostas.areas?.ambos > 0
+    },
+    {
+         pergunta: "Qual a sua prioridade em um serviço de beleza completo?",
+        tipo: "unica",
+        opcoes: ["Harmonia entre cílios e sobrancelhas", "Destaque de uma área específica"],
+        pontuacao: {
+            "Harmonia entre cílios e sobrancelhas": { lash_lifting: 0.5, volume_moana: 0.5, volume_jasmine: 0.5, fox_eyes: 0.5, volume_shine: 0.5, extensoes_pro: 0.5, design_sobrancelha: 0.5, design_com_henna: 0.5, brow_lamination: 0.5, nanobrows: 0.5 },
+            "Destaque de uma área específica": { lash_lifting: 0.5, volume_moana: 0.5, volume_jasmine: 0.5, fox_eyes: 0.5, volume_shine: 0.5, extensoes_pro: 0.5, design_sobrancelha: 0.5, design_com_henna: 0.5, brow_lamination: 0.5, nanobrows: 0.5 }
+        },
+         condicao: (respostas) => respostas.areas?.ambos > 0
+    },
+    {
+        pergunta: "Você busca procedimentos que economizem tempo na sua rotina de beleza?",
+        tipo: "unica",
+        opcoes: ["Sim, quero praticidade", "Não me importo com a rotina"],
+        pontuacao: {
+            "Sim, quero praticidade": { extensoes_pro: 0.6, nanobrows: 0.6, brow_lamination: 0.7, lash_lifting: 0.7 },
+            "Não me importo com a rotina": { volume_brasileiro: 0.5, volume_moana: 0.5, volume_jasmine: 0.5, volume_shine: 0.5, fox_eyes: 0.5, design_sobrancelha: 0.5, design_com_henna: 0.5 }
+        },
+            condicao: (respostas) => respostas.areas?.ambos > 0
+    },
+    {
+        pergunta: "Qual a sua expectativa geral ao combinar serviços de cílios e sobrancelhas?",
+        tipo: "unica",
+        opcoes: ["Um resultado elegante e equilibrado", "Um visual marcante e impactante"],
+        pontuacao: {
+            "Um resultado elegante e equilibrado": { lash_lifting: 0.6, volume_moana: 0.6, volume_jasmine: 0.6, fox_eyes: 0.6, volume_shine: 0.6, extensoes_pro: 0.6, design_sobrancelha: 0.6, design_com_henna: 0.6, brow_lamination: 0.6, nanobrows: 0.6 },
+            "Um visual marcante e impactante": { lash_lifting: 0.5, volume_moana: 0.5, volume_jasmine: 0.5, fox_eyes: 0.5, volume_shine: 0.5, extensoes_pro: 0.5, design_sobrancelha: 0.5, design_com_henna: 0.5, brow_lamination: 0.5, nanobrows: 0.5 }
+        },
+            condicao: (respostas) => respostas.areas?.ambos > 0
     }
 ];
 
