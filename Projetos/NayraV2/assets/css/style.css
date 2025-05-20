@@ -201,31 +201,64 @@ h3 {
 }
 
 .textos-titulo {
-    width: 100%;
-    padding: var(--espacamento-medio);
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 5;
+    text-align: center;
+    position: relative;
+    margin-top: -50px; /* Ajuste para não sumir */
 }
 
-.secao-principal__titulo {
-    margin-top: -2.5rem; /* Subiu o título até alinhar com o fim da foto */
-    font-size: var(--tamanho-h1);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    z-index: 2;
-    color: var(--cor-texto-titulo);
+.nome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.nome {
+    margin: 0;
+    line-height: 1;    
+    margin: -2px;      /* Make the text itself transparent */
+}
+
+.nayra {
+    font-family: var(--fonte-destaque);
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--cor-vinho);
+}
+
+.ananias {
     font-family: var(--fonte-titulo);
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--cor-vinho-escuro);
+}
+
+.linha {
+    position: absolute; /* Position lines absolutely */
+    width: 2px;          /* Line thickness */
+    background-color: #8B0000; /* Line color */
+    z-index: 10;
+}
+
+.linha-superior {
+    height: 20px;       /* Line height (adjust as needed) */
+    top: 0;            /* Position at the top */
+    transform: translateY(calc(-100% - 5px)); /* Adjust spacing */
+}
+
+.linha-inferior {
+    height: 20px;       /* Line height (adjust as needed) */
+    bottom: 0;         /* Position at the bottom */
+    transform: translateY(calc(100% + 5px));  /* Adjust spacing */
 }
 
 .secao-principal__subtitulo {
-    text-align: center;
-    font-size: var(--tamanho-subtitulo);
-    font-weight: 300;
-    max-width: 90%;
-    color: var(--cor-texto-corpo);
-    margin-top: var(--espacamento-pequeno);
+    font-size: 1.2em;
+    color: #333;
 }
 
 .foto-wrapper {
@@ -1522,22 +1555,39 @@ h3 {
         background-color: transparent;
     }
 
-    .textos-titulo {
-        align-items: center;
-        text-align: center;
-        padding: 0; /* Removendo padding do container de textos */
-        margin-bottom: var(--espacamento-medio);
+.textos-titulo {
+        margin-top: 0; /* Reset or adjust margin-top */
+        padding: 0; /* Add padding if needed */
+        margin-bottom: var(--espacamento-medio); /* Or a fixed value */
     }
 
     .secao-principal__titulo {
-        font-size: 3rem;
+        font-size: 5rem;
         margin-bottom: var(--espacamento-pequeno);
     }
 
-    .secao-principal__subtitulo {
-        font-size: 1.5rem;
-        max-width: 70%;
-        margin-bottom: var(--espacamento-grande);
+    .nome.nayra { /* Target the specific element */
+        font-size: 3rem; /* Adjust font size */
+        margin-bottom: var(--espacamento-pequeno); /* Add margin if needed */
+    }
+
+        .nome.ananias { /* Target the specific element */
+        font-size: 4rem; /* Adjust font size */
+        margin-bottom: var(--espacamento-pequeno); /* Add margin if needed */
+    }
+
+        .secao-principal__subtitulo {
+        font-size: 1.2rem; /* Or smaller */
+        max-width: 90%;  /* Or adjust percentage */
+    }
+
+        .linha {
+        width: 1px; /* Thinner line */
+    }
+
+    .linha-superior,
+    .linha-inferior {
+        height: 15px; /* Shorter lines */
     }
 
     .foto-wrapper {
@@ -1588,13 +1638,26 @@ h3 {
         font-size: 100px; /* Aumenta um pouco o texto de fundo */
     }
 
-    .secao-principal__titulo {
-        font-size: 3.5rem; /* Título um pouco maior */
+    .nome.nayra {
+        font-size: 2.5rem; /* Slightly larger "Nayra" */
+    }
+
+    .nome.ananias {
+        font-size: 3.5rem; /* Slightly larger "Ananias" */
     }
 
     .secao-principal__subtitulo {
-        font-size: 1.7rem; /* Subtítulo um pouco maior */
-        max-width: 60%; /* Reduz um pouco a largura máxima */
+        font-size: 1.7rem; /* Subtitle a bit larger */
+        max-width: 60%; /* Reduced max-width */
+    }
+
+    .linha {
+        width: 3px; /* Slightly thicker line */
+    }
+
+    .linha-superior,
+    .linha-inferior {
+        height: 25px; /* Slightly longer lines */
     }
 
     .secao-principal__foto {
@@ -1621,13 +1684,26 @@ h3 {
         font-size: 140px; /* Aumenta o texto de fundo */
     }
 
-    .secao-principal__titulo {
-        font-size: 4rem; /* Título maior */
+    .nome.nayra {
+        font-size: 3rem; /* Larger "Nayra" */
+    }
+
+    .nome.ananias {
+        font-size: 4rem; /* Larger "Ananias" */
     }
 
     .secao-principal__subtitulo {
-        font-size: 2rem; /* Subtítulo maior */
-        max-width: 50%; /* Reduz mais a largura máxima */
+        font-size: 2rem; /* Larger subtitle */
+        max-width: 50%; /* Even narrower subtitle */
+    }
+
+    .linha {
+        width: 4px; /* Thicker line */
+    }
+
+    .linha-superior,
+    .linha-inferior {
+        height: 30px; /* Longer lines */
     }
 
     .secao-principal__foto {
