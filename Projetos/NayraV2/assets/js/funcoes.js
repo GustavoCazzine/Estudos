@@ -187,7 +187,7 @@ const cursos = [
 const lista = document.getElementById("cursos-lista");
 
 function abrirWhatsApp(mensagem) {
-    const url = `https://wa.me/5519981559831?text=${encodeURIComponent(mensagem)}`;
+    const url = `https://wa.me/5519999670165?text=${encodeURIComponent(mensagem)}`;
     window.open(url, "_blank");
 }
 
@@ -200,7 +200,7 @@ cursos.forEach(curso => {
             <p class="curso-card-minimal__chamada">${curso.beneficio}</p>
             <p class="curso-card-minimal__incentivo">🔥 Vagas Limitadas! Transforme sua paixão agora!</p>
             <div class="curso-card-minimal__botoes">
-                <a href="https://wa.me/5519981559831?text=${encodeURIComponent(curso.mensagemWhats)}" target="_blank" class="curso-card-minimal__cta">Quero me inscrever!</a>
+                <a href="https://wa.me/5519999670165?text=${encodeURIComponent(curso.mensagemWhats)}" target="_blank" class="curso-card-minimal__cta">Quero me inscrever!</a>
                 <a href="${curso.pdfLink}" target="_blank" class="curso-card-minimal__pdf-link"><i class="fas fa-file-pdf"></i> Ver Detalhes</a>
             </div>
         </div>
@@ -217,25 +217,25 @@ const servicosSobrancelhas = [
         titulo: "Brow Lamination",
         descricao: "Alinhamento e fixação dos fios para sobrancelhas mais cheias, alinhadas e com efeito natural.",
         caracteristicas: ["Alinhamento duradouro", "Efeito natural", "Fios disciplinados"],
-        imagem: "assets/img/servicos/sobrancelhas/BrowLamination.jpg"
+        imagem: "assets/img/servicos/sobrancelhas/BrowLamination.png"
     },
     {
         titulo: "Nanobrows",
         descricao: "Técnica avançada de micropigmentação fio a fio para um resultado hiper-realista e delicado.",
         caracteristicas: ["Fio a fio realista", "Naturalidade", "Longa duração"],
-        imagem: "assets/img/servicos/sobrancelhas/Nanobrows.jpg"
+        imagem: "assets/img/servicos/sobrancelhas/NanoBrow.png"
     },
     {
         titulo: "Design de sobrancelhas personalizado",
         descricao: "Modelagem exclusiva para valorizar o formato do seu rosto, respeitando sua identidade.",
         caracteristicas: ["Personalizado", "Harmônico", "Preciso"],
-        imagem: "assets/img/servicos/sobrancelhas/DesignerSobrancelhasPersonalizado.jpg"
+        imagem: "assets/img/servicos/sobrancelhas/Personalizado.png"
     },
     {
         titulo: "Designer com henna",
         descricao: "Coloração temporária para realçar e preencher as sobrancelhas, com design sob medida.",
         caracteristicas: ["Definido", "Coloração temporária", "Preenchimento natural"],
-        imagem: "assets/img/servicos/sobrancelhas/DesignerHenna.jpg"
+        imagem: "assets/img/servicos/sobrancelhas/Henna.png"
     }
 ];
 
@@ -244,37 +244,31 @@ const servicosCilios = [
         titulo: "Volume Moana",
         descricao: "Técnica exclusiva que proporciona cílios volumosos, leves e com efeito natural, realçando o olhar sem pesar.",
         caracteristicas: ["Volume leve", "Efeito natural", "Confortável"],
-        imagem: "assets/img/servicos/cilios/VolumeMoana.jpg"
+        imagem: "assets/img/servicos/cilios/VolumeMoana.png"
     },
     {
         titulo: "Volume Jasmine",
         descricao: "Fios leves aplicados em leques para um olhar mais marcante.",
         caracteristicas: ["Olhar marcante", "Leques leves", "Durabilidade"],
-        imagem: "assets/img/servicos/cilios/VolumeJasmine.jpg"
-    },
-    {
-        titulo: "Volume Aurora",
-        descricao: "Curvatura natural dos cílios sem extensão.",
-        caracteristicas: ["Curvatura natural", "Sem extensão", "Praticidade"],
-        imagem: "assets/img/servicos/cilios/VolumeAurora.jpg"
+        imagem: "assets/img/servicos/cilios/VolumeJasmine.png"
     },
     {
         titulo: "Volume Brasileiro",
         descricao: "Técnica de volume que utiliza leques abertos para um efeito cheio e sofisticado, ideal para quem busca destaque.",
         caracteristicas: ["Volume intenso", "Leques abertos", "Efeito sofisticado"],
-        imagem: "assets/img/servicos/cilios/VolumeBrasileiro.jpg"
+        imagem: "assets/img/servicos/cilios/VolumeBrasileiro.png"
     },
     {
         titulo: "Lash Lifting",
         descricao: "Procedimento que curva e levanta os cílios naturais, proporcionando um olhar mais aberto e natural sem extensões.",
         caracteristicas: ["Sem extensão", "Curvatura duradoura", "Olhar aberto"],
-        imagem: "assets/img/servicos/cilios/LashLifting.jpg"
+        imagem: "assets/img/servicos/cilios/LashLifting.png"
     },
     {
         titulo: "Fox Eyes",
         descricao: "Técnica que alonga e levanta o canto externo dos olhos, criando um efeito de olhar alongado e sensual.",
         caracteristicas: ["Olhar alongado", "Efeito lifting", "Sensualidade"],
-        imagem: "assets/img/servicos/cilios/FoxEyes.jpg"
+        imagem: "assets/img/servicos/cilios/FoxEyses.png"
     }
 ];
 
@@ -390,20 +384,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const listaSobrancelhasQuiz = [
-    { id: 'design_sobrancelha', titulo: "Design de Sobrancelha", descricao: "Trabalhamos com o formato natural...", caracteristicas: ["Formato natural", "Desenho único", "Pode ser natural ou marcado"], imagem: 'assets/img/servicos/sobrancelhas/DesignSobrancelha.jpg' },
-    { id: 'design_com_henna', titulo: "Design com Henna", descricao: "Ideal para quem tem falhas...", caracteristicas: ["Preenchimento de falhas", "Natural", "Levemente marcado"], imagem: 'assets/img/servicos/sobrancelhas/DesignComHenna.jpg' },
-    { id: 'brow_lamination', titulo: "Brow Lamination", descricao: "Alinhamento dos fios por até 8 semanas...", caracteristicas: ["Alinhamento duradouro", "Preenche falhas", "Volume"], imagem: 'assets/img/servicos/sobrancelhas/BrowLamination.jpg' },
-    { id: 'nanobrows', titulo: "NanoBrows", descricao: "Evolução da micropigmentação...", caracteristicas: ["Fios realistas", "Indolor", "Volume", "Correção do formato"], imagem: 'assets/img/servicos/sobrancelhas/NanoBrows.jpg' }
+    { id: 'design_sobrancelha', titulo: "Design de Sobrancelha", descricao: "Trabalhamos com o formato natural...", caracteristicas: ["Formato natural", "Desenho único", "Pode ser natural ou marcado"], imagem: 'assets/img/servicos/sobrancelhas/Personalizado.png' },
+    { id: 'design_com_henna', titulo: "Design com Henna", descricao: "Ideal para quem tem falhas...", caracteristicas: ["Preenchimento de falhas", "Natural", "Levemente marcado"], imagem: 'assets/img/servicos/sobrancelhas/Henna.png' },
+    { id: 'brow_lamination', titulo: "Brow Lamination", descricao: "Alinhamento dos fios por até 8 semanas...", caracteristicas: ["Alinhamento duradouro", "Preenche falhas", "Volume"], imagem: 'assets/img/servicos/sobrancelhas/BrowLamination.png' },
+    { id: 'nanobrows', titulo: "NanoBrows", descricao: "Evolução da micropigmentação...", caracteristicas: ["Fios realistas", "Indolor", "Volume", "Correção do formato"], imagem: 'assets/img/servicos/sobrancelhas/NanoBrow.png' }
 ];
 
 const listaCiliosQuiz = [
-    { id: 'lash_lifting', titulo: "Lash Lifting", descricao: "Curvamento dos fios naturais...", caracteristicas: ["Curvamento natural", "Pode tingir", "Hidrata os fios"], imagem: 'assets/img/servicos/cilios/LashLifting.jpg' },
-    { id: 'volume_brasileiro', titulo: "Volume Brasileiro", descricao: "Fios em formato de Y...", caracteristicas: ["Volume", "Preenche 80% a 100% dos fios"], imagem: 'assets/img/servicos/cilios/VolumeBrasileiro.jpg' },
-    { id: 'volume_moana', titulo: "Volume Moana", descricao: "Volume encantador e natural...", caracteristicas: ["Volume", "Naturalidade", "Elegância"], imagem: 'assets/img/servicos/cilios/VolumeMoana.jpg' },
-    { id: 'volume_jasmine', titulo: "Volume Jasmine", descricao: "Volume e olhar encantador...", caracteristicas: ["Volume", "Elegância", "Sofisticação"], imagem: 'assets/img/servicos/cilios/VolumeJasmine.jpg' },
-    { id: 'extensoes_pro', titulo: "Extensões Pro", descricao: "Maior preenchimento e durabilidade...", caracteristicas: ["Preenchimento", "Durabilidade", "Sem manutenção"], imagem: 'assets/img/servicos/cilios/ExtensoesPro.jpg' },
-    { id: 'fox_eyes', titulo: "Efeito Fox Eyes", descricao: "Alonga e levanta os cílios...", caracteristicas: ["Alongamento", "Lifting", "Sofisticado"], imagem: 'assets/img/servicos/cilios/FoxEyes.jpg' },
-     { id: 'volume_shine', titulo: "Volume Shine", descricao: "Volume luminoso e radiante...", caracteristicas: ["Volume", "Luminoso", "Radiante"], imagem: 'assets/img/servicos/cilios/VolumeShine.jpg' }
+    { id: 'lash_lifting', titulo: "Lash Lifting", descricao: "Curvamento dos fios naturais...", caracteristicas: ["Curvamento natural", "Pode tingir", "Hidrata os fios"], imagem: 'assets/img/servicos/cilios/LashLifting.png' },
+    { id: 'volume_brasileiro', titulo: "Volume Brasileiro", descricao: "Fios em formato de Y...", caracteristicas: ["Volume", "Preenche 80% a 100% dos fios"], imagem: 'assets/img/servicos/cilios/VolumeBrasileiro.png' },
+    { id: 'volume_moana', titulo: "Volume Moana", descricao: "Volume encantador e natural...", caracteristicas: ["Volume", "Naturalidade", "Elegância"], imagem: 'assets/img/servicos/cilios/VolumeMoana.png' },
+    { id: 'volume_jasmine', titulo: "Volume Jasmine", descricao: "Volume e olhar encantador...", caracteristicas: ["Volume", "Elegância", "Sofisticação"], imagem: 'assets/img/servicos/cilios/VolumeJasmine.png' },
+    { id: 'extensoes_pro', titulo: "Extensões Pro", descricao: "Maior preenchimento e durabilidade...", caracteristicas: ["Preenchimento", "Durabilidade", "Sem manutenção"], imagem: 'assets/img/servicos/cilios/Pro.png' },
+    { id: 'fox_eyes', titulo: "Efeito Fox Eyes", descricao: "Alonga e levanta os cílios...", caracteristicas: ["Alongamento", "Lifting", "Sofisticado"], imagem: 'assets/img/servicos/cilios/FoxEyses.png' },
+    { id: 'volume_shine', titulo: "Volume Shine", descricao: "Volume luminoso e radiante...", caracteristicas: ["Volume", "Luminoso", "Radiante"], imagem: 'assets/img/servicos/cilios/VolumeShine.png' }
 ];
 
 // Perguntas do quiz (Você precisará adaptar essas perguntas para cobrir todos os serviços)
@@ -418,7 +412,7 @@ const quizPerguntas = [
             "Ambos": { areas: { sobrancelhas: 1, cilios: 1, ambos: 1 } }
         }
     },
-   {
+    {
         pergunta: "Qual o efeito de cílios que você mais deseja?",
         tipo: "unica",
         opcoes: ["Cílios curvados e alongados naturalmente", "Cílios com volume e preenchimento", "Um olhar mais exótico e marcante"],
@@ -436,11 +430,11 @@ const quizPerguntas = [
         pontuacao: {
             "Prefiro um procedimento sem manutenção": { extensoes_pro: 1 },
             "Estou disposta a fazer manutenção regular": { volume_brasileiro: 0.7, volume_moana: 0.6, volume_jasmine: 0.7, volume_shine: 0.6, lash_lifting: 0.6, fox_eyes: 0.6 },
-             "Prefiro algo de curta duração para eventos": { lash_lifting: 0.5}
+            "Prefiro algo de curta duração para eventos": { lash_lifting: 0.5}
         },
         condicao: (respostas) => respostas.areas?.cilios > 0 || respostas.areas?.ambos > 0
     },
-   {
+    {
         pergunta: "Qual estilo de cílios você acha mais atraente?",
         tipo: "unica",
         opcoes: ["Cílios discretos e elegantes", "Cílios mais chamativos e volumosos", "Um estilo que levante o olhar"],
@@ -459,10 +453,10 @@ const quizPerguntas = [
             "Sim, tenho sensibilidade": { lash_lifting: 0.7 },
             "Não tenho problemas com isso": { lash_lifting: 0.6, volume_brasileiro: 0.6, volume_moana: 0.6, volume_jasmine: 0.6, volume_shine: 0.6, fox_eyes: 0.6, extensoes_pro: 0.6 }
         },
-         condicao: (respostas) => respostas.areas?.cilios > 0 || respostas.areas?.ambos > 0
+        condicao: (respostas) => respostas.areas?.cilios > 0 || respostas.areas?.ambos > 0
     },
     {
-         pergunta: "Qual a sua prioridade ao escolher um procedimento para cílios?",
+        pergunta: "Qual a sua prioridade ao escolher um procedimento para cílios?",
         tipo: "unica",
         opcoes: ["Realçar a beleza natural", "Transformar o olhar", "Praticidade e durabilidade"],
         pontuacao: {
@@ -470,7 +464,7 @@ const quizPerguntas = [
             "Transformar o olhar": { volume_brasileiro: 0.7, volume_jasmine: 0.7, volume_shine: 0.7, fox_eyes: 0.6, extensoes_pro: 0.8 },
             "Praticidade e durabilidade": { extensoes_pro: 0.9, lash_lifting: 0.6 }
         },
-         condicao: (respostas) => respostas.areas?.cilios > 0 || respostas.areas?.ambos > 0
+        condicao: (respostas) => respostas.areas?.cilios > 0 || respostas.areas?.ambos > 0
     },
     {
         pergunta: "Qual o formato de sobrancelha que você mais te agrada?",
@@ -525,7 +519,7 @@ const quizPerguntas = [
         },
         condicao: (respostas) => respostas.areas?.sobrancelhas > 0 || respostas.areas?.ambos > 0
     },
-   {
+    {
         pergunta: "Ao realçar seu olhar, qual área você considera mais importante?",
         tipo: "unica",
         opcoes: ["Cílios (para expressividade)", "Sobrancelhas (para moldura do rosto)", "Ambas as áreas igualmente"],
@@ -534,7 +528,7 @@ const quizPerguntas = [
             "Sobrancelhas (para moldura do rosto)": { design_sobrancelha: 0.6, design_com_henna: 0.6, brow_lamination: 0.6, nanobrows: 0.6 },
             "Ambas as áreas igualmente": { lash_lifting: 0.5, volume_brasileiro: 0.5, volume_moana: 0.5, volume_jasmine: 0.5, volume_shine: 0.5, fox_eyes: 0.5, extensoes_pro: 0.5, design_sobrancelha: 0.5, design_com_henna: 0.5, brow_lamination: 0.5, nanobrows: 0.5 }
         },
-         condicao: (respostas) => respostas.areas?.ambos > 0
+        condicao: (respostas) => respostas.areas?.ambos > 0
     },
     {
         pergunta: "Você prefere um visual mais natural ou transformador?",
@@ -544,17 +538,17 @@ const quizPerguntas = [
             "Natural (realçar minha beleza)": { lash_lifting: 0.7, volume_moana: 0.6, design_sobrancelha: 0.7, brow_lamination: 0.6 },
             "Transformador (mudar meu visual)": { volume_brasileiro: 0.6, volume_jasmine: 0.7, volume_shine: 0.6, fox_eyes: 0.7, extensoes_pro: 0.7, design_com_henna: 0.7, nanobrows: 0.7 }
         },
-         condicao: (respostas) => respostas.areas?.ambos > 0
+        condicao: (respostas) => respostas.areas?.ambos > 0
     },
     {
-         pergunta: "Qual a sua prioridade em um serviço de beleza completo?",
+        pergunta: "Qual a sua prioridade em um serviço de beleza completo?",
         tipo: "unica",
         opcoes: ["Harmonia entre cílios e sobrancelhas", "Destaque de uma área específica"],
         pontuacao: {
             "Harmonia entre cílios e sobrancelhas": { lash_lifting: 0.5, volume_moana: 0.5, volume_jasmine: 0.5, fox_eyes: 0.5, volume_shine: 0.5, extensoes_pro: 0.5, design_sobrancelha: 0.5, design_com_henna: 0.5, brow_lamination: 0.5, nanobrows: 0.5 },
             "Destaque de uma área específica": { lash_lifting: 0.5, volume_moana: 0.5, volume_jasmine: 0.5, fox_eyes: 0.5, volume_shine: 0.5, extensoes_pro: 0.5, design_sobrancelha: 0.5, design_com_henna: 0.5, brow_lamination: 0.5, nanobrows: 0.5 }
         },
-         condicao: (respostas) => respostas.areas?.ambos > 0
+        condicao: (respostas) => respostas.areas?.ambos > 0
     },
     {
         pergunta: "Você busca procedimentos que economizem tempo na sua rotina de beleza?",
@@ -860,7 +854,7 @@ function mostrarResultado() {
 
     const recomendacao = recomendarServicos();
     let mensagemResultado = "";
-    let linkWhatsApp = "https://wa.me/5519981559831?text=";
+    let linkWhatsApp = "https://wa.me/5519999670165?text=";
     let conteudoResultado = '';
 
     if (recomendacao.tipo === 'combo' && recomendacao.sobrancelhas && recomendacao.cilios) {
