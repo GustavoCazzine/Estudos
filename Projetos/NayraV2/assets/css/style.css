@@ -70,7 +70,6 @@
 }
 
 html, body, main {
-    overflow-x: hidden;
     text-align: center;
 }
 
@@ -102,14 +101,12 @@ h3 {
 
 /* Estilos gerais para o container */
 .controle_geral {
-    margin-bottom: 2rem;
-    background-color: var(--cor-fundo-creme);
-}
-
-.conteudo_principais{
     margin: 0 auto;
     width: 100%;
+    max-width: 1200px; /* Seu limite de largura principal. */
+    overflow: hidden;
 }
+
 
 /* ---------------------------- CABEÇALHO ---------------------------- */
 .cabecalho {
@@ -354,11 +351,10 @@ h3 {
 
 /* ---------------------------- SEÇÃO CATÁLOGO ---------------------------- */
 .catalogo {
-    padding: var(--espacamento-grande) 1.5rem;
+    padding: var(--espacamento-grande) 1.5rem; /* Este padding é o espaço VISUAL nas laterais da seção. */
+    width: 100%; /* Ocupa 100% da largura disponível do .controle_geral */
     background-color: var(--cor-fundo-creme);
     font-family: var(--fonte-paragrafos);
-    max-width: 1200px;
-    margin: 0 auto;
     text-align: center;
 }
 
@@ -398,37 +394,48 @@ h3 {
     transition: .1s;
 }
 
+/* O Carrossel: Deve conter os cards e permitir a rolagem. */
 .catalogo__carrossel {
     display: flex;
-    overflow-x: auto;
-    gap: var(--espacamento-medio);
-    padding-bottom: 1.5rem;
+    overflow-x: auto; /* PERMANECE: essenciais para o carrossel */
+    gap: var(--espacamento-medio); /* Espaço entre os cards */
+    padding-bottom: 1.5rem; /* Espaço para a scrollbar na parte inferior */
     scroll-snap-type: x mandatory;
-    scroll-padding: 1rem;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     position: relative;
     scrollbar-width: 1px;
+    width: 100%; 
+    scroll-padding-inline: calc(50% - 160px);
 }
 
 .catalogo__carrossel::-webkit-scrollbar {
     display: block;
+    height: 8px;
 }
 
+/* Cor e arredondamento do "polegar" da scrollbar */
 .catalogo__carrossel::-webkit-scrollbar-thumb {
     background: var(--gradiente-vinho);
     border-radius: 25px;
 }
 
+/* Opcional: Estiliza o "trilho" da scrollbar */
+.catalogo__carrossel::-webkit-scrollbar-track {
+    background: var(--cor-fundo-branco);
+    border-radius: 25px;
+}
+
 .catalogo__card {
-    flex: 0 0 100%;
-    max-width: 300px;
+    flex: 0 0 auto; /* Impede encolhimento/crescimento e mantém a largura base */
+    width: 100%; /* Ocupa a largura total disponível pelo flex-item */
+    max-width: 300px; /* Largura fixa do card */
+    scroll-snap-align: center; /* Centraliza o card no ponto de snap */
     background-color: var(--cor-fundo-branco);
     border: 1px solid var(--cor-fundo-creme);
     border-radius: var(--espacamento-medio);
-    scroll-snap-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* A sombra */
+    overflow: hidden; /* Importante para o conteúdo do card */
     transition: transform var(--transition-duration) ease,
                 box-shadow var(--transition-duration) ease;
 }
@@ -440,7 +447,7 @@ h3 {
 }
 
 .catalogo__card.destacado {
-    transform: scale(1.03);
+    transform: scale(1.01);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
