@@ -85,7 +85,6 @@ body {
     width: 100%; /* Garante que o body ocupe toda a largura */
     font-family: var(--fonte-corpo);
     line-height: 1.6;
-    background-color: var(--cor-fundo-creme);
     max-width: 1200px; /* Mantém a largura máxima */
 }
 
@@ -274,7 +273,7 @@ h3 {
     position: absolute;
     bottom: -5px;
     left: 0;
-    width: 150%;
+    width: 200%;
     height: 40%; /* Aumente se quiser um degradê mais longo */
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--cor-fundo-creme) 100%);
     z-index: 3; /* abaixo da imagem mas acima do fundo */
@@ -296,7 +295,7 @@ h3 {
     align-items: center;
     z-index: 3;
     color: var(--cor-vinho-escuro);
-    margin-top: var(--espacamento-grande);
+    margin-top: 60px;
 }
 
 .scroll-text {
@@ -347,6 +346,10 @@ h3 {
     color: transparent;     /* fallback */
     font-weight: bold;
     font-size: var(--tamanho-h1);
+}
+
+.palavras_destaques{
+    color: var(--cor-vinho-escuro);
 }
 
 /* ---------------------------- SEÇÃO CATÁLOGO ---------------------------- */
@@ -419,7 +422,7 @@ h3 {
 
 .catalogo__card {
     flex: 0 0 100%;
-    max-width: 320px;
+    max-width: 300px;
     background-color: var(--cor-fundo-branco);
     border: 1px solid var(--cor-fundo-creme);
     border-radius: var(--espacamento-medio);
@@ -460,7 +463,8 @@ h3 {
 .catalogo__card__titulo {
     font-family: var(--fonte-titulos);
     font-size: var(--tamanho-subtitulo);
-    color: var(--cor-titulo);
+    color: var(--cor-vinho);
+    transform: scale(1.3);
     margin: 0;
 }
 
@@ -482,7 +486,7 @@ h3 {
     color: var(--cor-fundo-creme);
     padding: 0.1rem 0.8rem;
     border-radius: var(--espacamento-pequeno);
-    font-size: 0.70rem;
+    font-size: 0.80rem;
     font-weight: bold;
 }
 
@@ -1593,7 +1597,7 @@ h3 {
     .foto-wrapper {
         margin-top: var(--espacamento-medio);
         margin-bottom: var(--espacamento-grande);
-        width: 100%;
+        width: 150%;
         display: flex;
         justify-content: center;
     }

@@ -216,58 +216,46 @@ const servicosSobrancelhas = [
     {
         titulo: "Brow Lamination",
         descricao: "Alinhamento e fixação dos fios para sobrancelhas mais cheias, alinhadas e com efeito natural.",
-        caracteristicas: ["Alinhamento duradouro", "Efeito natural", "Fios disciplinados"],
+        caracteristicas: ["+ Volume", "Fios alinhados", "Natural"],
         imagem: "assets/img/servicos/sobrancelhas/BrowLamination.png"
     },
     {
         titulo: "Nanobrows",
         descricao: "Técnica avançada de micropigmentação fio a fio para um resultado hiper-realista e delicado.",
-        caracteristicas: ["Fio a fio realista", "Naturalidade", "Longa duração"],
+        caracteristicas: ["Fio a fio", "Realista", "Duradouro"],
         imagem: "assets/img/servicos/sobrancelhas/NanoBrow.png"
     },
     {
-        titulo: "Design de sobrancelhas personalizado",
+        titulo: "Design personalizado",
         descricao: "Modelagem exclusiva para valorizar o formato do seu rosto, respeitando sua identidade.",
-        caracteristicas: ["Personalizado", "Harmônico", "Preciso"],
+        caracteristicas: ["Exclusivo", "Harmonia", "Preciso"],
         imagem: "assets/img/servicos/sobrancelhas/Personalizado.png"
     },
     {
         titulo: "Designer com henna",
         descricao: "Coloração temporária para realçar e preencher as sobrancelhas, com design sob medida.",
-        caracteristicas: ["Definido", "Coloração temporária", "Preenchimento natural"],
+        caracteristicas: ["Definido", "Colorido", "Preenchido"],
         imagem: "assets/img/servicos/sobrancelhas/Henna.png"
     }
 ];
 
 const servicosCilios = [
     {
-        titulo: "Volume Moana",
-        descricao: "Técnica exclusiva que proporciona cílios volumosos, leves e com efeito natural, realçando o olhar sem pesar.",
-        caracteristicas: ["Volume leve", "Efeito natural", "Confortável"],
-        imagem: "assets/img/servicos/cilios/VolumeMoana.png"
-    },
-    {
-        titulo: "Volume Jasmine",
-        descricao: "Fios leves aplicados em leques para um olhar mais marcante.",
-        caracteristicas: ["Olhar marcante", "Leques leves", "Durabilidade"],
-        imagem: "assets/img/servicos/cilios/VolumeJasmine.png"
-    },
-    {
         titulo: "Volume Brasileiro",
         descricao: "Técnica de volume que utiliza leques abertos para um efeito cheio e sofisticado, ideal para quem busca destaque.",
-        caracteristicas: ["Volume intenso", "Leques abertos", "Efeito sofisticado"],
+        caracteristicas: ["Super volume", "Impacto", "Destaque"],
         imagem: "assets/img/servicos/cilios/VolumeBrasileiro.png"
     },
     {
         titulo: "Lash Lifting",
         descricao: "Procedimento que curva e levanta os cílios naturais, proporcionando um olhar mais aberto e natural sem extensões.",
-        caracteristicas: ["Sem extensão", "Curvatura duradoura", "Olhar aberto"],
+        caracteristicas: ["Curvado", "Natural", "Sem extensão"],
         imagem: "assets/img/servicos/cilios/LashLifting.png"
     },
     {
         titulo: "Fox Eyes",
         descricao: "Técnica que alonga e levanta o canto externo dos olhos, criando um efeito de olhar alongado e sensual.",
-        caracteristicas: ["Olhar alongado", "Efeito lifting", "Sensualidade"],
+        caracteristicas: ["Olhar felino", "Lifting", "Sensual"],
         imagem: "assets/img/servicos/cilios/FoxEyses.png"
     }
 ];
